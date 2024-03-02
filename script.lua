@@ -1377,7 +1377,7 @@ game.Workspace.giaan2003_2.Animate.jump.JumpAnim.AnimationId = ("rbxassetid://15
 wait()
 game.Workspace.giaan2003_2.Animate.fall.FallAnim.AnimationId = ("rbxassetid://15663270617")
 wait()
-end
+end)
 
 rng2Tab:Button("celestial", function()
 game.Workspace.giaan2003_2.Animate.idle.Animation1.AnimationId = ("rbxassetid://16098962011")
@@ -1390,7 +1390,7 @@ game.Workspace.giaan2003_2.Animate.jump.JumpAnim.AnimationId = ("rbxassetid://16
 wait()
 game.Workspace.giaan2003_2.Animate.fall.FallAnim.AnimationId = ("rbxassetid://16098962011")
 wait()
-end
+end)
 
 rng2Tab:Button("galaxy", function()
 game.Workspace.giaan2003_2.Animate.idle.Animation1.AnimationId = ("rbxassetid://15682451624")
@@ -1403,7 +1403,7 @@ game.Workspace.giaan2003_2.Animate.jump.JumpAnim.AnimationId = ("rbxassetid://15
 wait()
 game.Workspace.giaan2003_2.Animate.fall.FallAnim.AnimationId = ("rbxassetid://15682451624")
 wait()
-end
+end)
 
 rng2Tab:Button("hypervolt", function()
 game.Workspace.giaan2003_2.Animate.idle.Animation1.AnimationId = ("rbxassetid://16174757555")
@@ -1416,7 +1416,7 @@ game.Workspace.giaan2003_2.Animate.jump.JumpAnim.AnimationId = ("rbxassetid://16
 wait()
 game.Workspace.giaan2003_2.Animate.fall.FallAnim.AnimationId = ("rbxassetid://16174757555")
 wait()
-end
+end)
 
 rng2Tab:Button("undeaddevil", function()
 game.Workspace.giaan2003_2.Animate.idle.Animation1.AnimationId = ("rbxassetid://16242855244")
@@ -1429,7 +1429,7 @@ game.Workspace.giaan2003_2.Animate.jump.JumpAnim.AnimationId = ("rbxassetid://16
 wait()
 game.Workspace.giaan2003_2.Animate.fall.FallAnim.AnimationId = ("rbxassetid://16242855244")
 wait()
-end
+end)
 
 rng2Tab:Button("matrix", function()
 game.Workspace.giaan2003_2.Animate.idle.Animation1.AnimationId = ("rbxassetid://15843877956")
@@ -1442,7 +1442,7 @@ game.Workspace.giaan2003_2.Animate.jump.JumpAnim.AnimationId = ("rbxassetid://15
 wait()
 game.Workspace.giaan2003_2.Animate.fall.FallAnim.AnimationId = ("rbxassetid://15843877956")
 wait()
-end
+end)
 
 rng2Tab:Button("starscourse", function()
 game.Workspace.giaan2003_2.Animate.idle.Animation1.AnimationId = ("rbxassetid://16378485219")
@@ -1455,5 +1455,5 @@ game.Workspace.giaan2003_2.Animate.jump.JumpAnim.AnimationId = ("rbxassetid://16
 wait()
 game.Workspace.giaan2003_2.Animate.fall.FallAnim.AnimationId = ("rbxassetid://16378485219")
 wait()
-end
+end)
 end
