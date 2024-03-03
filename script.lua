@@ -637,7 +637,7 @@ zomTab:Toggle("spawn landmine (weak)", function(state)
     game:GetService("RunService").Heartbeat:Connect(function()
         if loopqjh == true then
             pcall(function()
-		wait(0.5)
+		wait(1)
                     local args = {
     [1] = "PLACE_LANDMINE"
 }
@@ -653,6 +653,7 @@ zomTab:Toggle("prevent spawnkill (zombie)", function(state)
     game:GetService("RunService").Heartbeat:Connect(function()
         if loopqjh == true then
             pcall(function()
+		wait(5)
 		local args = {
     [1] = Vector3.new(44.35234451293945, 5.365959167480469, 26.555503845214844),
     [2] = Vector3.new(23.554460525512695, 1, 37.850868225097656)
