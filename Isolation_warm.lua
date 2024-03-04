@@ -63,4 +63,3 @@ isoTab:Toggle("spray", function(state)
         end
     end)
 end)
-end
