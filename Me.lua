@@ -138,15 +138,15 @@ PlayerTab:Toggle("Loop WalkSpeed", function(state)
     end)
 end)
 
-PlayerTab:TextBox("JumpPower", function(value)
-    getgenv().Jumppower = value
+PlayerTab:TextBox("JumpPower", function(valuep)
+    getgenv().Jumppower = valuep
     pcall(function()
         game:GetService("Players").LocalPlayer.Character.Humanoid.JumpPower = value
     end)
 end)
 
-PlayerTab:Toggle("Loop JumpPower", function(state)
-    getgenv().loopJ = state
+PlayerTab:Toggle("Loop JumpPower", function(statep)
+    getgenv().loopJ = statep
     game:GetService("RunService").Heartbeat:Connect(function()
         if loopJ == true then
             pcall(function()
@@ -156,12 +156,12 @@ PlayerTab:Toggle("Loop JumpPower", function(state)
     end)
 end)
 
-PlayerTab:TextBox("TP Speed", function(value)
-getgenv().TPSpeed = value
+PlayerTab:TextBox("TP Speed", function(valuet)
+getgenv().TPSpeed = valuet
 end)
 
-PlayerTab:Toggle("TP Walk", function(s)
-getgenv().TPWalk = s
+PlayerTab:Toggle("TP Walk", function(st)
+getgenv().TPWalk = st
 local hb = game:GetService("RunService").Heartbeat
 local player = game:GetService("Players")
 local lplr = player.LocalPlayer
@@ -227,159 +227,8 @@ end)
 if game.PlaceId == 14419907512 then
 local zomTab = Window:Tab("zombie game","rbxassetid://12308581351")
 zomTab:Section("DOMAIN EXPANSION")
-zomTab:Button("spawn spits", function()
-local args = {
-    [1] = Vector3.new(44.35234451293945, 5.365959167480469, 26.555503845214844),
-    [2] = Vector3.new(23.554460525512695, 1, 37.850868225097656)
-}
-
-game:GetService("ReplicatedStorage"):WaitForChild("Remotes"):WaitForChild("ZombieRelated"):WaitForChild("AcidSpit"):FireServer(unpack(args))
-
-local args = {
-    [1] = Vector3.new(-9.678816795349121, 5.362382888793945, 46.75006103515625),
-    [2] = Vector3.new(12.37794303894043, 1, 39.067474365234375)
-}
-
-game:GetService("ReplicatedStorage"):WaitForChild("Remotes"):WaitForChild("ZombieRelated"):WaitForChild("AcidSpit"):FireServer(unpack(args))
-
-local args = {
-    [1] = Vector3.new(29.278545379638672, 5.362962245941162, 27.883119583129883),
-    [2] = Vector3.new(19.839088439941406, 1, 30.919002532958984)
-}
-
-game:GetService("ReplicatedStorage"):WaitForChild("Remotes"):WaitForChild("ZombieRelated"):WaitForChild("AcidSpit"):FireServer(unpack(args))
-
-local args = {
-    [1] = Vector3.new(18.922393798828125, 5.366894245147705, 58.81745910644531),
-    [2] = Vector3.new(19.588932037353516, 1, 46.68156051635742)
-}
-
-game:GetService("ReplicatedStorage"):WaitForChild("Remotes"):WaitForChild("ZombieRelated"):WaitForChild("AcidSpit"):FireServer(unpack(args))
-local args = {
-    [1] = Vector3.new(7.932519912719727, 5.349757194519043, 29.92782211303711),
-    [2] = Vector3.new(12.952587127685547, 1, 34.079986572265625)
-}
-
-game:GetService("ReplicatedStorage"):WaitForChild("Remotes"):WaitForChild("ZombieRelated"):WaitForChild("AcidSpit"):FireServer(unpack(args))
-wait()
-local args = {
-    [1] = Vector3.new(9.445194244384766, 5.434213161468506, 42.986026763916016),
-    [2] = Vector3.new(8.34402847290039, 1, 49.173927307128906)
-}
-
-game:GetService("ReplicatedStorage"):WaitForChild("Remotes"):WaitForChild("ZombieRelated"):WaitForChild("AcidSpit"):FireServer(unpack(args))
-
-local args = {
-    [1] = Vector3.new(12.096213340759277, 46.05311584472656, 42.83441925048828),
-    [2] = Vector3.new(29.159839630126953, 1, 46.822818756103516)
-}
-
-game:GetService("ReplicatedStorage"):WaitForChild("Remotes"):WaitForChild("ZombieRelated"):WaitForChild("AcidSpit"):FireServer(unpack(args))
-
-local args = {
-    [1] = Vector3.new(21.971342086791992, 67.66288757324219, 43.97311782836914),
-    [2] = Vector3.new(28.945167541503906, 1, 29.998523712158203)
-}
-
-game:GetService("ReplicatedStorage"):WaitForChild("Remotes"):WaitForChild("ZombieRelated"):WaitForChild("AcidSpit"):FireServer(unpack(args))
-
-local args = {
-    [1] = Vector3.new(10.784433364868164, 51.12495803833008, 27.635202407836914),
-    [2] = Vector3.new(9.324787139892578, 1, 22.732925415039062)
-}
-
-game:GetService("ReplicatedStorage"):WaitForChild("Remotes"):WaitForChild("ZombieRelated"):WaitForChild("AcidSpit"):FireServer(unpack(args))
-
-local args = {
-    [1] = Vector3.new(10.908175468444824, 35.18443298339844, 26.67213249206543),
-    [2] = Vector3.new(1.5721616744995117, 1, 33.99274444580078)
-}
-
-game:GetService("ReplicatedStorage"):WaitForChild("Remotes"):WaitForChild("ZombieRelated"):WaitForChild("AcidSpit"):FireServer(unpack(args))
-local args = {
-    [1] = Vector3.new(32.143959045410156, 32.23530578613281, 60.60480499267578),
-    [2] = Vector3.new(15.280675888061523, 1, 55.7652587890625)
-}
-
-game:GetService("ReplicatedStorage"):WaitForChild("Remotes"):WaitForChild("ZombieRelated"):WaitForChild("AcidSpit"):FireServer(unpack(args))
-
-local args = {
-    [1] = Vector3.new(34.03712844848633, 28.763200759887695, 26.95634651184082),
-    [2] = Vector3.new(17.477977752685547, 1, 21.750869750976562)
-}
-
-game:GetService("ReplicatedStorage"):WaitForChild("Remotes"):WaitForChild("ZombieRelated"):WaitForChild("AcidSpit"):FireServer(unpack(args))
-
-local args = {
-    [1] = Vector3.new(38.76292037963867, 26.908273696899414, 51.250160217285156),
-    [2] = Vector3.new(23.956645965576172, 1, 56.102455139160156)
-}
-
-game:GetService("ReplicatedStorage"):WaitForChild("Remotes"):WaitForChild("ZombieRelated"):WaitForChild("AcidSpit"):FireServer(unpack(args))
-local args = {
-    [1] = Vector3.new(23.389341354370117, 22.40927505493164, 38.9362678527832),
-    [2] = Vector3.new(-1.4333553314208984, 1, 43.43775939941406)
-}
-
-game:GetService("ReplicatedStorage"):WaitForChild("Remotes"):WaitForChild("ZombieRelated"):WaitForChild("AcidSpit"):FireServer(unpack(args))
-
-local args = {
-    [1] = Vector3.new(18.875486373901367, 23.455617904663086, 27.726234436035156),
-    [2] = Vector3.new(2.869516372680664, 1, 26.669734954833984)
-}
-
-game:GetService("ReplicatedStorage"):WaitForChild("Remotes"):WaitForChild("ZombieRelated"):WaitForChild("AcidSpit"):FireServer(unpack(args))
-
-local args = {
-    [1] = Vector3.new(32.20348358154297, 30.2653751373291, 50.97477722167969),
-    [2] = Vector3.new(34.01089096069336, 1, 38.1528205871582)
-}
-
-game:GetService("ReplicatedStorage"):WaitForChild("Remotes"):WaitForChild("ZombieRelated"):WaitForChild("AcidSpit"):FireServer(unpack(args))
-
-local args = {
-    [1] = Vector3.new(32.004356384277344, 23.961029052734375, 31.314598083496094),
-    [2] = Vector3.new(26.61473846435547, 1, 21.144412994384766)
-}
-
-game:GetService("ReplicatedStorage"):WaitForChild("Remotes"):WaitForChild("ZombieRelated"):WaitForChild("AcidSpit"):FireServer(unpack(args))
-
-local args = {
-    [1] = Vector3.new(39.88054656982422, 38.73746871948242, 35.30915832519531),
-    [2] = Vector3.new(34.94029235839844, 1, 25.787796020507812)
-}
-
-game:GetService("ReplicatedStorage"):WaitForChild("Remotes"):WaitForChild("ZombieRelated"):WaitForChild("AcidSpit"):FireServer(unpack(args))
-local args = {
-    [1] = Vector3.new(35.952850341796875, 41.29209518432617, 41.73908233642578),
-    [2] = Vector3.new(39.80612564086914, 1, 31.96713638305664)
-}
-
-game:GetService("ReplicatedStorage"):WaitForChild("Remotes"):WaitForChild("ZombieRelated"):WaitForChild("AcidSpit"):FireServer(unpack(args))
-local args = {
-    [1] = Vector3.new(28.336002349853516, 36.502498626708984, 55.610130310058594),
-    [2] = Vector3.new(37.89435577392578, 1, 45.20414352416992)
-}
-
-game:GetService("ReplicatedStorage"):WaitForChild("Remotes"):WaitForChild("ZombieRelated"):WaitForChild("AcidSpit"):FireServer(unpack(args))
-local args = {
-    [1] = Vector3.new(28.84077262878418, 41.29795455932617, 60.43194580078125),
-    [2] = Vector3.new(32.001529693603516, 1, 52.4228401184082)
-}
-
-game:GetService("ReplicatedStorage"):WaitForChild("Remotes"):WaitForChild("ZombieRelated"):WaitForChild("AcidSpit"):FireServer(unpack(args))
-local args = {
-    [1] = Vector3.new(3.665933132171631, 30.512939453125, 43.34560012817383),
-    [2] = Vector3.new(5.261941909790039, 1, 41.78221130371094)
-}
-
-game:GetService("ReplicatedStorage"):WaitForChild("Remotes"):WaitForChild("ZombieRelated"):WaitForChild("AcidSpit"):FireServer(unpack(args))
-local args = {
-    [1] = Vector3.new(14.185626983642578, 15.68039608001709, 64.00680541992188),
-    [2] = Vector3.new(6.018622398376465, 1, 57.25159454345703)
-}
-
-game:GetService("ReplicatedStorage"):WaitForChild("Remotes"):WaitForChild("ZombieRelated"):WaitForChild("AcidSpit"):FireServer(unpack(args))
+zomTab:Button("spit zone", function()
+loadstring(game:HttpGet("https://raw.githubusercontent.com/Coolestsmug/Coolestsmug/main/SPITZONE.lua", true))()
 end)
 
 zomTab:Button("unescapeable base", function()
@@ -649,10 +498,117 @@ end)
 
 zomTab:Button("summon zombie", function()
     game:GetService("ReplicatedStorage"):WaitForChild("Remotes"):WaitForChild("ZombieRelated"):WaitForChild("Necro"):WaitForChild("AbilityPlayer"):FireServer()
-
+game:GetService("ReplicatedStorage"):WaitForChild("Remotes"):WaitForChild("ZombieRelated"):WaitForChild("Necro"):WaitForChild("AbilityPlayer"):FireServer()
+game:GetService("ReplicatedStorage"):WaitForChild("Remotes"):WaitForChild("ZombieRelated"):WaitForChild("Necro"):WaitForChild("AbilityPlayer"):FireServer()
+game:GetService("ReplicatedStorage"):WaitForChild("Remotes"):WaitForChild("ZombieRelated"):WaitForChild("Necro"):WaitForChild("AbilityPlayer"):FireServer()
 end)
 
 zomTab:Button("summon horde", function()
+game:GetService("ReplicatedStorage"):WaitForChild("Remotes"):WaitForChild("ZombieRelated"):WaitForChild("Necro"):WaitForChild("AbilityPlayer"):FireServer()
+game:GetService("ReplicatedStorage"):WaitForChild("Remotes"):WaitForChild("ZombieRelated"):WaitForChild("Necro"):WaitForChild("AbilityPlayer"):FireServer()
+game:GetService("ReplicatedStorage"):WaitForChild("Remotes"):WaitForChild("ZombieRelated"):WaitForChild("Necro"):WaitForChild("AbilityPlayer"):FireServer()
+game:GetService("ReplicatedStorage"):WaitForChild("Remotes"):WaitForChild("ZombieRelated"):WaitForChild("Necro"):WaitForChild("AbilityPlayer"):FireServer()
+game:GetService("ReplicatedStorage"):WaitForChild("Remotes"):WaitForChild("ZombieRelated"):WaitForChild("Necro"):WaitForChild("AbilityPlayer"):FireServer()
+game:GetService("ReplicatedStorage"):WaitForChild("Remotes"):WaitForChild("ZombieRelated"):WaitForChild("Necro"):WaitForChild("AbilityPlayer"):FireServer()
+game:GetService("ReplicatedStorage"):WaitForChild("Remotes"):WaitForChild("ZombieRelated"):WaitForChild("Necro"):WaitForChild("AbilityPlayer"):FireServer()
+game:GetService("ReplicatedStorage"):WaitForChild("Remotes"):WaitForChild("ZombieRelated"):WaitForChild("Necro"):WaitForChild("AbilityPlayer"):FireServer()
+game:GetService("ReplicatedStorage"):WaitForChild("Remotes"):WaitForChild("ZombieRelated"):WaitForChild("Necro"):WaitForChild("AbilityPlayer"):FireServer()
+game:GetService("ReplicatedStorage"):WaitForChild("Remotes"):WaitForChild("ZombieRelated"):WaitForChild("Necro"):WaitForChild("AbilityPlayer"):FireServer()
+game:GetService("ReplicatedStorage"):WaitForChild("Remotes"):WaitForChild("ZombieRelated"):WaitForChild("Necro"):WaitForChild("AbilityPlayer"):FireServer()
+game:GetService("ReplicatedStorage"):WaitForChild("Remotes"):WaitForChild("ZombieRelated"):WaitForChild("Necro"):WaitForChild("AbilityPlayer"):FireServer()
+game:GetService("ReplicatedStorage"):WaitForChild("Remotes"):WaitForChild("ZombieRelated"):WaitForChild("Necro"):WaitForChild("AbilityPlayer"):FireServer()
+game:GetService("ReplicatedStorage"):WaitForChild("Remotes"):WaitForChild("ZombieRelated"):WaitForChild("Necro"):WaitForChild("AbilityPlayer"):FireServer()
+game:GetService("ReplicatedStorage"):WaitForChild("Remotes"):WaitForChild("ZombieRelated"):WaitForChild("Necro"):WaitForChild("AbilityPlayer"):FireServer()
+game:GetService("ReplicatedStorage"):WaitForChild("Remotes"):WaitForChild("ZombieRelated"):WaitForChild("Necro"):WaitForChild("AbilityPlayer"):FireServer()
+game:GetService("ReplicatedStorage"):WaitForChild("Remotes"):WaitForChild("ZombieRelated"):WaitForChild("Necro"):WaitForChild("AbilityPlayer"):FireServer()
+game:GetService("ReplicatedStorage"):WaitForChild("Remotes"):WaitForChild("ZombieRelated"):WaitForChild("Necro"):WaitForChild("AbilityPlayer"):FireServer()
+game:GetService("ReplicatedStorage"):WaitForChild("Remotes"):WaitForChild("ZombieRelated"):WaitForChild("Necro"):WaitForChild("AbilityPlayer"):FireServer()
+game:GetService("ReplicatedStorage"):WaitForChild("Remotes"):WaitForChild("ZombieRelated"):WaitForChild("Necro"):WaitForChild("AbilityPlayer"):FireServer()
+game:GetService("ReplicatedStorage"):WaitForChild("Remotes"):WaitForChild("ZombieRelated"):WaitForChild("Necro"):WaitForChild("AbilityPlayer"):FireServer()
+game:GetService("ReplicatedStorage"):WaitForChild("Remotes"):WaitForChild("ZombieRelated"):WaitForChild("Necro"):WaitForChild("AbilityPlayer"):FireServer()
+game:GetService("ReplicatedStorage"):WaitForChild("Remotes"):WaitForChild("ZombieRelated"):WaitForChild("Necro"):WaitForChild("AbilityPlayer"):FireServer()
+game:GetService("ReplicatedStorage"):WaitForChild("Remotes"):WaitForChild("ZombieRelated"):WaitForChild("Necro"):WaitForChild("AbilityPlayer"):FireServer()
+game:GetService("ReplicatedStorage"):WaitForChild("Remotes"):WaitForChild("ZombieRelated"):WaitForChild("Necro"):WaitForChild("AbilityPlayer"):FireServer()
+game:GetService("ReplicatedStorage"):WaitForChild("Remotes"):WaitForChild("ZombieRelated"):WaitForChild("Necro"):WaitForChild("AbilityPlayer"):FireServer()
+game:GetService("ReplicatedStorage"):WaitForChild("Remotes"):WaitForChild("ZombieRelated"):WaitForChild("Necro"):WaitForChild("AbilityPlayer"):FireServer()
+game:GetService("ReplicatedStorage"):WaitForChild("Remotes"):WaitForChild("ZombieRelated"):WaitForChild("Necro"):WaitForChild("AbilityPlayer"):FireServer()
+game:GetService("ReplicatedStorage"):WaitForChild("Remotes"):WaitForChild("ZombieRelated"):WaitForChild("Necro"):WaitForChild("AbilityPlayer"):FireServer()
+game:GetService("ReplicatedStorage"):WaitForChild("Remotes"):WaitForChild("ZombieRelated"):WaitForChild("Necro"):WaitForChild("AbilityPlayer"):FireServer()
+game:GetService("ReplicatedStorage"):WaitForChild("Remotes"):WaitForChild("ZombieRelated"):WaitForChild("Necro"):WaitForChild("AbilityPlayer"):FireServer()
+game:GetService("ReplicatedStorage"):WaitForChild("Remotes"):WaitForChild("ZombieRelated"):WaitForChild("Necro"):WaitForChild("AbilityPlayer"):FireServer()
+game:GetService("ReplicatedStorage"):WaitForChild("Remotes"):WaitForChild("ZombieRelated"):WaitForChild("Necro"):WaitForChild("AbilityPlayer"):FireServer()
+game:GetService("ReplicatedStorage"):WaitForChild("Remotes"):WaitForChild("ZombieRelated"):WaitForChild("Necro"):WaitForChild("AbilityPlayer"):FireServer()
+game:GetService("ReplicatedStorage"):WaitForChild("Remotes"):WaitForChild("ZombieRelated"):WaitForChild("Necro"):WaitForChild("AbilityPlayer"):FireServer()
+game:GetService("ReplicatedStorage"):WaitForChild("Remotes"):WaitForChild("ZombieRelated"):WaitForChild("Necro"):WaitForChild("AbilityPlayer"):FireServer()
+game:GetService("ReplicatedStorage"):WaitForChild("Remotes"):WaitForChild("ZombieRelated"):WaitForChild("Necro"):WaitForChild("AbilityPlayer"):FireServer()
+game:GetService("ReplicatedStorage"):WaitForChild("Remotes"):WaitForChild("ZombieRelated"):WaitForChild("Necro"):WaitForChild("AbilityPlayer"):FireServer()
+game:GetService("ReplicatedStorage"):WaitForChild("Remotes"):WaitForChild("ZombieRelated"):WaitForChild("Necro"):WaitForChild("AbilityPlayer"):FireServer()
+game:GetService("ReplicatedStorage"):WaitForChild("Remotes"):WaitForChild("ZombieRelated"):WaitForChild("Necro"):WaitForChild("AbilityPlayer"):FireServer()
+game:GetService("ReplicatedStorage"):WaitForChild("Remotes"):WaitForChild("ZombieRelated"):WaitForChild("Necro"):WaitForChild("AbilityPlayer"):FireServer()
+game:GetService("ReplicatedStorage"):WaitForChild("Remotes"):WaitForChild("ZombieRelated"):WaitForChild("Necro"):WaitForChild("AbilityPlayer"):FireServer()
+game:GetService("ReplicatedStorage"):WaitForChild("Remotes"):WaitForChild("ZombieRelated"):WaitForChild("Necro"):WaitForChild("AbilityPlayer"):FireServer()
+game:GetService("ReplicatedStorage"):WaitForChild("Remotes"):WaitForChild("ZombieRelated"):WaitForChild("Necro"):WaitForChild("AbilityPlayer"):FireServer()
+game:GetService("ReplicatedStorage"):WaitForChild("Remotes"):WaitForChild("ZombieRelated"):WaitForChild("Necro"):WaitForChild("AbilityPlayer"):FireServer()
+game:GetService("ReplicatedStorage"):WaitForChild("Remotes"):WaitForChild("ZombieRelated"):WaitForChild("Necro"):WaitForChild("AbilityPlayer"):FireServer()
+game:GetService("ReplicatedStorage"):WaitForChild("Remotes"):WaitForChild("ZombieRelated"):WaitForChild("Necro"):WaitForChild("AbilityPlayer"):FireServer()
+game:GetService("ReplicatedStorage"):WaitForChild("Remotes"):WaitForChild("ZombieRelated"):WaitForChild("Necro"):WaitForChild("AbilityPlayer"):FireServer()
+game:GetService("ReplicatedStorage"):WaitForChild("Remotes"):WaitForChild("ZombieRelated"):WaitForChild("Necro"):WaitForChild("AbilityPlayer"):FireServer()
+game:GetService("ReplicatedStorage"):WaitForChild("Remotes"):WaitForChild("ZombieRelated"):WaitForChild("Necro"):WaitForChild("AbilityPlayer"):FireServer()
+game:GetService("ReplicatedStorage"):WaitForChild("Remotes"):WaitForChild("ZombieRelated"):WaitForChild("Necro"):WaitForChild("AbilityPlayer"):FireServer()
+game:GetService("ReplicatedStorage"):WaitForChild("Remotes"):WaitForChild("ZombieRelated"):WaitForChild("Necro"):WaitForChild("AbilityPlayer"):FireServer()
+game:GetService("ReplicatedStorage"):WaitForChild("Remotes"):WaitForChild("ZombieRelated"):WaitForChild("Necro"):WaitForChild("AbilityPlayer"):FireServer()
+game:GetService("ReplicatedStorage"):WaitForChild("Remotes"):WaitForChild("ZombieRelated"):WaitForChild("Necro"):WaitForChild("AbilityPlayer"):FireServer()
+game:GetService("ReplicatedStorage"):WaitForChild("Remotes"):WaitForChild("ZombieRelated"):WaitForChild("Necro"):WaitForChild("AbilityPlayer"):FireServer()
+game:GetService("ReplicatedStorage"):WaitForChild("Remotes"):WaitForChild("ZombieRelated"):WaitForChild("Necro"):WaitForChild("AbilityPlayer"):FireServer()
+game:GetService("ReplicatedStorage"):WaitForChild("Remotes"):WaitForChild("ZombieRelated"):WaitForChild("Necro"):WaitForChild("AbilityPlayer"):FireServer()
+game:GetService("ReplicatedStorage"):WaitForChild("Remotes"):WaitForChild("ZombieRelated"):WaitForChild("Necro"):WaitForChild("AbilityPlayer"):FireServer()
+game:GetService("ReplicatedStorage"):WaitForChild("Remotes"):WaitForChild("ZombieRelated"):WaitForChild("Necro"):WaitForChild("AbilityPlayer"):FireServer()
+game:GetService("ReplicatedStorage"):WaitForChild("Remotes"):WaitForChild("ZombieRelated"):WaitForChild("Necro"):WaitForChild("AbilityPlayer"):FireServer()
+game:GetService("ReplicatedStorage"):WaitForChild("Remotes"):WaitForChild("ZombieRelated"):WaitForChild("Necro"):WaitForChild("AbilityPlayer"):FireServer()
+game:GetService("ReplicatedStorage"):WaitForChild("Remotes"):WaitForChild("ZombieRelated"):WaitForChild("Necro"):WaitForChild("AbilityPlayer"):FireServer()
+game:GetService("ReplicatedStorage"):WaitForChild("Remotes"):WaitForChild("ZombieRelated"):WaitForChild("Necro"):WaitForChild("AbilityPlayer"):FireServer()
+game:GetService("ReplicatedStorage"):WaitForChild("Remotes"):WaitForChild("ZombieRelated"):WaitForChild("Necro"):WaitForChild("AbilityPlayer"):FireServer()
+game:GetService("ReplicatedStorage"):WaitForChild("Remotes"):WaitForChild("ZombieRelated"):WaitForChild("Necro"):WaitForChild("AbilityPlayer"):FireServer()
+game:GetService("ReplicatedStorage"):WaitForChild("Remotes"):WaitForChild("ZombieRelated"):WaitForChild("Necro"):WaitForChild("AbilityPlayer"):FireServer()
+game:GetService("ReplicatedStorage"):WaitForChild("Remotes"):WaitForChild("ZombieRelated"):WaitForChild("Necro"):WaitForChild("AbilityPlayer"):FireServer()
+game:GetService("ReplicatedStorage"):WaitForChild("Remotes"):WaitForChild("ZombieRelated"):WaitForChild("Necro"):WaitForChild("AbilityPlayer"):FireServer()
+game:GetService("ReplicatedStorage"):WaitForChild("Remotes"):WaitForChild("ZombieRelated"):WaitForChild("Necro"):WaitForChild("AbilityPlayer"):FireServer()
+game:GetService("ReplicatedStorage"):WaitForChild("Remotes"):WaitForChild("ZombieRelated"):WaitForChild("Necro"):WaitForChild("AbilityPlayer"):FireServer()
+game:GetService("ReplicatedStorage"):WaitForChild("Remotes"):WaitForChild("ZombieRelated"):WaitForChild("Necro"):WaitForChild("AbilityPlayer"):FireServer()
+game:GetService("ReplicatedStorage"):WaitForChild("Remotes"):WaitForChild("ZombieRelated"):WaitForChild("Necro"):WaitForChild("AbilityPlayer"):FireServer()
+game:GetService("ReplicatedStorage"):WaitForChild("Remotes"):WaitForChild("ZombieRelated"):WaitForChild("Necro"):WaitForChild("AbilityPlayer"):FireServer()
+game:GetService("ReplicatedStorage"):WaitForChild("Remotes"):WaitForChild("ZombieRelated"):WaitForChild("Necro"):WaitForChild("AbilityPlayer"):FireServer()
+game:GetService("ReplicatedStorage"):WaitForChild("Remotes"):WaitForChild("ZombieRelated"):WaitForChild("Necro"):WaitForChild("AbilityPlayer"):FireServer()
+game:GetService("ReplicatedStorage"):WaitForChild("Remotes"):WaitForChild("ZombieRelated"):WaitForChild("Necro"):WaitForChild("AbilityPlayer"):FireServer()
+game:GetService("ReplicatedStorage"):WaitForChild("Remotes"):WaitForChild("ZombieRelated"):WaitForChild("Necro"):WaitForChild("AbilityPlayer"):FireServer()
+game:GetService("ReplicatedStorage"):WaitForChild("Remotes"):WaitForChild("ZombieRelated"):WaitForChild("Necro"):WaitForChild("AbilityPlayer"):FireServer()
+game:GetService("ReplicatedStorage"):WaitForChild("Remotes"):WaitForChild("ZombieRelated"):WaitForChild("Necro"):WaitForChild("AbilityPlayer"):FireServer()
+game:GetService("ReplicatedStorage"):WaitForChild("Remotes"):WaitForChild("ZombieRelated"):WaitForChild("Necro"):WaitForChild("AbilityPlayer"):FireServer()
+game:GetService("ReplicatedStorage"):WaitForChild("Remotes"):WaitForChild("ZombieRelated"):WaitForChild("Necro"):WaitForChild("AbilityPlayer"):FireServer()
+game:GetService("ReplicatedStorage"):WaitForChild("Remotes"):WaitForChild("ZombieRelated"):WaitForChild("Necro"):WaitForChild("AbilityPlayer"):FireServer()
+game:GetService("ReplicatedStorage"):WaitForChild("Remotes"):WaitForChild("ZombieRelated"):WaitForChild("Necro"):WaitForChild("AbilityPlayer"):FireServer()
+game:GetService("ReplicatedStorage"):WaitForChild("Remotes"):WaitForChild("ZombieRelated"):WaitForChild("Necro"):WaitForChild("AbilityPlayer"):FireServer()
+game:GetService("ReplicatedStorage"):WaitForChild("Remotes"):WaitForChild("ZombieRelated"):WaitForChild("Necro"):WaitForChild("AbilityPlayer"):FireServer()
+game:GetService("ReplicatedStorage"):WaitForChild("Remotes"):WaitForChild("ZombieRelated"):WaitForChild("Necro"):WaitForChild("AbilityPlayer"):FireServer()
+game:GetService("ReplicatedStorage"):WaitForChild("Remotes"):WaitForChild("ZombieRelated"):WaitForChild("Necro"):WaitForChild("AbilityPlayer"):FireServer()
+game:GetService("ReplicatedStorage"):WaitForChild("Remotes"):WaitForChild("ZombieRelated"):WaitForChild("Necro"):WaitForChild("AbilityPlayer"):FireServer()
+game:GetService("ReplicatedStorage"):WaitForChild("Remotes"):WaitForChild("ZombieRelated"):WaitForChild("Necro"):WaitForChild("AbilityPlayer"):FireServer()
+game:GetService("ReplicatedStorage"):WaitForChild("Remotes"):WaitForChild("ZombieRelated"):WaitForChild("Necro"):WaitForChild("AbilityPlayer"):FireServer()
+game:GetService("ReplicatedStorage"):WaitForChild("Remotes"):WaitForChild("ZombieRelated"):WaitForChild("Necro"):WaitForChild("AbilityPlayer"):FireServer()
+game:GetService("ReplicatedStorage"):WaitForChild("Remotes"):WaitForChild("ZombieRelated"):WaitForChild("Necro"):WaitForChild("AbilityPlayer"):FireServer()
+game:GetService("ReplicatedStorage"):WaitForChild("Remotes"):WaitForChild("ZombieRelated"):WaitForChild("Necro"):WaitForChild("AbilityPlayer"):FireServer()
+game:GetService("ReplicatedStorage"):WaitForChild("Remotes"):WaitForChild("ZombieRelated"):WaitForChild("Necro"):WaitForChild("AbilityPlayer"):FireServer()
+game:GetService("ReplicatedStorage"):WaitForChild("Remotes"):WaitForChild("ZombieRelated"):WaitForChild("Necro"):WaitForChild("AbilityPlayer"):FireServer()
+game:GetService("ReplicatedStorage"):WaitForChild("Remotes"):WaitForChild("ZombieRelated"):WaitForChild("Necro"):WaitForChild("AbilityPlayer"):FireServer()
+game:GetService("ReplicatedStorage"):WaitForChild("Remotes"):WaitForChild("ZombieRelated"):WaitForChild("Necro"):WaitForChild("AbilityPlayer"):FireServer()
+game:GetService("ReplicatedStorage"):WaitForChild("Remotes"):WaitForChild("ZombieRelated"):WaitForChild("Necro"):WaitForChild("AbilityPlayer"):FireServer()
+game:GetService("ReplicatedStorage"):WaitForChild("Remotes"):WaitForChild("ZombieRelated"):WaitForChild("Necro"):WaitForChild("AbilityPlayer"):FireServer()
+game:GetService("ReplicatedStorage"):WaitForChild("Remotes"):WaitForChild("ZombieRelated"):WaitForChild("Necro"):WaitForChild("AbilityPlayer"):FireServer()
+game:GetService("ReplicatedStorage"):WaitForChild("Remotes"):WaitForChild("ZombieRelated"):WaitForChild("Necro"):WaitForChild("AbilityPlayer"):FireServer()
+game:GetService("ReplicatedStorage"):WaitForChild("Remotes"):WaitForChild("ZombieRelated"):WaitForChild("Necro"):WaitForChild("AbilityPlayer"):FireServer()
+game:GetService("ReplicatedStorage"):WaitForChild("Remotes"):WaitForChild("ZombieRelated"):WaitForChild("Necro"):WaitForChild("AbilityPlayer"):FireServer()
+game:GetService("ReplicatedStorage"):WaitForChild("Remotes"):WaitForChild("ZombieRelated"):WaitForChild("Necro"):WaitForChild("AbilityPlayer"):FireServer()
+game:GetService("ReplicatedStorage"):WaitForChild("Remotes"):WaitForChild("ZombieRelated"):WaitForChild("Necro"):WaitForChild("AbilityPlayer"):FireServer()
 game:GetService("ReplicatedStorage"):WaitForChild("Remotes"):WaitForChild("ZombieRelated"):WaitForChild("Necro"):WaitForChild("AbilityPlayer"):FireServer()
 game:GetService("ReplicatedStorage"):WaitForChild("Remotes"):WaitForChild("ZombieRelated"):WaitForChild("Necro"):WaitForChild("AbilityPlayer"):FireServer()
 game:GetService("ReplicatedStorage"):WaitForChild("Remotes"):WaitForChild("ZombieRelated"):WaitForChild("Necro"):WaitForChild("AbilityPlayer"):FireServer()
@@ -723,620 +679,13 @@ end)
 end
 
 if game.PlaceId == 3411100258 then
-local ebgeTab = Window:Tab("ebge","rbxassetid://12308581351")
-ebgeTab:Section("shop")
-ebgeTab:Button("sword", function()
-local args = {
-    [1] = "sword",
-    [2] = false,
-    [3] = true
-}
-
-game:GetService("ReplicatedStorage"):WaitForChild("Packages"):WaitForChild("Knit"):WaitForChild("Services"):WaitForChild("ShopService"):WaitForChild("RF"):WaitForChild("Shop"):InvokeServer(unpack(args))
-end)
-
-ebgeTab:Button("shield", function()
-local args = {
-    [1] = "shield",
-    [2] = false,
-    [3] = true
-}
-
-game:GetService("ReplicatedStorage"):WaitForChild("Packages"):WaitForChild("Knit"):WaitForChild("Services"):WaitForChild("ShopService"):WaitForChild("RF"):WaitForChild("Shop"):InvokeServer(unpack(args))
-end)
-
-ebgeTab:Button("bow", function()
-local args = {
-    [1] = "bow",
-    [2] = false,
-    [3] = true
-}
-
-game:GetService("ReplicatedStorage"):WaitForChild("Packages"):WaitForChild("Knit"):WaitForChild("Services"):WaitForChild("ShopService"):WaitForChild("RF"):WaitForChild("Shop"):InvokeServer(unpack(args))
-end)
-
-ebgeTab:Button("bomb", function()
-local args = {
-    [1] = "bomb",
-    [2] = false,
-    [3] = true
-}
-
-game:GetService("ReplicatedStorage"):WaitForChild("Packages"):WaitForChild("Knit"):WaitForChild("Services"):WaitForChild("ShopService"):WaitForChild("RF"):WaitForChild("Shop"):InvokeServer(unpack(args))
-end)
-
-ebgeTab:Button("cannon", function()
-local args = {
-    [1] = "cannon",
-    [2] = false,
-    [3] = true
-}
-
-game:GetService("ReplicatedStorage"):WaitForChild("Packages"):WaitForChild("Knit"):WaitForChild("Services"):WaitForChild("ShopService"):WaitForChild("RF"):WaitForChild("Shop"):InvokeServer(unpack(args))
-end)
-
-ebgeTab:Button("fishing pole", function()
-local args = {
-    [1] = "fishing pol",
-    [2] = false,
-    [3] = true
-}
-
-game:GetService("ReplicatedStorage"):WaitForChild("Packages"):WaitForChild("Knit"):WaitForChild("Services"):WaitForChild("ShopService"):WaitForChild("RF"):WaitForChild("Shop"):InvokeServer(unpack(args))
-end)
-
-ebgeTab:Button("pickaxe", function()
-local args = {
-    [1] = "pickax",
-    [2] = false,
-    [3] = true
-}
-
-game:GetService("ReplicatedStorage"):WaitForChild("Packages"):WaitForChild("Knit"):WaitForChild("Services"):WaitForChild("ShopService"):WaitForChild("RF"):WaitForChild("Shop"):InvokeServer(unpack(args))
-end)
-
-ebgeTab:Button("axe", function()
-local args = {
-    [1] = "ax",
-    [2] = false,
-    [3] = true
-}
-
-game:GetService("ReplicatedStorage"):WaitForChild("Packages"):WaitForChild("Knit"):WaitForChild("Services"):WaitForChild("ShopService"):WaitForChild("RF"):WaitForChild("Shop"):InvokeServer(unpack(args))
-end)
-
-ebgeTab:Section("buy and sell")
-
-ebgeTab:Button("coal", function()
-local args = {
-    [1] = "coal",
-    [2] = false,
-    [3] = true
-}
-
-game:GetService("ReplicatedStorage"):WaitForChild("Packages"):WaitForChild("Knit"):WaitForChild("Services"):WaitForChild("ShopService"):WaitForChild("RF"):WaitForChild("Shop"):InvokeServer(unpack(args))
-task.wait(10)
-local args = {
-    [1] = "coal",
-    [2] = false,
-    [3] = false
-}
-
-game:GetService("ReplicatedStorage"):WaitForChild("Packages"):WaitForChild("Knit"):WaitForChild("Services"):WaitForChild("ShopService"):WaitForChild("RF"):WaitForChild("Shop"):InvokeServer(unpack(args))
-end)
-
-ebgeTab:Button("iron", function()
-local args = {
-    [1] = "iron",
-    [2] = false,
-    [3] = true
-}
-
-game:GetService("ReplicatedStorage"):WaitForChild("Packages"):WaitForChild("Knit"):WaitForChild("Services"):WaitForChild("ShopService"):WaitForChild("R a F"):WaitForChild("Shop"):InvokeServer(unpack(args))
-task.wait(10)
-local args = {
-    [1] = "iron",
-    [2] = false,
-    [3] = false
-}
-
-game:GetService("ReplicatedStorage"):WaitForChild("Packages"):WaitForChild("Knit"):WaitForChild("Services"):WaitForChild("ShopService"):WaitForChild("RF"):WaitForChild("Shop"):InvokeServer(unpack(args))
-end)
-
-ebgeTab:Button("gold", function()
-local args = {
-    [1] = "gold",
-    [2] = false,
-    [3] = true
-}
-
-game:GetService("ReplicatedStorage"):WaitForChild("Packages"):WaitForChild("Knit"):WaitForChild("Services"):WaitForChild("ShopService"):WaitForChild("RF"):WaitForChild("Shop"):InvokeServer(unpack(args))
-task.wait(10)
-local args = {
-    [1] = "gold",
-    [2] = false,
-    [3] = false
-}
-
-game:GetService("ReplicatedStorage"):WaitForChild("Packages"):WaitForChild("Knit"):WaitForChild("Services"):WaitForChild("ShopService"):WaitForChild("RF"):WaitForChild("Shop"):InvokeServer(unpack(args))
-end)
-
-ebgeTab:Button("gunpowder", function()
-local args = {
-    [1] = "gunpowder",
-    [2] = false,
-    [3] = true
-}
-
-game:GetService("ReplicatedStorage"):WaitForChild("Packages"):WaitForChild("Knit"):WaitForChild("Services"):WaitForChild("ShopService"):WaitForChild("RF"):WaitForChild("Shop"):InvokeServer(unpack(args))
-task.wait(10)
-local args = {
-    [1] = "gunpowder",
-    [2] = false,
-    [3] = false
-}
-
-game:GetService("ReplicatedStorage"):WaitForChild("Packages"):WaitForChild("Knit"):WaitForChild("Services"):WaitForChild("ShopService"):WaitForChild("RF"):WaitForChild("Shop"):InvokeServer(unpack(args))
-end)
-
-ebgeTab:Button("fish", function()
-local args = {
-    [1] = "fish",
-    [2] = false,
-    [3] = true
-}
-
-game:GetService("ReplicatedStorage"):WaitForChild("Packages"):WaitForChild("Knit"):WaitForChild("Services"):WaitForChild("ShopService"):WaitForChild("RF"):WaitForChild("Shop"):InvokeServer(unpack(args))
-task.wait(10)
-local args = {
-    [1] = "fish",
-    [2] = false,
-    [3] = false
-}
-
-game:GetService("ReplicatedStorage"):WaitForChild("Packages"):WaitForChild("Knit"):WaitForChild("Services"):WaitForChild("ShopService"):WaitForChild("RF"):WaitForChild("Shop"):InvokeServer(unpack(args))
-end)
-ebgeTab:Button("fish", function()
-local args = {
-    [1] = "lumber",
-    [2] = false,
-    [3] = true
-}
-
-game:GetService("ReplicatedStorage"):WaitForChild("Packages"):WaitForChild("Knit"):WaitForChild("Services"):WaitForChild("ShopService"):WaitForChild("RF"):WaitForChild("Shop"):InvokeServer(unpack(args))
-task.wait(10)
-local args = {
-    [1] = "lumber",
-    [2] = false,
-    [3] = false
-}
-
-game:GetService("ReplicatedStorage"):WaitForChild("Packages"):WaitForChild("Knit"):WaitForChild("Services"):WaitForChild("ShopService"):WaitForChild("RF"):WaitForChild("Shop"):InvokeServer(unpack(args))
-end)
-
-ebgeTab:Button("potions", function()
-local args = {
-    [1] = "potions",
-    [2] = false,
-    [3] = true
-}
-
-game:GetService("ReplicatedStorage"):WaitForChild("Packages"):WaitForChild("Knit"):WaitForChild("Services"):WaitForChild("ShopService"):WaitForChild("RF"):WaitForChild("Shop"):InvokeServer(unpack(args))
-task.wait(10)
-local args = {
-    [1] = "potions",
-    [2] = false,
-    [3] = false
-}
-
-game:GetService("ReplicatedStorage"):WaitForChild("Packages"):WaitForChild("Knit"):WaitForChild("Services"):WaitForChild("ShopService"):WaitForChild("RF"):WaitForChild("Shop"):InvokeServer(unpack(args))
-end)
-
-ebgeTab:Button("gold", function()
-local args = {
-    [1] = "gold",
-    [2] = false,
-    [3] = true
-}
-
-game:GetService("ReplicatedStorage"):WaitForChild("Packages"):WaitForChild("Knit"):WaitForChild("Services"):WaitForChild("ShopService"):WaitForChild("RF"):WaitForChild("Shop"):InvokeServer(unpack(args))
-task.wait(10)
-local args = {
-    [1] = "gold",
-    [2] = false,
-    [3] = false
-}
-
-game:GetService("ReplicatedStorage"):WaitForChild("Packages"):WaitForChild("Knit"):WaitForChild("Services"):WaitForChild("ShopService"):WaitForChild("RF"):WaitForChild("Shop"):InvokeServer(unpack(args))
-end)
-
-ebgeTab:Button("flowers", function()
-local args = {
-    [1] = "flowers",
-    [2] = false,
-    [3] = true
-}
-
-game:GetService("ReplicatedStorage"):WaitForChild("Packages"):WaitForChild("Knit"):WaitForChild("Services"):WaitForChild("ShopService"):WaitForChild("RF"):WaitForChild("Shop"):InvokeServer(unpack(args))
-task.wait(10)
-local args = {
-    [1] = "flowers",
-    [2] = false,
-    [3] = false
-}
-
-game:GetService("ReplicatedStorage"):WaitForChild("Packages"):WaitForChild("Knit"):WaitForChild("Services"):WaitForChild("ShopService"):WaitForChild("RF"):WaitForChild("Shop"):InvokeServer(unpack(args))
-end)
-
-ebgeTab:Button("chalices", function()
-local args = {
-    [1] = "chalices",
-    [2] = false,
-    [3] = true
-}
-
-game:GetService("ReplicatedStorage"):WaitForChild("Packages"):WaitForChild("Knit"):WaitForChild("Services"):WaitForChild("ShopService"):WaitForChild("RF"):WaitForChild("Shop"):InvokeServer(unpack(args))
-task.wait(10)
-local args = {
-    [1] = "chalices",
-    [2] = false,
-    [3] = false
-}
-
-game:GetService("ReplicatedStorage"):WaitForChild("Packages"):WaitForChild("Knit"):WaitForChild("Services"):WaitForChild("ShopService"):WaitForChild("RF"):WaitForChild("Shop"):InvokeServer(unpack(args))
-end)
+loadstring(game:HttpGet("https://raw.githubusercontent.com/Coolestsmug/Coolestsmug/main/everybordergameever.lua", true))()
 end
 
 if game.PlaceId == 13704594433 then
-local storageTab = Window:Tab("the storage","rbxassetid://12308581351")
-storageTab:Section("thing that do something")
-storageTab:Toggle("auto block", function(state)
-    getgenv().lojopjoh = state
-    game:GetService("RunService").Heartbeat:Connect(function()
-        if lojopjoh == true then
-            pcall(function()
-                    local args = {
-    [1] = "Block"
-}
-
-game:GetService("ReplicatedStorage"):WaitForChild("RemoteEvent"):FireServer(unpack(args))
-            end)
-        end
-    end)
-end)
-
-storageTab:Toggle("auto run", function(state)
-    getgenv().looh = state
-    game:GetService("RunService").Heartbeat:Connect(function()
-        if looh == true then
-            pcall(function()
-                    local args = {
-    [1] = "Run"
-}
-
-game:GetService("ReplicatedStorage"):WaitForChild("RemoteEvent"):FireServer(unpack(args))
-            end)
-        end
-    end)
-end)
-storageTab:Section("buy")
-storageTab:Button("armor pad", function()
-local args = {
-    [1] = "BuyItem",
-    [2] = {
-        [1] = "Armor Pad",
-        [2] = "The Leader",
-        [3] = workspace:WaitForChild("Storages"):WaitForChild("Room"):WaitForChild("Contents"):WaitForChild("NPC"):WaitForChild("The Leader")
-    }
-}
-
-game:GetService("ReplicatedStorage"):WaitForChild("RemoteEvent"):FireServer(unpack(args))
-end)
-
-storageTab:Section("sell")
-storageTab:Toggle("auto sell all", function(state)
-    getgenv().lojoh = state
-    game:GetService("RunService").Heartbeat:Connect(function()
-        if lojoh == true then
-            pcall(function()
-                    local args = {
-    [1] = "SellAllItems",
-    [2] = workspace:WaitForChild("Storages"):WaitForChild("Room"):WaitForChild("Contents"):WaitForChild("NPC"):WaitForChild("The Collector"),
-    [3] = {}
-}
-
-game:GetService("ReplicatedStorage"):WaitForChild("RemoteEvent"):FireServer(unpack(args))
-            end)
-        end
-    end)
-end)
-
-storageTab:Section("take bank")
-storageTab:Button("one", function()
-local args = {
-    [1] = "TakeBank",
-    [2] = "One",
-    [3] = ""
-}
-
-game:GetService("ReplicatedStorage"):WaitForChild("RemoteEvent"):FireServer(unpack(args))
-end)
-
-storageTab:Button("two", function()
-local args = {
-    [1] = "TakeBank",
-    [2] = "Two",
-    [3] = ""
-}
-
-game:GetService("ReplicatedStorage"):WaitForChild("RemoteEvent"):FireServer(unpack(args))
-end)
-
-storageTab:Button("three", function()
-local args = {
-    [1] = "TakeBank",
-    [2] = "Three",
-    [3] = ""
-}
-
-game:GetService("ReplicatedStorage"):WaitForChild("RemoteEvent"):FireServer(unpack(args))
-end)
-
-storageTab:Button("four", function()
-local args = {
-    [1] = "TakeBank",
-    [2] = "Four",
-    [3] = ""
-}
-
-game:GetService("ReplicatedStorage"):WaitForChild("RemoteEvent"):FireServer(unpack(args))
-end)
-
-storageTab:Button("five", function()
-local args = {
-    [1] = "TakeBank",
-    [2] = "Five",
-    [3] = ""
-}
-
-game:GetService("ReplicatedStorage"):WaitForChild("RemoteEvent"):FireServer(unpack(args))
-end)
-
-storageTab:Button("six", function()
-local args = {
-    [1] = "TakeBank",
-    [2] = "Six",
-    [3] = ""
-}
-
-game:GetService("ReplicatedStorage"):WaitForChild("RemoteEvent"):FireServer(unpack(args))
-end)
-storageTab:Section("store bank")
-storageTab:Button("one", function()
-local args = {
-    [1] = "StoreBank",
-    [2] = "One",
-    [3] = ""
-}
-
-game:GetService("ReplicatedStorage"):WaitForChild("RemoteEvent"):FireServer(unpack(args))
-end)
-
-storageTab:Button("two", function()
-local args = {
-    [1] = "StoreBank",
-    [2] = "Two",
-    [3] = ""
-}
-
-game:GetService("ReplicatedStorage"):WaitForChild("RemoteEvent"):FireServer(unpack(args))
-end)
-
-storageTab:Button("three", function()
-local args = {
-    [1] = "StoreBank",
-    [2] = "Three",
-    [3] = ""
-}
-
-game:GetService("ReplicatedStorage"):WaitForChild("RemoteEvent"):FireServer(unpack(args))
-end)
-
-storageTab:Button("four", function()
-local args = {
-    [1] = "StoreBank",
-    [2] = "Four",
-    [3] = ""
-}
-
-game:GetService("ReplicatedStorage"):WaitForChild("RemoteEvent"):FireServer(unpack(args))
-end)
-
-storageTab:Button("five", function()
-local args = {
-    [1] = "StoreBank",
-    [2] = "Five",
-    [3] = ""
-}
-
-game:GetService("ReplicatedStorage"):WaitForChild("RemoteEvent"):FireServer(unpack(args))
-end)
-
-storageTab:Button("six", function()
-local args = {
-    [1] = "StoreBank",
-    [2] = "Six",
-    [3] = ""
-}
-
-game:GetService("ReplicatedStorage"):WaitForChild("RemoteEvent"):FireServer(unpack(args))
-end)
-end
-
-if game.PlaceId == 6681647040 then
-local randomTab = Window:Tab("the random","rbxassetid://12308581351")
-randomTab:Section("emote")
-randomTab:Button("dancing!", function()
-local args = {
-    [1] = game:GetService("Players").LocalPlayer,
-    [2] = "giaan2003_2",
-    [3] = true,
-    [4] = "Dancing!",
-    [5] = "Taunts",
-    [6] = "None"
-}
-
-game:GetService("ReplicatedStorage"):WaitForChild("Remotes"):WaitForChild("Staff"):WaitForChild("2"):FireServer(unpack(args))
-end)
-
-randomTab:Button("Aris", function()
-local args = {
-    [1] = game:GetService("Players").LocalPlayer,
-    [2] = "giaan2003_2",
-    [3] = true,
-    [4] = "Aris Dance",
-    [5] = "Taunts",
-    [6] = "None"
-}
-
-game:GetService("ReplicatedStorage"):WaitForChild("Remotes"):WaitForChild("Staff"):WaitForChild("2"):FireServer(unpack(args))
-end)
-
-randomTab:Button("Caramell", function()
-local args = {
-    [1] = game:GetService("Players").LocalPlayer,
-    [2] = "giaan2003_2",
-    [3] = true,
-    [4] = "Caramelldansen",
-    [5] = "Taunts",
-    [6] = "None"
-}
-
-game:GetService("ReplicatedStorage"):WaitForChild("Remotes"):WaitForChild("Staff"):WaitForChild("2"):FireServer(unpack(args))
-end)
-
-randomTab:Button("inkling", function()
-local args = {
-    [1] = game:GetService("Players").LocalPlayer,
-    [2] = "giaan2003_2",
-    [3] = true,
-    [4] = "Inkling Dance",
-    [5] = "Taunts",
-    [6] = "None"
-}
-
-game:GetService("ReplicatedStorage"):WaitForChild("Remotes"):WaitForChild("Staff"):WaitForChild("2"):FireServer(unpack(args))
-end)
-
-randomTab:Button("funny", function()
-local args = {
-    [1] = game:GetService("Players").LocalPlayer,
-    [2] = "giaan2003_2",
-    [3] = true,
-    [4] = "funny dance",
-    [5] = "Taunts",
-    [6] = "None"
-}
-
-game:GetService("ReplicatedStorage"):WaitForChild("Remotes"):WaitForChild("Staff"):WaitForChild("2"):FireServer(unpack(args))
-end)
-
-randomTab:Section("what")
-randomTab:Toggle("parry", function(state)
-    getgenv().lojohk = state
-    game:GetService("RunService").Heartbeat:Connect(function()
-        if lojohk == true then
-            pcall(function()
-                    local args = {
-    [1] = Enum.KeyCode.Q
-}
-
-game:GetService("Players").LocalPlayer.Character:FindFirstChild("Fencing Foil").Remote:FireServer(unpack(args))
-            end)
-        end
-    end)
-end)
-
-randomTab:Section("loadouts")
-randomTab:Button("darksoul build", function()
-local args = {
-    [1] = game:GetService("Players").LocalPlayer,
-    [2] = "giaan2003_2",
-    [3] = "Fencing Foil",
-    [4] = "Palustaff",
-    [5] = "Red Mushroom",
-    [6] = "Dodge Roll",
-    [7] = "Dancing!"
-}
-
-game:GetService("ReplicatedStorage"):WaitForChild("Remotes"):WaitForChild("Staff"):WaitForChild("4"):FireServer(unpack(args))
-end)
+loadstring(game:HttpGet("https://raw.githubusercontent.com/Coolestsmug/Coolestsmug/main/The_storage.lua", true))()
 end
 
 if game.PlaceId == 6838795423 then
-local isoTab = Window:Tab("warm isolation","rbxassetid://12308581351")
-isoTab:Section("vote submit")
-isoTab:InfoLabel("stacked, not for you")
-isoTab:Button("yes", function()
-local args = {
-    [1] = true
-}
-
-game:GetService("ReplicatedStorage"):WaitForChild("Remotes"):WaitForChild("Shop"):WaitForChild("SubmitVote"):FireServer(unpack(args))
-end)
-
-isoTab:Button("no", function()
-local args = {
-    [1] = false
-}
-
-game:GetService("ReplicatedStorage"):WaitForChild("Remotes"):WaitForChild("Shop"):WaitForChild("SubmitVote"):FireServer(unpack(args))
-end)
-isoTab:Section("vote loop")
-isoTab:InfoLabel("stacked, not for you")
-isoTab:Toggle("yes", function(state)
-    getgenv().lojophhk = state
-    game:GetService("RunService").Heartbeat:Connect(function()
-        if lojophhk == true then
-            pcall(function()
-                    local args = {
-    [1] = true
-}
-
-game:GetService("ReplicatedStorage"):WaitForChild("Remotes"):WaitForChild("Shop"):WaitForChild("SubmitVote"):FireServer(unpack(args))
-            end)
-        end
-    end)
-end)
-
-isoTab:Toggle("no", function(state)
-    getgenv().lojopkhhk = state
-    game:GetService("RunService").Heartbeat:Connect(function()
-        if lojopkhhk == true then
-            pcall(function()
-                    local args = {
-    [1] = false
-}
-
-game:GetService("ReplicatedStorage"):WaitForChild("Remotes"):WaitForChild("Shop"):WaitForChild("SubmitVote"):FireServer(unpack(args))
-            end)
-        end
-    end)
-end)
-
-isoTab:Section("misc")
-isoTab:Button("remove IFP", function()
-game:GetService("ReplicatedStorage"):WaitForChild("Remotes"):WaitForChild("Hallway"):WaitForChild("InFirstPerson"):Destroy()
-end)
-
-isoTab:Toggle("spray", function(state)
-    getgenv().lojoplkhhk = state
-    game:GetService("RunService").Heartbeat:Connect(function()
-        if lojoplkhhk == true then
-            pcall(function()
-                    game:GetService("Players").LocalPlayer.Character:FindFirstChild("Spray bottle").StartSpray:FireServer()
-            end)
-        end
-    end)
-end)
+loadstring(game:HttpGet("https://raw.githubusercontent.com/Coolestsmug/Coolestsmug/main/Isolation_warm.lua", true))()
 end
