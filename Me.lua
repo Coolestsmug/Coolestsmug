@@ -228,16 +228,8 @@ realTab:Button("rtx", function()
 loadstring(game:HttpGet(('https://pastefy.app/xXkUxA0P/raw'),true))()
 end)
 
-realTab:Button("reach", function()
-loadstring(game:HttpGet(("https://raw.githubusercontent.com/Coolestsmug/Coolestsmug/main/reach.lua", true))()
-end)
-
 realTab:Button("dex explorer but better", function()
 loadstring(game:GetObjects('rbxassetid://2180084478')[1].Source)()
-end)
-
-realTab:Button("dex explorer but bad", function()
-loadstring(game:HttpGet("https://cdn.wearedevs.net/scripts/Dex%20Explorer.txt"))()
 end)
 
 if game.PlaceId == 14419907512 then
