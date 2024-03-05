@@ -239,6 +239,10 @@ zomTab:Button("spit zone", function()
 loadstring(game:HttpGet("https://raw.githubusercontent.com/Coolestsmug/Coolestsmug/main/SPITZONE.lua", true))()
 end)
 
+zomTab:Button("base spit", function()
+loadstring(game:HttpGet("https://raw.githubusercontent.com/Coolestsmug/Coolestsmug/main/cave-spit.lua", true))()
+end)
+
 zomTab:Button("unescapeable base", function()
 local args = {
     [1] = Vector3.new(-111.21009063720703, 48.495262145996094, 43.27946472167969),
