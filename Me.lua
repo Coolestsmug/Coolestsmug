@@ -241,6 +241,7 @@ loadstring(game:HttpGet("https://raw.githubusercontent.com/Coolestsmug/Coolestsm
 loadstring(game:HttpGet("https://raw.githubusercontent.com/Coolestsmug/Coolestsmug/main/SPITZONE2.lua", true))()
 loadstring(game:HttpGet("https://raw.githubusercontent.com/Coolestsmug/Coolestsmug/main/backspit.lua", true))()
 loadstring(game:HttpGet("https://raw.githubusercontent.com/Coolestsmug/Coolestsmug/main/this.lua", true))()
+loadstring(game:HttpGet("https://raw.githubusercontent.com/Coolestsmug/Coolestsmug/main/fillgang.lua", true))()
 end)
 
 zomTab:Button("spit zone", function()
