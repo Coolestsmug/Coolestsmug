@@ -236,7 +236,7 @@ if game.PlaceId == 14419907512 then
 local zomTab = Window:Tab("zombie game","rbxassetid://12308581351")
 zomTab:Section("DOMAIN EXPANSION")
 
-zomTab:Button("spit zone", function()
+zomTab:Button("spit void", function()
 loadstring(game:HttpGet("https://raw.githubusercontent.com/Coolestsmug/Coolestsmug/main/SPITZONE.lua", true))()
 loadstring(game:HttpGet("https://raw.githubusercontent.com/Coolestsmug/Coolestsmug/main/SPITZONE2.lua", true))()
 loadstring(game:HttpGet("https://raw.githubusercontent.com/Coolestsmug/Coolestsmug/main/backspit.lua", true))()
