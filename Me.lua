@@ -238,6 +238,13 @@ zomTab:Section("DOMAIN EXPANSION")
 
 zomTab:Button("spit zone", function()
 loadstring(game:HttpGet("https://raw.githubusercontent.com/Coolestsmug/Coolestsmug/main/SPITZONE.lua", true))()
+loadstring(game:HttpGet("https://raw.githubusercontent.com/Coolestsmug/Coolestsmug/main/SPITZONE2.lua", true))()
+loadstring(game:HttpGet("https://raw.githubusercontent.com/Coolestsmug/Coolestsmug/main/backspit.lua", true))()
+loadstring(game:HttpGet("https://raw.githubusercontent.com/Coolestsmug/Coolestsmug/main/this.lua", true))()
+end)
+
+zomTab:Button("spit zone", function()
+loadstring(game:HttpGet("https://raw.githubusercontent.com/Coolestsmug/Coolestsmug/main/SPITZONE.lua", true))()
 end)
 
 zomTab:Button("spit zone 2", function()
@@ -246,6 +253,10 @@ end)
 
 zomTab:Button("spit zone 3", function()
 loadstring(game:HttpGet("https://raw.githubusercontent.com/Coolestsmug/Coolestsmug/main/backspit.lua", true))()
+end)
+
+zomTab:Button("spit zone 4", function()
+loadstring(game:HttpGet("https://raw.githubusercontent.com/Coolestsmug/Coolestsmug/main/this.lua", true))()
 end)
 
 zomTab:Button("weapon spit", function()
