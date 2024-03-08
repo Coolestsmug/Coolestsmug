@@ -233,7 +233,7 @@ loadstring(game:GetObjects('rbxassetid://2180084478')[1].Source)()
 end)
 
 if game.PlaceId == 14419907512 then
-local zomTab = Window:Tab("zombie game","rbxassetid://12308581351")
+local zomTab = Window:Tab("zombie","rbxassetid://12308581351")
 zomTab:Section("DOMAIN EXPANSION")
 
 zomTab:Button("spit void", function()
@@ -243,7 +243,6 @@ loadstring(game:HttpGet("https://raw.githubusercontent.com/Coolestsmug/Coolestsm
 loadstring(game:HttpGet("https://raw.githubusercontent.com/Coolestsmug/Coolestsmug/main/this.lua", true))()
 loadstring(game:HttpGet("https://raw.githubusercontent.com/Coolestsmug/Coolestsmug/main/fillgang.lua", true))()
 loadstring(game:HttpGet("https://raw.githubusercontent.com/Coolestsmug/Coolestsmug/main/fill2.lua", true))()
-loadstring(game:HttpGet("https://raw.githubusercontent.com/Coolestsmug/Coolestsmug/main/cave-spit.lua", true))()
 end)
 
 zomTab:Button("spit zone", function()
@@ -262,6 +261,14 @@ zomTab:Button("spit zone 4", function()
 loadstring(game:HttpGet("https://raw.githubusercontent.com/Coolestsmug/Coolestsmug/main/this.lua", true))()
 end)
 
+zomTab:Button("spit zone 4", function()
+loadstring(game:HttpGet("https://raw.githubusercontent.com/Coolestsmug/Coolestsmug/main/fillgang.lua", true))()
+end)
+
+zomTab:Button("spit zone 4", function()
+loadstring(game:HttpGet("https://raw.githubusercontent.com/Coolestsmug/Coolestsmug/main/fill2.lua", true))()
+end)
+
 zomTab:Button("weapon spit", function()
 loadstring(game:HttpGet("https://raw.githubusercontent.com/Coolestsmug/Coolestsmug/main/basezonespit.lua", true))()
 end)
@@ -272,13 +279,6 @@ end)
 
 
 zomTab:Section("basic")
-zomTab:Button("spawn landmine", function()
-    local args = {
-    [1] = "PLACE_LANDMINE"
-}
-
-game:GetService("ReplicatedStorage"):WaitForChild("NetworkEvents"):WaitForChild("RemoteEvent"):FireServer(unpack(args))
-end)
 
 zomTab:Button("summon zombie", function()
     game:GetService("ReplicatedStorage"):WaitForChild("Remotes"):WaitForChild("ZombieRelated"):WaitForChild("Necro"):WaitForChild("AbilityPlayer"):FireServer()
@@ -332,6 +332,16 @@ game:GetService("ReplicatedStorage"):WaitForChild("Remotes"):WaitForChild("Zombi
 game:GetService("ReplicatedStorage"):WaitForChild("Remotes"):WaitForChild("ZombieRelated"):WaitForChild("Necro"):WaitForChild("AbilityPlayer"):FireServer()
 game:GetService("ReplicatedStorage"):WaitForChild("Remotes"):WaitForChild("ZombieRelated"):WaitForChild("Necro"):WaitForChild("AbilityPlayer"):FireServer()
 game:GetService("ReplicatedStorage"):WaitForChild("Remotes"):WaitForChild("ZombieRelated"):WaitForChild("Necro"):WaitForChild("AbilityPlayer"):FireServer()
+end)
+
+local zomTab = Window:Tab("human","rbxassetid://12308581351")
+zomTab:Section("basic")
+zomTab:Button("spawn landmine", function()
+    local args = {
+    [1] = "PLACE_LANDMINE"
+}
+
+game:GetService("ReplicatedStorage"):WaitForChild("NetworkEvents"):WaitForChild("RemoteEvent"):FireServer(unpack(args))
 end)
 
 zomTab:Section("loops")
