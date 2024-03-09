@@ -138,10 +138,10 @@ PlayerTab:Toggle("Loop WalkSpeed", function(state)
     end)
 end)
 
-PlayerTab:TextBox("JumpPower", function(valuep)
-    getgenv().Jumppower = valuep
+PlayerTab:TextBox("JumpPower", function(value)
+    getgenv().Jumppower = value
     pcall(function()
-        game:GetService("Players").LocalPlayer.Character.Humanoid.JumpPower = valuep
+        game:GetService("Players").LocalPlayer.Character.Humanoid.JumpPower = value
     end)
 end)
 
@@ -156,12 +156,12 @@ PlayerTab:Toggle("Loop JumpPower", function(state)
     end)
 end)
 
-PlayerTab:TextBox("TP Speed", function(valuet)
-getgenv().TPSpeed = valuet
+PlayerTab:TextBox("TP Speed", function(value)
+getgenv().TPSpeed = value
 end)
 
-PlayerTab:Toggle("TP Walk", function(st)
-getgenv().TPWalk = st
+PlayerTab:Toggle("TP Walk", function(s)
+getgenv().TPWalk = s
 local hb = game:GetService("RunService").Heartbeat
 local player = game:GetService("Players")
 local lplr = player.LocalPlayer
@@ -220,8 +220,12 @@ getgenv().outlinetrans = 0.5 --Change outline transparency
 loadstring(game:HttpGet("https://raw.githubusercontent.com/Vcsk/RobloxScripts/main/Highlight-ESP.lua"))()
 end)
 
-realTab:Button("inf yield", function()
+realTab:Button("infinite yiff 🤯", function()
 loadstring(game:HttpGet('https://raw.githubusercontent.com/EdgeIY/infiniteyield/master/source'))()
+end)
+
+realTab:Button("reach", function()
+loadstring(game:HttpGet("https://raw.githubusercontent.com/Coolestsmug/Coolestsmug/main/reach.lua", true))()
 end)
 
 realTab:Button("rtx", function()
