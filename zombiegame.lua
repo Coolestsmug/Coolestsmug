@@ -168,4 +168,3 @@ game:GetService("ReplicatedStorage"):WaitForChild("NetworkEvents"):WaitForChild(
         end
     end)
 end)
-end 
