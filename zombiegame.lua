@@ -53,11 +53,11 @@ zomTab:Button("spit zone 4", function()
 loadstring(game:HttpGet("https://raw.githubusercontent.com/Coolestsmug/Coolestsmug/main/this.lua", true))()
 end)
 
-zomTab:Button("spit zone 4", function()
+zomTab:Button("spit zone 5", function()
 loadstring(game:HttpGet("https://raw.githubusercontent.com/Coolestsmug/Coolestsmug/main/fillgang.lua", true))()
 end)
 
-zomTab:Button("spit zone 4", function()
+zomTab:Button("spit zone 6", function()
 loadstring(game:HttpGet("https://raw.githubusercontent.com/Coolestsmug/Coolestsmug/main/fill2.lua", true))()
 end)
 
