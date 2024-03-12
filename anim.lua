@@ -1,4 +1,3 @@
-if game.PlaceId == 1335775256 then
 local snaTab = Window:Tab("boxer","rbxassetid://12308581351")
 
 snaTab:Button("stance", function()
@@ -625,5 +624,3 @@ local args = {
 
 game:GetService("ReplicatedStorage"):WaitForChild("PoseEditorDependencies"):WaitForChild("ChangeTransformationForPart"):FireServer(unpack(args))
 end)
-end
-
