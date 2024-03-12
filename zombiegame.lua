@@ -25,8 +25,6 @@ Toggle.MouseButton1Click:connect(function()
     Library:ToggleUI()
 end)
 
-local zomTab = Window:Tab("game", "rbxassetid://12308581351")
-
 local zomTab = Window:Tab("zombie","rbxassetid://12308581351")
 zomTab:Section("DOMAIN EXPANSION")
 
