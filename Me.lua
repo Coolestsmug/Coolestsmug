@@ -414,3 +414,7 @@ end
 if game.PlaceId == 6838795423 then
 loadstring(game:HttpGet("https://raw.githubusercontent.com/Coolestsmug/Coolestsmug/main/Isolation_warm.lua", true))()
 end
+
+if game.PlaceId == 1335775256 then
+loadstring(game:HttpGet("https://raw.githubusercontent.com/Coolestsmug/Coolestsmug/main/anim.lua", true))()
+end
