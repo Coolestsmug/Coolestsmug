@@ -654,6 +654,7 @@ end)
 
 local snaTab = Window:Tab("sus","rbxassetid://12308581351")
 
+snaTab:WarningLabel("never fuck men.")
 snaTab:Button("back", function()
 local args = {
     [1] = "LowerTorso",
