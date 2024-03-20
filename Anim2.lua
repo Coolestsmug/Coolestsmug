@@ -27,30 +27,38 @@ end)
 
 local sTab = Window:Tab("Bold (gay)","rbxassetid://10888331510")
 
-sTab:Button("", function()
-
+sTab:Button("idle", function()
+local Animate = game.Players.LocalPlayer.Character.Animate
+Animate.idle.Animation1.AnimationId = "http://www.roblox.com/asset/?id=16738333868"
+Animate.idle.Animation2.AnimationId = "http://www.roblox.com/asset/?id=16738334710"
 end)
 
-sTab:Button("", function()
-
+sTab:Button("walk", function()
+local Animate = game.Players.LocalPlayer.Character.Animate
+Animate.walk.WalkAnim.AnimationId = "http://www.roblox.com/asset/?id=16738340646"
 end)
 
-sTab:Button("", function()
-
+sTab:Button("run", function()
+local Animate = game.Players.LocalPlayer.Character.Animate
+Animate.run.RunAnim.AnimationId = "http://www.roblox.com/asset/?id=16738337225"
 end)
 
-sTab:Button("", function()
-
+sTab:Button("jump", function()
+local Animate = game.Players.LocalPlayer.Character.Animate
+Animate.jump.JumpAnim.AnimationId = "http://www.roblox.com/asset/?id=16738336650"
 end)
 
-sTab:Button("", function()
-
+sTab:Button("fall", function()
+local Animate = game.Players.LocalPlayer.Character.Animate
+Animate.fall.FallAnim.AnimationId = "http://www.roblox.com/asset/?id=16738333171"
 end)
 
-sTab:Button("", function()
-
+sTab:Button("climb", function()
+local Animate = game.Players.LocalPlayer.Character.Animate
+Animate.climb.ClimbAnim.AnimationId = "http://www.roblox.com/asset/?id=16738332169"
 end)
 
-sTab:Button("", function()
+sTab:Button("swim", function()
+local Animate = game.Players.LocalPlayer.Character.Animate
 
 end)
