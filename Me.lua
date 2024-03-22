@@ -203,6 +203,17 @@ getgenv().InfJ = s
     end)
 end)
 
+PlayerTab:Toggle("head camera", function(state)
+    getgenv().camera = state
+    pcall(function()
+	if camera == true then
+            game.Workspace.Camera.CameraSubject = game.Players.LocalPlayer.Character:WaitForChild("Head")
+	elseif camera == false then
+	    game.Workspace.Camera.CameraSubject = game.Players.LocalPlayer.Character:WaitForChild("Humanoid")
+	end
+    end)
+end)
+
 PlayerTab:Button("Rejoin", function()
     game:GetService("TeleportService"):Teleport(game.PlaceId, game:GetService("Players").LocalPlayer)
 end)
@@ -219,17 +230,6 @@ getgenv().filltrans = 0.5 --Change fill transparency
 getgenv().outlinetrans = 0.5 --Change outline transparency
 
 loadstring(game:HttpGet("https://raw.githubusercontent.com/Vcsk/RobloxScripts/main/Highlight-ESP.lua"))()
-end)
-
-PlayerTab:Toggle("head camera", function(state)
-    getgenv().camera = state
-    pcall(function()
-	if camera == true then
-            game.Workspace.Camera.CameraSubject = game.Players.LocalPlayer.Character:WaitForChild("Head")
-	elseif camera == false then
-	    game.Workspace.Camera.CameraSubject = game.Players.LocalPlayer.Character:WaitForChild("HumanoidRootPart")
-	end
-    end)
 end)
 
 realTab:Button("infinite yiff 🤯", function()
