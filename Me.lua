@@ -221,6 +221,17 @@ getgenv().outlinetrans = 0.5 --Change outline transparency
 loadstring(game:HttpGet("https://raw.githubusercontent.com/Vcsk/RobloxScripts/main/Highlight-ESP.lua"))()
 end)
 
+PlayerTab:Toggle("head camera", function(state)
+    getgenv().camera = state
+    pcall(function()
+	if camera == true then
+            game.Workspace.Camera.CameraSubject = game.Players.LocalPlayer.Character:WaitForChild("Head")
+	elseif camera == false then
+	    game.Workspace.Camera.CameraSubject = game.Players.LocalPlayer.Character:WaitForChild("HumanoidRootPart")
+	end
+    end)
+end)
+
 realTab:Button("infinite yiff 🤯", function()
 loadstring(game:HttpGet('https://raw.githubusercontent.com/EdgeIY/infiniteyield/master/source'))()
 end)
