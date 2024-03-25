@@ -975,7 +975,7 @@ local args = {
 game:GetService("ReplicatedStorage"):WaitForChild("PoseEditorDependencies"):WaitForChild("ChangeTransformationForPart"):FireServer(unpack(args))
 end)
 local snaTab = Window:Tab("sus","rbxassetid://12308581351")
-
+snaTab:Section("boy")
 snaTab:WarningLabel("never fuck men.")
 snaTab:Button("back n front", function()
 local args = {
@@ -2161,6 +2161,368 @@ local args = {
 }
 
 game:GetService("ReplicatedStorage"):WaitForChild("PoseEditorDependencies"):WaitForChild("ChangeOffsetForPart"):FireServer(unpack(args))
+end)
+snaTab:Section("girl")
+
+snaTab:Button("pound", function()
+local args = {
+    [1] = "LowerTorso",
+    [2] = CFrame.new(0, 0, 0, 1, 0, 0, 0, 0.9790979623794556, -0.20338945090770721, 0, 0.20338945090770721, 0.9790979623794556)
+}
+
+game:GetService("ReplicatedStorage"):WaitForChild("PoseEditorDependencies"):WaitForChild("ChangeTransformationForPart"):FireServer(unpack(args))
+local args = {
+    [1] = "LowerTorso",
+    [2] = Vector3.new(0, -0.08324432373046875, 0)
+}
+
+game:GetService("ReplicatedStorage"):WaitForChild("PoseEditorDependencies"):WaitForChild("ChangeOffsetForPart"):FireServer(unpack(args))
+local args = {
+    [1] = "RightUpperLeg",
+    [2] = CFrame.new(0, 0, 0, 0.5839624404907227, -0.556083083152771, -0.5914046764373779, 0.35226985812187195, 0.8299476504325867, -0.43254220485687256, 0.731364369392395, 0.044254373759031296, 0.6805495619773865)
+}
+
+game:GetService("ReplicatedStorage"):WaitForChild("PoseEditorDependencies"):WaitForChild("ChangeTransformationForPart"):FireServer(unpack(args))
+local args = {
+    [1] = "RightLowerLeg",
+    [2] = CFrame.new(0, 0, 0, 1, 0, 0, 0, 0.9803964495658875, 0.19703492522239685, 0, -0.19703492522239685, 0.9803964495658875)
+}
+
+game:GetService("ReplicatedStorage"):WaitForChild("PoseEditorDependencies"):WaitForChild("ChangeTransformationForPart"):FireServer(unpack(args))
+local args = {
+    [1] = "LeftUpperLeg",
+    [2] = CFrame.new(0, 0, 0, 0.4938839077949524, 0.5742776393890381, 0.6529041528701782, -0.3227747082710266, 0.8183043599128723, -0.475599080324173, -0.8074002861976624, 0.024149760603904724, 0.5895096063613892)
+}
+
+game:GetService("ReplicatedStorage"):WaitForChild("PoseEditorDependencies"):WaitForChild("ChangeTransformationForPart"):FireServer(unpack(args))
+local args = {
+    [1] = "LeftLowerLeg",
+    [2] = CFrame.new(0, 0, 0, 1, 0, 0, 0, 0.989732027053833, 0.14293567836284637, 0, -0.14293567836284637, 0.989732027053833)
+}
+
+game:GetService("ReplicatedStorage"):WaitForChild("PoseEditorDependencies"):WaitForChild("ChangeTransformationForPart"):FireServer(unpack(args))
+local args = {
+    [1] = "RightUpperArm",
+    [2] = CFrame.new(0, 0, 0, 1, 0, 0, 0, 0.8482356667518616, 0.529619038105011, 0, -0.529619038105011, 0.8482356667518616)
+}
+
+game:GetService("ReplicatedStorage"):WaitForChild("PoseEditorDependencies"):WaitForChild("ChangeTransformationForPart"):FireServer(unpack(args))
+local args = {
+    [1] = "RightLowerArm",
+    [2] = CFrame.new(0, 0, 0, 0.7148475646972656, 0.2079324871301651, 0.6676504015922546, 0.5488944053649902, 0.4246966540813446, -0.7199637293815613, -0.43325275182724, 0.8811339139938354, 0.1894603967666626)
+}
+
+game:GetService("ReplicatedStorage"):WaitForChild("PoseEditorDependencies"):WaitForChild("ChangeTransformationForPart"):FireServer(unpack(args))
+local args = {
+    [1] = "LeftUpperArm",
+    [2] = CFrame.new(0, 0, 0, 1, 0, 0, 0, 0.910442590713501, 0.4136354923248291, 0, -0.4136354923248291, 0.910442590713501)
+}
+
+game:GetService("ReplicatedStorage"):WaitForChild("PoseEditorDependencies"):WaitForChild("ChangeTransformationForPart"):FireServer(unpack(args))
+local args = {
+    [1] = "LeftLowerArm",
+    [2] = CFrame.new(0, 0, 0, 0.8145672678947449, -0.11527183651924133, -0.5685003399848938, -0.5234353542327881, 0.2763053774833679, -0.8060215711593628, 0.2499912679195404, 0.9541319012641907, 0.1647319495677948)
+}
+
+game:GetService("ReplicatedStorage"):WaitForChild("PoseEditorDependencies"):WaitForChild("ChangeTransformationForPart"):FireServer(unpack(args))
+local args = {
+    [1] = "UpperTorso",
+    [2] = CFrame.new(0, 0, 0, 1, 0, 0, 0, 0.9986938238143921, 0.05109505355358124, 0, -0.05109505355358124, 0.9986938238143921)
+}
+
+game:GetService("ReplicatedStorage"):WaitForChild("PoseEditorDependencies"):WaitForChild("ChangeTransformationForPart"):FireServer(unpack(args))
+local args = {
+    [1] = "Head",
+    [2] = CFrame.new(0, 0, 0, 1, 0, 0, 0, 0.891008734703064, 0.45398619771003723, 0, -0.45398619771003723, 0.891008734703064)
+}
+
+game:GetService("ReplicatedStorage"):WaitForChild("PoseEditorDependencies"):WaitForChild("ChangeTransformationForPart"):FireServer(unpack(args))
+wait(0.1)
+local args = {
+    [1] = "LowerTorso",
+    [2] = CFrame.new(0, 0, 0, 1, 0, 0, 0, 0.9964444041252136, -0.08425258100032806, 0, 0.08425258100032806, 0.9964444041252136)
+}
+
+game:GetService("ReplicatedStorage"):WaitForChild("PoseEditorDependencies"):WaitForChild("ChangeTransformationForPart"):FireServer(unpack(args))
+local args = {
+    [1] = "LowerTorso",
+    [2] = Vector3.new(0, -0.3786468505859375, -.2)
+}
+
+game:GetService("ReplicatedStorage"):WaitForChild("PoseEditorDependencies"):WaitForChild("ChangeOffsetForPart"):FireServer(unpack(args))
+local args = {
+    [1] = "RightUpperLeg",
+    [2] = CFrame.new(0, 0, 0, 0.583961546421051, -0.6442400217056274, -0.49390652775764465, 0.35227352380752563, 0.7492606043815613, -0.5608134865760803, 0.7313632965087891, 0.15350332856178284, 0.6644881367683411)
+}
+
+game:GetService("ReplicatedStorage"):WaitForChild("PoseEditorDependencies"):WaitForChild("ChangeTransformationForPart"):FireServer(unpack(args))
+local args = {
+    [1] = "RightLowerLeg",
+    [2] = CFrame.new(0, 0, 0, 1, 0, 0, 0, 0.8805913925170898, 0.47387635707855225, 0, -0.47387635707855225, 0.8805913925170898)
+}
+
+game:GetService("ReplicatedStorage"):WaitForChild("PoseEditorDependencies"):WaitForChild("ChangeTransformationForPart"):FireServer(unpack(args))
+local args = {
+    [1] = "RightFoot",
+    [2] = CFrame.new(0, 0, 0, 1, 0, 0, 0, 0.976104736328125, 0.21730083227157593, 0, -0.21730083227157593, 0.976104736328125)
+}
+
+game:GetService("ReplicatedStorage"):WaitForChild("PoseEditorDependencies"):WaitForChild("ChangeTransformationForPart"):FireServer(unpack(args))
+local args = {
+    [1] = "LeftUpperLeg",
+    [2] = CFrame.new(0, 0, 0, 0.4938688278198242, 0.7438383102416992, 0.45033127069473267, -0.32279008626937866, 0.6377235651016235, -0.6993678212165833, -0.8074033260345459, 0.2000335305929184, 0.5550553798675537)
+}
+
+game:GetService("ReplicatedStorage"):WaitForChild("PoseEditorDependencies"):WaitForChild("ChangeTransformationForPart"):FireServer(unpack(args))
+local args = {
+    [1] = "LeftLowerLeg",
+    [2] = CFrame.new(0, 0, 0, 1, 0, 0, 0, 0.898831307888031, 0.43829476833343506, 0, -0.43829476833343506, 0.898831307888031)
+}
+
+game:GetService("ReplicatedStorage"):WaitForChild("PoseEditorDependencies"):WaitForChild("ChangeTransformationForPart"):FireServer(unpack(args))
+local args = {
+    [1] = "LeftFoot",
+    [2] = CFrame.new(0, 0, 0, 1, 0, 0, 0, 0.9069685935974121, 0.4211982786655426, 0, -0.4211982786655426, 0.9069685935974121)
+}
+
+game:GetService("ReplicatedStorage"):WaitForChild("PoseEditorDependencies"):WaitForChild("ChangeTransformationForPart"):FireServer(unpack(args))
+wait(0.21)
+local args = {
+    [1] = "LowerTorso",
+    [2] = CFrame.new(0, 0, 0, 1, 0, 0, 0, 0.9886594414710999, 0.1501750946044922, 0, -0.1501750946044922, 0.9886594414710999)
+}
+
+game:GetService("ReplicatedStorage"):WaitForChild("PoseEditorDependencies"):WaitForChild("ChangeTransformationForPart"):FireServer(unpack(args))
+local args = {
+    [1] = "LowerTorso",
+    [2] = Vector3.new(0, -0.9134140014648438, -0.4)
+}
+
+game:GetService("ReplicatedStorage"):WaitForChild("PoseEditorDependencies"):WaitForChild("ChangeOffsetForPart"):FireServer(unpack(args))
+local args = {
+    [1] = "RightUpperLeg",
+    [2] = CFrame.new(0, 0, 0, 0.4183785319328308, -0.794768750667572, 0.43966132402420044, 0.36322757601737976, -0.29726487398147583, -0.8830058574676514, 0.832481324672699, 0.5291277170181274, 0.16431260108947754)
+}
+
+game:GetService("ReplicatedStorage"):WaitForChild("PoseEditorDependencies"):WaitForChild("ChangeTransformationForPart"):FireServer(unpack(args))
+local args = {
+    [1] = "RightLowerLeg",
+    [2] = CFrame.new(0, 0, 0, 1, 0, 0, 0, -0.09824780374765396, 0.9951620697975159, 0, -0.9951620697975159, -0.09824780374765396)
+}
+
+game:GetService("ReplicatedStorage"):WaitForChild("PoseEditorDependencies"):WaitForChild("ChangeTransformationForPart"):FireServer(unpack(args))
+local args = {
+    [1] = "RightFoot",
+    [2] = CFrame.new(0, 0, 0, 1, 0, 0, 0, 0.9207918643951416, 0.39005428552627563, 0, -0.39005428552627563, 0.9207918643951416)
+}
+
+game:GetService("ReplicatedStorage"):WaitForChild("PoseEditorDependencies"):WaitForChild("ChangeTransformationForPart"):FireServer(unpack(args))
+local args = {
+    [1] = "LeftUpperLeg",
+    [2] = CFrame.new(0, 0, 0, 0.4039878249168396, 0.8880007266998291, -0.21965543925762177, -0.18924039602279663, -0.15379881858825684, -0.9698113203048706, -0.8949759006500244, 0.43335968255996704, 0.10591274499893188)
+}
+
+game:GetService("ReplicatedStorage"):WaitForChild("PoseEditorDependencies"):WaitForChild("ChangeTransformationForPart"):FireServer(unpack(args))
+local args = {
+    [1] = "LeftLowerLeg",
+    [2] = CFrame.new(0, 0, 0, 1, 0, 0, 0, 0.15548075735569, 0.9878389239311218, 0, -0.9878389239311218, 0.15548075735569)
+}
+
+game:GetService("ReplicatedStorage"):WaitForChild("PoseEditorDependencies"):WaitForChild("ChangeTransformationForPart"):FireServer(unpack(args))
+local args = {
+    [1] = "LeftFoot",
+    [2] = CFrame.new(0, 0, 0, 1, 0, 0, 0, 0.8386168479919434, 0.5447217226028442, 0, -0.5447217226028442, 0.8386168479919434)
+}
+
+game:GetService("ReplicatedStorage"):WaitForChild("PoseEditorDependencies"):WaitForChild("ChangeTransformationForPart"):FireServer(unpack(args))
+local args = {
+    [1] = "UpperTorso",
+    [2] = CFrame.new(0, 0, 0, 1, 0, 0, 0, 0.9681224822998047, 0.25047725439071655, 0, -0.25047725439071655, 0.9681224822998047)
+}
+
+game:GetService("ReplicatedStorage"):WaitForChild("PoseEditorDependencies"):WaitForChild("ChangeTransformationForPart"):FireServer(unpack(args))
+local args = {
+    [1] = "RightUpperArm",
+    [2] = CFrame.new(0, 0, 0, 0.7087457180023193, -0.693207323551178, 0.13093158602714539, 0.6289212107658386, 0.7049481868743896, 0.3278812766075134, -0.31958967447280884, -0.15003877878189087, 0.9356018304824829)
+}
+
+game:GetService("ReplicatedStorage"):WaitForChild("PoseEditorDependencies"):WaitForChild("ChangeTransformationForPart"):FireServer(unpack(args))
+local args = {
+    [1] = "RightLowerArm",
+    [2] = CFrame.new(0, 0, 0, 0.7148419618606567, 0.6050906181335449, 0.35052287578582764, 0.5488928556442261, -0.17495158314704895, -0.8173789978027344, -0.4332638680934906, 0.7766963839530945, -0.45719271898269653)
+}
+
+game:GetService("ReplicatedStorage"):WaitForChild("PoseEditorDependencies"):WaitForChild("ChangeTransformationForPart"):FireServer(unpack(args))
+local args = {
+    [1] = "LeftUpperArm",
+    [2] = CFrame.new(0, 0, 0, 0.8325632214546204, 0.5539300441741943, 0, -0.5043174624443054, 0.7579949498176575, 0.4136515259742737, 0.22913400828838348, -0.3443910479545593, 0.9104353189468384)
+}
+
+game:GetService("ReplicatedStorage"):WaitForChild("PoseEditorDependencies"):WaitForChild("ChangeTransformationForPart"):FireServer(unpack(args))
+local args = {
+    [1] = "LeftLowerArm",
+    [2] = CFrame.new(0, 0, 0, 0.8145925402641296, -0.39361390471458435, -0.4260365962982178, -0.5233999490737915, -0.18225716054439545, -0.8323670625686646, 0.2499830275774002, 0.901027500629425, -0.3544827997684479)
+}
+
+game:GetService("ReplicatedStorage"):WaitForChild("PoseEditorDependencies"):WaitForChild("ChangeTransformationForPart"):FireServer(unpack(args))
+local args = {
+    [1] = "Head",
+    [2] = CFrame.new(0, 0, 0, 1, 0, 0, 0, 0.7259458303451538, 0.6877518892288208, 0, -0.6877518892288208, 0.7259458303451538)
+}
+
+game:GetService("ReplicatedStorage"):WaitForChild("PoseEditorDependencies"):WaitForChild("ChangeTransformationForPart"):FireServer(unpack(args))
+wait(0.16)
+local args = {
+    [1] = "LowerTorso",
+    [2] = Vector3.new(0, -0.793212890625, -0.3)
+}
+
+game:GetService("ReplicatedStorage"):WaitForChild("PoseEditorDependencies"):WaitForChild("ChangeOffsetForPart"):FireServer(unpack(args))
+local args = {
+    [1] = "RightUpperLeg",
+    [2] = CFrame.new(0, 0, 0, 0.41837984323501587, -0.8964186310768127, 0.14625966548919678, 0.3631990849971771, 0.017522573471069336, -0.9315468072891235, 0.8324930667877197, 0.44286173582077026, 0.3329095244407654)
+}
+
+game:GetService("ReplicatedStorage"):WaitForChild("PoseEditorDependencies"):WaitForChild("ChangeTransformationForPart"):FireServer(unpack(args))
+local args = {
+    [1] = "RightLowerLeg",
+    [2] = CFrame.new(0, 0, 0, 1, 0, 0, 0, 0.20697054266929626, 0.97834712266922, 0, -0.97834712266922, 0.20697054266929626)
+}
+
+game:GetService("ReplicatedStorage"):WaitForChild("PoseEditorDependencies"):WaitForChild("ChangeTransformationForPart"):FireServer(unpack(args))
+local args = {
+    [1] = "LeftUpperLeg",
+    [2] = CFrame.new(0, 0, 0, 0.4040142297744751, 0.9142928123474121, 0.029005005955696106, -0.18919509649276733, 0.11454121768474579, -0.975236177444458, -0.894973635673523, 0.3885217010974884, 0.21925601363182068)
+}
+
+game:GetService("ReplicatedStorage"):WaitForChild("PoseEditorDependencies"):WaitForChild("ChangeTransformationForPart"):FireServer(unpack(args))
+local args = {
+    [1] = "LeftLowerLeg",
+    [2] = CFrame.new(0, 0, 0, 1, 0, 0, 0, 0.3289170563220978, 0.944358766078949, 0, -0.944358766078949, 0.3289170563220978)
+}
+
+game:GetService("ReplicatedStorage"):WaitForChild("PoseEditorDependencies"):WaitForChild("ChangeTransformationForPart"):FireServer(unpack(args))
+local args = {
+    [1] = "RightUpperArm",
+    [2] = CFrame.new(0, 0, 0, 0.8929042220115662, -0.36884796619415283, -0.258211612701416, 0.44204336404800415, 0.8271253108978271, 0.34707552194595337, 0.08555525541305542, -0.4240459203720093, 0.9015904664993286)
+}
+
+game:GetService("ReplicatedStorage"):WaitForChild("PoseEditorDependencies"):WaitForChild("ChangeTransformationForPart"):FireServer(unpack(args))
+local args = {
+    [1] = "RightLowerArm",
+    [2] = CFrame.new(0, 0, 0, 0.7148503065109253, 0.5064558386802673, 0.48217374086380005, 0.5488705635070801, 0.02086395025253296, -0.8356469869613647, -0.4332783818244934, 0.8620135188102722, -0.26306402683258057)
+}
+
+game:GetService("ReplicatedStorage"):WaitForChild("PoseEditorDependencies"):WaitForChild("ChangeTransformationForPart"):FireServer(unpack(args))
+local args = {
+    [1] = "LeftUpperArm",
+    [2] = CFrame.new(0, 0, 0, 0.8844209909439087, 0.46237391233444214, -0.0633242130279541, -0.2789257764816284, 0.632488489151001, 0.7226055860519409, 0.37416577339172363, -0.6214247941970825, 0.6883540153503418)
+}
+
+game:GetService("ReplicatedStorage"):WaitForChild("PoseEditorDependencies"):WaitForChild("ChangeTransformationForPart"):FireServer(unpack(args))
+local args = {
+    [1] = "LeftLowerArm",
+    [2] = CFrame.new(0, 0, 0, 0.8145880699157715, -0.2784769833087921, -0.5088191032409668, -0.5234081745147705, 0.025153398513793945, -0.8517107963562012, 0.2499803751707077, 0.960113525390625, -0.12526744604110718)
+}
+
+game:GetService("ReplicatedStorage"):WaitForChild("PoseEditorDependencies"):WaitForChild("ChangeTransformationForPart"):FireServer(unpack(args))
+local args = {
+    [1] = "UpperTorso",
+    [2] = CFrame.new(0, 0, 0, 1, 0, 0, 0, 0.9994174838066101, 0.03412681818008423, 0, -0.03412681818008423, 0.9994174838066101)
+}
+
+game:GetService("ReplicatedStorage"):WaitForChild("PoseEditorDependencies"):WaitForChild("ChangeTransformationForPart"):FireServer(unpack(args))
+local args = {
+    [1] = "Head",
+    [2] = CFrame.new(0, 0, 0, 1, 0, 0, 0, 0.8796247243881226, 0.4756682515144348, 0, -0.4756682515144348, 0.8796247243881226)
+}
+
+game:GetService("ReplicatedStorage"):WaitForChild("PoseEditorDependencies"):WaitForChild("ChangeTransformationForPart"):FireServer(unpack(args))
+wait(0.1)
+local args = {
+    [1] = "LowerTorso",
+    [2] = CFrame.new(0, 0, 0, 1, 0, 0, 0, 0.9998731017112732, -0.015929609537124634, 0, 0.015929609537124634, 0.9998731017112732)
+}
+
+game:GetService("ReplicatedStorage"):WaitForChild("PoseEditorDependencies"):WaitForChild("ChangeTransformationForPart"):FireServer(unpack(args))
+local args = {
+    [1] = "LowerTorso",
+    [2] = Vector3.new(0, -0.40224456787109375, -0.10000000149011612)
+}
+
+game:GetService("ReplicatedStorage"):WaitForChild("PoseEditorDependencies"):WaitForChild("ChangeOffsetForPart"):FireServer(unpack(args))
+local args = {
+    [1] = "RightUpperLeg",
+    [2] = CFrame.new(0, 0, 0, 0.41837650537490845, -0.8359941244125366, -0.3550702929496765, 0.36320793628692627, 0.5123011469841003, -0.7782207727432251, 0.8324909210205078, 0.19662491977214813, 0.5179744362831116)
+}
+
+game:GetService("ReplicatedStorage"):WaitForChild("PoseEditorDependencies"):WaitForChild("ChangeTransformationForPart"):FireServer(unpack(args))
+local args = {
+    [1] = "RightLowerLeg",
+    [2] = CFrame.new(0, 0, 0, 1, 0, 0, 0, 0.6961109042167664, 0.7179343104362488, 0, -0.7179343104362488, 0.6961109042167664)
+}
+
+game:GetService("ReplicatedStorage"):WaitForChild("PoseEditorDependencies"):WaitForChild("ChangeTransformationForPart"):FireServer(unpack(args))
+local args = {
+    [1] = "LeftUpperLeg",
+    [2] = CFrame.new(0, 0, 0, 0.4040066599845886, 0.8717837929725647, 0.2770768702030182, -0.189189612865448, 0.375979483127594, -0.9071090817451477, -0.8949781656265259, 0.3140580356121063, 0.3168306350708008)
+}
+
+game:GetService("ReplicatedStorage"):WaitForChild("PoseEditorDependencies"):WaitForChild("ChangeTransformationForPart"):FireServer(unpack(args))
+local args = {
+    [1] = "LeftLowerLeg",
+    [2] = CFrame.new(0, 0, 0, 1, 0, 0, 0, 0.7184218168258667, 0.6956077814102173, 0, -0.6956077814102173, 0.7184218168258667)
+}
+
+game:GetService("ReplicatedStorage"):WaitForChild("PoseEditorDependencies"):WaitForChild("ChangeTransformationForPart"):FireServer(unpack(args))
+local args = {
+    [1] = "LeftFoot",
+    [2] = CFrame.new(0, 0, 0, 1, 0, 0, 0, 0.9071636199951172, 0.4207781255245209, 0, -0.4207781255245209, 0.9071636199951172)
+}
+
+game:GetService("ReplicatedStorage"):WaitForChild("PoseEditorDependencies"):WaitForChild("ChangeTransformationForPart"):FireServer(unpack(args))
+local args = {
+    [1] = "RightFoot",
+    [2] = CFrame.new(0, 0, 0, 1, 0, 0, 0, 0.9996615648269653, 0.026013433933258057, 0, -0.026013433933258057, 0.9996615648269653)
+}
+
+game:GetService("ReplicatedStorage"):WaitForChild("PoseEditorDependencies"):WaitForChild("ChangeTransformationForPart"):FireServer(unpack(args))
+local args = {
+    [1] = "UpperTorso",
+    [2] = CFrame.new(0, 0, 0, 1, 0, 0, 0, 0.9911588430404663, -0.13268053531646729, 0, 0.13268053531646729, 0.9911588430404663)
+}
+
+game:GetService("ReplicatedStorage"):WaitForChild("PoseEditorDependencies"):WaitForChild("ChangeTransformationForPart"):FireServer(unpack(args))
+local args = {
+    [1] = "Head",
+    [2] = CFrame.new(0, 0, 0, 1, 0, 0, 0, 0.8042638301849365, 0.5942723751068115, 0, -0.5942723751068115, 0.8042638301849365)
+}
+
+game:GetService("ReplicatedStorage"):WaitForChild("PoseEditorDependencies"):WaitForChild("ChangeTransformationForPart"):FireServer(unpack(args))
+local args = {
+    [1] = "RightUpperArm",
+    [2] = CFrame.new(0, 0, 0, 0.962207555770874, -0.0332944393157959, -0.2702741324901581, 0.1759708970785141, 0.8334646224975586, 0.5238044261932373, 0.20782412588596344, -0.5515689849853516, 0.8078247904777527)
+}
+
+game:GetService("ReplicatedStorage"):WaitForChild("PoseEditorDependencies"):WaitForChild("ChangeTransformationForPart"):FireServer(unpack(args))
+local args = {
+    [1] = "RightLowerArm",
+    [2] = CFrame.new(0, 0, 0, 0.41303980350494385, 0.4162469506263733, 0.8100227117538452, 0.8372359275817871, 0.17645390331745148, -0.5175907611846924, -0.35837721824645996, 0.8919656872749329, -0.275614470243454)
+}
+
+game:GetService("ReplicatedStorage"):WaitForChild("PoseEditorDependencies"):WaitForChild("ChangeTransformationForPart"):FireServer(unpack(args))
+local args = {
+    [1] = "LeftUpperArm",
+    [2] = CFrame.new(0, 0, 0, 0.9746605157852173, 0.2088020294904709, -0.08024097979068756, -0.12505033612251282, 0.8060344457626343, 0.5785074234008789, 0.18547052145004272, -0.553814172744751, 0.8117207288742065)
+}
+
+game:GetService("ReplicatedStorage"):WaitForChild("PoseEditorDependencies"):WaitForChild("ChangeTransformationForPart"):FireServer(unpack(args))
+local args = {
+    [1] = "LeftLowerArm",
+    [2] = CFrame.new(0, 0, 0, 0.5876181125640869, -0.31101107597351074, -0.7469786405563354, -0.703493058681488, 0.2597195506095886, -0.6615462303161621, 0.3997531235218048, 0.9142307639122009, -0.06617820262908936)
+}
+
+game:GetService("ReplicatedStorage"):WaitForChild("PoseEditorDependencies"):WaitForChild("ChangeTransformationForPart"):FireServer(unpack(args))
 end)
 
 local snaTab = Window:Tab("dance","rbxassetid://12308581351")
