@@ -166,3 +166,24 @@ game:GetService("ReplicatedStorage"):WaitForChild("NetworkEvents"):WaitForChild(
         end
     end)
 end)
+
+local zomTab = Window:Tab("kill","rbxassetid://12308581351")
+zomTab:TextBox("target", function(name)
+    getgenv().player = name
+end)
+
+zomTab:Toggle("kill target", function(state)
+    getgenv().loopjkh = state
+    game:GetService("RunService").Heartbeat:Connect(function()
+        if loopjkh == true then
+            pcall(function()
+local args = {
+    [1] = "GUN_DAMAGE",
+    [2] = workspace.LivingThings.player
+}
+
+game:GetService("ReplicatedStorage"):WaitForChild("NetworkEvents"):WaitForChild("RemoteEvent"):FireServer(unpack(args))
+            end)
+        end
+    end)
+end)
