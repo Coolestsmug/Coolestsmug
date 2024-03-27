@@ -180,7 +180,7 @@ zomTab:Toggle("kill target", function(state)
             pcall(function()
                 local args = {
                     [1] = "GUN_DAMAGE",
-                    [2] = workspace.LivingThings.player
+                    [2] = workspace:WaitForChild("LivingThings"):WaitForChild("player")
                 }
                 -- wtf is this code lmao
 
