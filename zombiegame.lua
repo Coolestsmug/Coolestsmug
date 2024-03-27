@@ -1,5 +1,5 @@
 local Library = loadstring(game:HttpGet("https://raw.githubusercontent.com/Vcsk/UI-Library/main/Source/MyUILib(Unamed).lua"))();
-local Window = Library:Create("Hitbox Expander")
+local Window = Library:Create("zombie game")
 
 local ToggleGui = Instance.new("ScreenGui")
 local Toggle = Instance.new("TextButton")
@@ -168,18 +168,18 @@ game:GetService("ReplicatedStorage"):WaitForChild("NetworkEvents"):WaitForChild(
 end)
 
 local zomTab = Window:Tab("kill","rbxassetid://12308581351")
-zomTab:TextBox("target", function(name)
-    getgenv().player = name
+zomTab:TextBox("target", function(value)
+    getgenv().player = value
 end)
 
 zomTab:Toggle("kill target", function(state)
-    getgenv().loopjkh = state
+    getgenv().loopjkhkkkk = state
     game:GetService("RunService").Heartbeat:Connect(function()
-        if loopjkh == true then
+        if loopjkhkkkk == true then
             pcall(function()
 local args = {
     [1] = "GUN_DAMAGE",
-    [2] = workspace.LivingThings.player
+    [2] = workspace:WaitForChild("LivingThings"):WaitForChild("player")
 }
 
 game:GetService("ReplicatedStorage"):WaitForChild("NetworkEvents"):WaitForChild("RemoteEvent"):FireServer(unpack(args))
