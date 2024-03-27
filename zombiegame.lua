@@ -169,7 +169,6 @@ end)
 
 local zomTab = Window:Tab("kill","rbxassetid://12308581351")
 
-local zomTab = Window:Tab("kill","rbxassetid://12308581351")
 zomTab:TextBox("target", function(value)
     getgenv().player = value
 end)
