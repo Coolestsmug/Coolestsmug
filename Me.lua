@@ -232,23 +232,29 @@ getgenv().outlinetrans = 0.5 --Change outline transparency
 loadstring(game:HttpGet("https://raw.githubusercontent.com/Vcsk/RobloxScripts/main/Highlight-ESP.lua"))()
 end)
 
+realTab:InfoLabel("#COOLGANG #FREESMUG #FUCKALL")
+
 realTab:Button("infinite yiff 🤯", function()
 loadstring(game:HttpGet('https://raw.githubusercontent.com/EdgeIY/infiniteyield/master/source'))()
 end)
 
-realTab:Button("reach", function()
+realTab:Button("nameless admin 🤫🧏‍♂️", function()
+loadstring(game:HttpGet("https://raw.githubusercontent.com/FD2Team/Nameless-Admin-No-Byfron-Kick/main/Source",true))()
+end)
+
+realTab:Button("reacher wit tool", function()
 loadstring(game:HttpGet("https://raw.githubusercontent.com/Coolestsmug/Coolestsmug/main/reach.lua", true))()
 end)
 
-realTab:Button("rtx", function()
+realTab:Button("rtx for high quality", function()
 loadstring(game:HttpGet(('https://pastefy.app/xXkUxA0P/raw'),true))()
 end)
 
-realTab:Button("dex explorer but better", function()
+realTab:Button("dex explorer but better (my ass)", function()
 loadstring(game:GetObjects('rbxassetid://2180084478')[1].Source)()
 end)
 
-realTab:Button("cool esp", function()
+realTab:Button("cool esp (TOO LAGGY WTF)", function()
 loadstring(game:HttpGet(('https://raw.githubusercontent.com/cool83birdcarfly02six/UNIVERSALESPLTX/main/README.md'),true))()
 end)
 
