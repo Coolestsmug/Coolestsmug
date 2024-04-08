@@ -179,7 +179,7 @@ while getgenv().TPWalk and hb:Wait() and chr and hum and hum.Parent do
 end
 end)
 
-PlayerTab:Slider("Fov", game.Workspace.CurrentCamera,10,120, function(v)
+PlayerTab:Slider("Fov", game.Workspace.CurrentCamera.FieldOfView,120, function(v)
      game.Workspace.CurrentCamera.FieldOfView = v
 end)
 
