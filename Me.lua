@@ -55,6 +55,7 @@ local PlayerTab = Window:Tab("Players","rbxassetid://12296135476")
 local VisualTab = Window:Tab("Visuals","rbxassetid://12308581351")
 local realTab = Window:Tab("universal","rbxassetid://12308581351")
 local gangTab = Window:Tab("game", "rbxassetid://12308581351")
+local gagTab = Window:Tab("cilent sided", "rbxassetid://12308581351")
 
 HomeTab:InfoLabel("only works on some games!")
 
@@ -277,3 +278,66 @@ end)
 gangTab:Button("isolation warm", function()
 endloadstring(game:HttpGet("https://raw.githubusercontent.com/Coolestsmug/Coolestsmug/main/Isolationwarm.lua", true))()
 end)
+
+gagTab:Button("boobs n ass 🗣️", function()
+if boobc == false and cheekc false then
+(getgenv and getgenv() or _G or shared).BB_Settings = {
+Breast = false,
+BreastPhysics = { Target = 5, Speed = 10, Damper = 0.2 },
+BreastSize = 0.5,
+Cheeks = false,
+CheeksPhysics = { Target = 3, Speed = 10, Damper = 0.1 },
+CheeksSize = 1,
+Collisions = false,
+ForceAllRigs = false,
+Only_Others = false,
+Simulate_Physics_On_LocalPlayer_Only = false,
+}
+-- для инжектора Key: 7ecde6e1148745b0a8bf0d9aad691beb
+loadstring(
+game:HttpGet("https://gist.githubusercontent.com/htt-py/92db22eeefad0042a6da9117501ad827/raw/BBies.luau", true)
+)()
+elseif boobc == true and cheekc false then
+(getgenv and getgenv() or _G or shared).BB_Settings = {
+Breast = true,
+BreastPhysics = { Target = 5, Speed = 10, Damper = 0.2 },
+BreastSize = 0.5,
+Cheeks = false,
+CheeksPhysics = { Target = 3, Speed = 10, Damper = 0.1 },
+CheeksSize = 1,
+Collisions = false,
+ForceAllRigs = false,
+Only_Others = false,
+Simulate_Physics_On_LocalPlayer_Only = false,
+}
+-- для инжектора Key: 7ecde6e1148745b0a8bf0d9aad691beb
+loadstring(
+game:HttpGet("https://gist.githubusercontent.com/htt-py/92db22eeefad0042a6da9117501ad827/raw/BBies.luau", true)
+)()
+if boobc == true and cheekc true then
+(getgenv and getgenv() or _G or shared).BB_Settings = {
+Breast = true,
+BreastPhysics = { Target = 5, Speed = 10, Damper = 0.2 },
+BreastSize = 0.5,
+Cheeks = true,
+CheeksPhysics = { Target = 3, Speed = 10, Damper = 0.1 },
+CheeksSize = 1,
+Collisions = false,
+ForceAllRigs = false,
+Only_Others = false,
+Simulate_Physics_On_LocalPlayer_Only = false,
+}
+-- для инжектора Key: 7ecde6e1148745b0a8bf0d9aad691beb
+loadstring(
+game:HttpGet("https://gist.githubusercontent.com/htt-py/92db22eeefad0042a6da9117501ad827/raw/BBies.luau", true)
+)()
+end)
+
+gagTab:Toggle("boob toggle", function(state)
+    getgenv().boobc = state
+end)
+
+gagTab:Toggle("cheek toggle", function(state)
+    getgenv().cheekc = state
+end)
+
