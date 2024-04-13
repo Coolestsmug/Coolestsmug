@@ -25,7 +25,7 @@ Toggle.MouseButton1Click:connect(function()
     Library:ToggleUI()
 end)
 
-local ebgeTab = Window:Tab("ebge","rbxassetid://12308581351")
+local ebgeTab = Window:Tab("shop","rbxassetid://12308581351")
 ebgeTab:Section("shop")
 ebgeTab:Button("sword", function()
 local args = {
@@ -107,7 +107,8 @@ local args = {
 game:GetService("ReplicatedStorage"):WaitForChild("Packages"):WaitForChild("Knit"):WaitForChild("Services"):WaitForChild("ShopService"):WaitForChild("RF"):WaitForChild("Shop"):InvokeServer(unpack(args))
 end)
 
-ebgeTab:Section("buy and sell")
+local ebgeTab = Window:Tab("stuff","rbxassetid://12308581351")
+ebgeTab:Section("buy n sell")
 
 ebgeTab:Button("coal", function()
 local args = {
