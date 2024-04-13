@@ -118,7 +118,7 @@ HomeTab:Toggle("Team Check", function(state)
     getgenv().TeamCheck = state
 end)
 
-HomeTab:Keybind("Toggle UI", Enum.KeyCode.F, function()
+HomeTab:Keybind("Toggle UI", Enum.KeyCode.b, function()
     Library:ToggleUI()
 end)
 
@@ -228,7 +228,7 @@ getgenv().outlineuseteamcolor = true --Toggle outline color using player team co
 getgenv().fillcolor = Color3.new(0, 0, 0) --Change fill color, no need to edit if using team color
 getgenv().outlinecolor = Color3.new(1, 1, 1) --Change outline color, no need to edit if using team color
 getgenv().filltrans = 0.5 --Change fill transparency
-getgenv().outlinetrans = 0.5 --Change outline transparency
+getgenv().outlinetrans = 0 --Change outline transparency
 
 loadstring(game:HttpGet("https://raw.githubusercontent.com/Vcsk/RobloxScripts/main/Highlight-ESP.lua"))()
 end)
@@ -259,6 +259,10 @@ realTab:Button("cool esp (TOO LAGGY WTF)", function()
 loadstring(game:HttpGet(('https://raw.githubusercontent.com/cool83birdcarfly02six/UNIVERSALESPLTX/main/README.md'),true))()
 end)
 
+realTab:Button("built in shiftlock", function()
+loadstring(game:HttpGet('https://pastebin.com/raw/CjNsnSDy'))()
+end)
+
 gangTab:Button("zombie game", function()
 loadstring(game:HttpGet("https://raw.githubusercontent.com/Coolestsmug/Coolestsmug/main/zombiegame.lua", true))()
 end)
@@ -279,7 +283,7 @@ gangTab:Button("isolation warm", function()
 endloadstring(game:HttpGet("https://raw.githubusercontent.com/Coolestsmug/Coolestsmug/main/Isolationwarm.lua", true))()
 end)
 
-gagTab:Button("boobs n ass 🗣️", function()
+gagTab:Button("boobs n ass 🗣️ (perm)", function()
 (getgenv and getgenv() or _G or shared).BB_Settings = {
 Breast = true,
 BreastPhysics = { Target = 5, Speed = 10, Damper = 0.2 },
