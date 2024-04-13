@@ -118,10 +118,6 @@ HomeTab:Toggle("Team Check", function(state)
     getgenv().TeamCheck = state
 end)
 
-HomeTab:Keybind("Toggle UI", Enum.KeyCode.b, function()
-    Library:ToggleUI()
-end)
-
 PlayerTab:TextBox("WalkSpeed", function(value)
     getgenv().Walkspeed = value
     pcall(function()
