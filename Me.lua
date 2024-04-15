@@ -285,10 +285,10 @@ end)
 gagTab:Button("boobs n ass 🗣️ (perm)", function()
 (getgenv and getgenv() or _G or shared).BB_Settings = {
 Breast = true,
-BreastPhysics = { Target = 5, Speed = 10, Damper = 0.2 },
+BreastPhysics = { Target = 8, Speed = 15, Damper = 0.2 },
 BreastSize = 0.7,
 Cheeks = true,
-CheeksPhysics = { Target = 3, Speed = 10, Damper = 0.1 },
+CheeksPhysics = { Target = 4, Speed = 11, Damper = 0.1 },
 CheeksSize = 1,
 Collisions = false,
 ForceAllRigs = false,
