@@ -265,7 +265,7 @@ loadstring(game:HttpGet("https://raw.githubusercontent.com/Coolestsmug/Coolestsm
 end)
 
 realTab:Button("chat bypass2", function()
-loadstring(game:HttpGet("https://raw.githubusercontent.com/Coolestsmug/Coolestsmug/main/chatbypass2.lua", true))()
+loadstring(game:HttpGet('https://pastebin.ai/raw/lstrrfipqq'))();
 end)
 realTab:InfoLabel("pick one only! (above)")
 
