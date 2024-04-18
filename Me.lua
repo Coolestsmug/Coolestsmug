@@ -259,9 +259,16 @@ realTab:Button("built in shiftlock", function()
 loadstring(game:HttpGet('https://pastebin.com/raw/CjNsnSDy'))()
 end)
 
+realTab:InfoLabel("pick one only! (below)")
 realTab:Button("chat bypass", function()
 loadstring(game:HttpGet("https://raw.githubusercontent.com/Coolestsmug/Coolestsmug/main/Chatbypass.lua", true))()
 end)
+
+realTab:Button("chat bypass2", function()
+loadstring(game:HttpGet("https://raw.githubusercontent.com/Coolestsmug/Coolestsmug/main/chatbypass2.lua", true))()
+end)
+realTab:InfoLabel("pick one only! (above)")
+
 gangTab:Button("zombie game", function()
 loadstring(game:HttpGet("https://raw.githubusercontent.com/Coolestsmug/Coolestsmug/main/zombiegame.lua", true))()
 end)
@@ -286,12 +293,12 @@ gagTab:Button("boobs n ass 🗣️ (perm)", function()
 (getgenv and getgenv() or _G or shared).BB_Settings = {
 Breast = true,
 BreastPhysics = { Target = 5, Speed = 10, Damper = 0.2 },
-BreastSize = 0.5,
+BreastSize = 0.7,
 Cheeks = true,
 CheeksPhysics = { Target = 3, Speed = 10, Damper = 0.1 },
 CheeksSize = 1,
 Collisions = false,
-ForceAllRigs = false,
+ForceAllRigs = true,
 Only_Others = false,
 Simulate_Physics_On_LocalPlayer_Only = false,
 }
@@ -300,8 +307,6 @@ Simulate_Physics_On_LocalPlayer_Only = false,
   true-on
   false-off
 ]]
-loadstring(
-game:HttpGet("https://gist.githubusercontent.com/htt-py/92db22eeefad0042a6da9117501ad827/raw/BBies.luau", true)
-)()
+loadstring(game:HttpGet("https://gist.githubusercontent.com/htt-py/92db22eeefad0042a6da9117501ad827/raw/BBies.luau", true))()
 end)
 
