@@ -84,7 +84,7 @@ old = hookmetamethod(game, "__namecall", newcclosure(function(self, ...)
             local rep = string.gsub(newMessage, i, v .. "⁥")
             newMessage = rep
         end
-        newMessage = "￰" .. newMessage .. default
+        newMessage = "FAG￰" .. newMessage .. default
 
         args[1] = newMessage
         coroutine.wrap(c)
