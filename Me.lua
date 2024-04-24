@@ -259,6 +259,10 @@ realTab:Button("built in shiftlock", function()
 loadstring(game:HttpGet('https://pastebin.com/raw/CjNsnSDy'))()
 end)
 
+realTab:Button("built in shiftlock 2", function()
+loadstring(game:HttpGet(('https://pastebin.com/raw/WKUVJ6jK'),true))()
+end)
+
 realTab:InfoLabel("pick one only! (below)")
 realTab:Button("chat bypass", function()
 loadstring(game:HttpGet("https://raw.githubusercontent.com/Coolestsmug/Coolestsmug/main/Chatbypass.lua", true))()
