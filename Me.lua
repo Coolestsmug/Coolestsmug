@@ -304,7 +304,7 @@ Cheeks = true,
 CheeksPhysics = { Target = 3, Speed = 10, Damper = 0.1 },
 CheeksSize = 0.9,
 Collisions = false,
-ForceAllRigs = true,
+ForceAllRigs = false,
 Only_Others = false,
 Simulate_Physics_On_LocalPlayer_Only = false,
 }
