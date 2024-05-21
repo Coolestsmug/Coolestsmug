@@ -2235,6 +2235,120 @@ local args = {
 game:GetService("ReplicatedStorage"):WaitForChild("PoseEditorDependencies"):WaitForChild("ChangeTransformationForPart"):FireServer(unpack(args))
 end)
 
+snaTab:Button("down n up", function()
+local args = {
+    [1] = "LowerTorso",
+    [2] = Vector3.new(0, -0.90435791015625, 0)
+}
+
+game:GetService("ReplicatedStorage").PoseEditorDependencies.ChangeOffsetForPart:FireServer(unpack(args))
+local args = {
+    [1] = "LowerTorso",
+    [2] = CFrame.new(0, 0, 0) * CFrame.Angles(-1.138993501663208, 0, -0)
+}
+
+game:GetService("ReplicatedStorage").PoseEditorDependencies.ChangeTransformationForPart:FireServer(unpack(args))
+local args = {
+    [1] = "RightUpperLeg",
+    [2] = CFrame.new(0, 0, 0) * CFrame.Angles(0.08757626265287399, -0.16151480376720428, 0.037586651742458344)
+}
+
+game:GetService("ReplicatedStorage").PoseEditorDependencies.ChangeTransformationForPart:FireServer(unpack(args))
+local args = {
+    [1] = "LeftUpperLeg",
+    [2] = CFrame.new(0, 0, 0) * CFrame.Angles(0.09274306893348694, 0.1726393699645996, -0)
+}
+
+game:GetService("ReplicatedStorage").PoseEditorDependencies.ChangeTransformationForPart:FireServer(unpack(args))
+local args = {
+    [1] = "RightUpperArm",
+    [2] = Vector3.new(-0.15574680268764496, -1.1866722106933594, -0.06174752116203308)
+}
+
+game:GetService("ReplicatedStorage").PoseEditorDependencies.ChangeOffsetForPart:FireServer(unpack(args))
+local args = {
+    [1] = "RightUpperArm",
+    [2] = CFrame.new(0, 0, 0) * CFrame.Angles(1.801311731338501, 0, -0)
+}
+
+game:GetService("ReplicatedStorage").PoseEditorDependencies.ChangeTransformationForPart:FireServer(unpack(args))
+local args = {
+    [1] = "LeftUpperArm",
+    [2] = Vector3.new(0.28093022108078003, -1.1859365701675415, -0.04160047322511673)
+}
+
+game:GetService("ReplicatedStorage").PoseEditorDependencies.ChangeOffsetForPart:FireServer(unpack(args))
+local args = {
+    [1] = "LeftUpperArm",
+    [2] = CFrame.new(0, 0, 0) * CFrame.Angles(1.801311731338501, 0, -0)
+}
+
+game:GetService("ReplicatedStorage").PoseEditorDependencies.ChangeTransformationForPart:FireServer(unpack(args))
+local args = {
+    [1] = "RightUpperLeg",
+    [2] = Vector3.new(0, 0, 0)
+}
+
+game:GetService("ReplicatedStorage").PoseEditorDependencies.ChangeOffsetForPart:FireServer(unpack(args))
+local args = {
+    [1] = "LeftUpperLeg",
+    [2] = Vector3.new(0, 0, 0)
+}
+
+game:GetService("ReplicatedStorage").PoseEditorDependencies.ChangeOffsetForPart:FireServer(unpack(args))
+-- frame 2
+-- frame 2
+task.wait(0.2)
+local args = {
+    [1] = "LowerTorso",
+    [2] = CFrame.new(0, 0, 0) * CFrame.Angles(-1.2636778354644775, 0, -0)
+}
+
+game:GetService("ReplicatedStorage").PoseEditorDependencies.ChangeTransformationForPart:FireServer(unpack(args))
+local args = {
+    [1] = "LowerTorso",
+    [2] = Vector3.new(0, -0.4, 0.5)
+}
+
+game:GetService("ReplicatedStorage").PoseEditorDependencies.ChangeOffsetForPart:FireServer(unpack(args))
+local args = {
+    [1] = "RightUpperLeg",
+    [2] = CFrame.new(0, 0, 0) * CFrame.Angles(0.6827725768089294, -0.11302230507135391, 0.12158926576375961)
+}
+
+game:GetService("ReplicatedStorage").PoseEditorDependencies.ChangeTransformationForPart:FireServer(unpack(args))
+local args = {
+    [1] = "LeftUpperLeg",
+    [2] = CFrame.new(0, 0, 0) * CFrame.Angles(0.7547544836997986, 0.13669227063655853, -0.10580498725175858)
+}
+
+game:GetService("ReplicatedStorage").PoseEditorDependencies.ChangeTransformationForPart:FireServer(unpack(args))
+local args = {
+    [1] = "RightUpperArm",
+    [2] = Vector3.new(-0.15574680268764496, -0.5, -0.5)
+}
+
+game:GetService("ReplicatedStorage").PoseEditorDependencies.ChangeOffsetForPart:FireServer(unpack(args))
+local args = {
+    [1] = "RightUpperArm",
+    [2] = CFrame.new(0, 0, 0) * CFrame.Angles(1.7427030801773071, 0, -0)
+}
+
+game:GetService("ReplicatedStorage").PoseEditorDependencies.ChangeTransformationForPart:FireServer(unpack(args))
+local args = {
+    [1] = "LeftUpperArm",
+    [2] = Vector3.new(0.28093022108078003, -0.33530616760253906, -0.4625227451324463)
+}
+
+game:GetService("ReplicatedStorage").PoseEditorDependencies.ChangeOffsetForPart:FireServer(unpack(args))
+local args = {
+    [1] = "LeftUpperArm",
+    [2] = CFrame.new(0, 0, 0) * CFrame.Angles(1.6351603269577026, 0, -0)
+}
+
+game:GetService("ReplicatedStorage").PoseEditorDependencies.ChangeTransformationForPart:FireServer(unpack(args))
+end)
+
 snaTab:Button("backshots (improved!)", function()
 local args = {
     [1] = "LowerTorso",
