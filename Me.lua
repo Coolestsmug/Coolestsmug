@@ -243,6 +243,10 @@ realTab:Button("reacher wit tool", function()
 loadstring(game:HttpGet("https://raw.githubusercontent.com/Coolestsmug/Coolestsmug/main/reach.lua", true))()
 end)
 
+realTab:Button("cool esp (TOO LAGGY WTF)", function()
+loadstring(game:HttpGet(('https://raw.githubusercontent.com/cool83birdcarfly02six/UNIVERSALESPLTX/main/README.md'),true))()
+end)
+
 realTab:Button("rtx for high quality", function()
 loadstring(game:HttpGet(('https://pastefy.app/xXkUxA0P/raw'),true))()
 end)
@@ -251,9 +255,36 @@ realTab:Button("dex explorer but better (my ass)", function()
 loadstring(game:GetObjects('rbxassetid://2180084478')[1].Source)()
 end)
 
-realTab:Button("cool esp (TOO LAGGY WTF)", function()
-loadstring(game:HttpGet(('https://raw.githubusercontent.com/cool83birdcarfly02six/UNIVERSALESPLTX/main/README.md'),true))()
+realTab:InfoLabel("smoothlock (L)")
+
+realTab:TextBox("sideset", function(number)
+    getgenv().radius22 = number
 end)
+realTab:TextBox("aimlock strengthen", function(number)
+    getgenv().aimstrengthen = number
+end)
+realTab:TextBox("predict", function(number)
+    getgenv().predti = number
+end)
+
+realTab:Button("built in shiftlock", function()
+getgenv().RecurringPoint = "Head"
+getgenv().Hitbox = "Head" 
+getgenv().Keybind = "l" 
+getgenv().AimbotStrengthAmount = aimstrengthen
+getgenv().PredictionAmount = predti
+getgenv().Radius = radius22
+getgenv().UsePrediction = true 
+getgenv().AimbotStrength = true 
+getgenv().FirstPerson = true 
+getgenv().ThirdPerson = true 
+getgenv().TeamCheck = false 
+getgenv().Enabled = true 
+-- // main script / / --
+ loadstring(game:HttpGet("https://raw.githubusercontent.com/tenaaki/GenericAimbot/main/v1.0.0"))()
+end)
+
+realTab:InfoLabel("shiftlock")
 
 realTab:TextBox("sideset", function(number)
     getgenv().Offset1 = number
@@ -274,7 +305,7 @@ ShiftlockStarterGui.Parent = game.CoreGui
 ShiftlockStarterGui.ZIndexBehavior =  Enum.ZIndexBehavior.Sibling
 ShiftlockStarterGui.ResetOnSpawn = false
 
-ImageButton.Parent = ShiftlockStarterGui
+		ImageButton.Parent = ShiftlockStarterGui
 ImageButton.Active = true
 ImageButton.Draggable = true
 ImageButton.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
@@ -508,6 +539,9 @@ local function OMQRQRC_fake_script() -- ShiftlockStarterGui.LocalScript
 end
 coroutine.wrap(OMQRQRC_fake_script)()
 end)
+realTab:Button("destroy shiftlock", function()
+game.CoreGui[Shiftlock (StarterGui)]:Destroy()
+end)
 
 realTab:InfoLabel("pick one only! (below)")
 realTab:Button("chat bypass", function()
@@ -550,7 +584,7 @@ Cheeks = true,
 CheeksPhysics = { Target = 3, Speed = 10, Damper = 0.1 },
 CheeksSize = 0.9,
 Collisions = false,
-ForceAllRigs = false,
+ForceAllRigs = true,
 Only_Others = false,
 Simulate_Physics_On_LocalPlayer_Only = false,
 }
