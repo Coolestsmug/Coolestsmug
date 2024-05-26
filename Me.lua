@@ -229,7 +229,7 @@ getgenv().outlinetrans = 0 --Change outline transparency
 loadstring(game:HttpGet("https://raw.githubusercontent.com/Vcsk/RobloxScripts/main/Highlight-ESP.lua"))()
 end)
 
-realTab:InfoLabel("#COOLGANG #FREESMUG #FUCKALL")
+realTab:InfoLabel("#COOLGANG")
 
 realTab:Button("infinite yiff 🤯", function()
 loadstring(game:HttpGet('https://raw.githubusercontent.com/EdgeIY/infiniteyield/master/source'))()
@@ -262,6 +262,9 @@ realTab:TextBox("sideset", function(number)
 end)
 realTab:TextBox("down n up set", function(number)
     getgenv().Offset2 = number
+end)
+realTab:TextBox("forward n back", function(number)
+    getgenv().Offset3 = number
 end)
 
 realTab:Button("built in shiftlock", function()
@@ -313,8 +316,8 @@ local function TLQOYN_fake_script() -- ImageButton.ShiftGUI
 	}
 	local MAX_LENGTH = 900000
 	local active = false
-	local ENABLED_OFFSET = CFrame.new(Offset1, Offset2, 0)
-	local DISABLED_OFFSET = CFrame.new(-Offset1, -Offset2, 0)
+	local ENABLED_OFFSET = CFrame.new(Offset1, Offset2, Offset3)
+	local DISABLED_OFFSET = CFrame.new(-Offset1, -Offset2, -Offset3)
 local rootPos = Vector3.new(0,0,0)
 local function UpdatePos()
 if player.Character and player.Character:FindFirstChildOfClass"Humanoid" and player.Character:FindFirstChildOfClass"Humanoid".RootPart then
@@ -510,6 +513,7 @@ local function OMQRQRC_fake_script() -- ShiftlockStarterGui.LocalScript
 end
 coroutine.wrap(OMQRQRC_fake_script)()
 end)
+
 realTab:Button("destroy shiftlock", function()
 game.CoreGui.Shiftlockgui:Destroy()
 end)
