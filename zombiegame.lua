@@ -139,22 +139,23 @@ end)
 zomTab:Section("loops")
 zomTab:Toggle("heal (gamepass)", function(state)
     getgenv().looph = state
-    game:GetService("RunService").Heartbeat:Connect(function()
-        if looph == true then
-            pcall(function()
-                local args = {
+end)
+game:GetService("RunService").Heartbeat:Connect(function()
+    if looph == true then
+        pcall(function()
+              local args = {
     [1] = "Medkit_Heal"
 }
 
-game:GetService("ReplicatedStorage"):WaitForChild("NetworkEvents"):WaitForChild("RemoteEvent"):FireServer(unpack(args))
-            end)
-        end
-    end)
+game:GetService("ReplicatedStorage"):WaitForChild("NetworkEvents"):WaitForChild("RemoteEvent"):FireServer(unpack(args)
+        end)
+    end
 end)
 
 zomTab:Toggle("spawn landmine", function(state)
     getgenv().loopjh = state
-    game:GetService("RunService").Heartbeat:Connect(function()
+end)
+    task.wait(0.1)
         if loopjh == true then
             pcall(function()
                     local args = {
@@ -162,9 +163,8 @@ zomTab:Toggle("spawn landmine", function(state)
 }
 
 game:GetService("ReplicatedStorage"):WaitForChild("NetworkEvents"):WaitForChild("RemoteEvent"):FireServer(unpack(args))
-            end)
-        end
-    end)
+        end)
+    end
 end)
 
 local zomTab = Window:Tab("kill","rbxassetid://12308581351")
