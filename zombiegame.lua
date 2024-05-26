@@ -147,7 +147,7 @@ game:GetService("RunService").Heartbeat:Connect(function()
     [1] = "Medkit_Heal"
 }
 
-game:GetService("ReplicatedStorage"):WaitForChild("NetworkEvents"):WaitForChild("RemoteEvent"):FireServer(unpack(args)
+game:GetService("ReplicatedStorage"):WaitForChild("NetworkEvents"):WaitForChild("RemoteEvent"):FireServer(unpack(args))
         end)
     end
 end)
