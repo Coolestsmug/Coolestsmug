@@ -202,7 +202,6 @@ end)
 
 PlayerTab:Toggle("head camera", function(state)
 getgenv().camera = state
-    game:GetService("RunService").Heartbeat:Connect(function()
     pcall(function()
 	if camera == true then
             game.Workspace.Camera.CameraSubject = game.Players.LocalPlayer.Character:WaitForChild("Head")
