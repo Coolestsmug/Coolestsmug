@@ -607,7 +607,7 @@ animTab:TextBox("speed2", function(number)
     getgenv().adspeed1 = number
 end)
 
-
+animTab:Button("tool", function()
 local isPlaying = false
 local animationTrack = nil
 
@@ -671,3 +671,4 @@ tool.Unequipped:Connect(function()
 end)
 local isPlaying = false
 local animationTrack = nil
+end)
