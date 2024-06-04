@@ -201,7 +201,8 @@ getgenv().InfJ = s
 end)
 
 PlayerTab:Toggle("head camera", function(state)
-    getgenv().camera = state
+getgenv().camera = state
+    game:GetService("RunService").Heartbeat:Connect(function()
     pcall(function()
 	if camera == true then
             game.Workspace.Camera.CameraSubject = game.Players.LocalPlayer.Character:WaitForChild("Head")
@@ -230,32 +231,11 @@ loadstring(game:HttpGet("https://raw.githubusercontent.com/Vcsk/RobloxScripts/ma
 end)
 
 realTab:InfoLabel("#COOLGANG")
+realTab:InfoLabel("remember to turn off shiftlock before destroy")
 
-realTab:Button("infinite yiff 🤯", function()
-loadstring(game:HttpGet('https://raw.githubusercontent.com/EdgeIY/infiniteyield/master/source'))()
-end)
-
-realTab:Button("nameless admin 🤫🧏‍♂️", function()
-loadstring(game:HttpGet("https://raw.githubusercontent.com/FD2Team/Nameless-Admin-No-Byfron-Kick/main/Source",true))()
-end)
-
-realTab:Button("reacher wit tool", function()
-loadstring(game:HttpGet("https://raw.githubusercontent.com/Coolestsmug/Coolestsmug/main/reach.lua", true))()
-end)
-
-realTab:Button("cool esp (TOO LAGGY WTF)", function()
-loadstring(game:HttpGet(('https://raw.githubusercontent.com/cool83birdcarfly02six/UNIVERSALESPLTX/main/README.md'),true))()
-end)
-
-realTab:Button("rtx for high quality", function()
-loadstring(game:HttpGet(('https://pastefy.app/xXkUxA0P/raw'),true))()
-end)
-
-realTab:Button("dex explorer but better (my ass)", function()
-loadstring(game:GetObjects('rbxassetid://2180084478')[1].Source)()
-end)
-
-realTab:InfoLabel("shiftlock")
+getgenv().Offset1 = 1.7
+getgenv().Offset2 = 0
+getgenv().Offset3 = 0
 
 realTab:TextBox("sideset", function(number)
     getgenv().Offset1 = number
@@ -513,9 +493,32 @@ local function OMQRQRC_fake_script() -- ShiftlockStarterGui.LocalScript
 end
 coroutine.wrap(OMQRQRC_fake_script)()
 end)
-
 realTab:Button("destroy shiftlock", function()
 game.CoreGui.Shiftlockgui:Destroy()
+end)
+
+realTab:Button("infinite yiff 🤯", function()
+loadstring(game:HttpGet('https://raw.githubusercontent.com/EdgeIY/infiniteyield/master/source'))()
+end)
+
+realTab:Button("nameless admin 🤫🧏‍♂️", function()
+loadstring(game:HttpGet("https://raw.githubusercontent.com/FD2Team/Nameless-Admin-No-Byfron-Kick/main/Source",true))()
+end)
+
+realTab:Button("reacher wit tool", function()
+loadstring(game:HttpGet("https://raw.githubusercontent.com/Coolestsmug/Coolestsmug/main/reach.lua", true))()
+end)
+
+realTab:Button("cool esp (TOO LAGGY WTF)", function()
+loadstring(game:HttpGet(('https://raw.githubusercontent.com/cool83birdcarfly02six/UNIVERSALESPLTX/main/README.md'),true))()
+end)
+
+realTab:Button("rtx for high quality", function()
+loadstring(game:HttpGet(('https://pastefy.app/xXkUxA0P/raw'),true))()
+end)
+
+realTab:Button("dex explorer but better (my ass)", function()
+loadstring(game:GetObjects('rbxassetid://2180084478')[1].Source)()
 end)
 
 realTab:InfoLabel("pick one only! (below)")
@@ -526,7 +529,6 @@ end)
 realTab:Button("chat bypass2", function()
 loadstring(game:HttpGet('https://pastebin.ai/raw/lstrrfipqq'))();
 end)
-realTab:InfoLabel("pick one only! (above)")
 
 gangTab:Button("zombie game", function()
 loadstring(game:HttpGet("https://raw.githubusercontent.com/Coolestsmug/Coolestsmug/main/zombiegame.lua", true))()
