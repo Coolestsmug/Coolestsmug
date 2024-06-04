@@ -56,6 +56,7 @@ local VisualTab = Window:Tab("Visuals","rbxassetid://12308581351")
 local realTab = Window:Tab("universal","rbxassetid://12308581351")
 local gangTab = Window:Tab("game", "rbxassetid://12308581351")
 local gagTab = Window:Tab("cilent sided", "rbxassetid://12308581351")
+local animTab = Window:Tab("anim tool cus", "rbxassetid://12308581351")
 
 HomeTab:InfoLabel("only works on some games!")
 
@@ -231,31 +232,10 @@ end)
 
 realTab:InfoLabel("#COOLGANG")
 
-realTab:Button("infinite yiff 🤯", function()
-loadstring(game:HttpGet('https://raw.githubusercontent.com/EdgeIY/infiniteyield/master/source'))()
-end)
-
-realTab:Button("nameless admin 🤫🧏‍♂️", function()
-loadstring(game:HttpGet("https://raw.githubusercontent.com/FD2Team/Nameless-Admin-No-Byfron-Kick/main/Source",true))()
-end)
-
-realTab:Button("reacher wit tool", function()
-loadstring(game:HttpGet("https://raw.githubusercontent.com/Coolestsmug/Coolestsmug/main/reach.lua", true))()
-end)
-
-realTab:Button("cool esp (TOO LAGGY WTF)", function()
-loadstring(game:HttpGet(('https://raw.githubusercontent.com/cool83birdcarfly02six/UNIVERSALESPLTX/main/README.md'),true))()
-end)
-
-realTab:Button("rtx for high quality", function()
-loadstring(game:HttpGet(('https://pastefy.app/xXkUxA0P/raw'),true))()
-end)
-
-realTab:Button("dex explorer but better (my ass)", function()
-loadstring(game:GetObjects('rbxassetid://2180084478')[1].Source)()
-end)
-
 realTab:InfoLabel("shiftlock")
+getgenv().Offset1 = 1.7
+getgenv().Offset2 = 0
+getgenv().Offset3 = 0
 
 realTab:TextBox("sideset", function(number)
     getgenv().Offset1 = number
@@ -518,6 +498,30 @@ realTab:Button("destroy shiftlock", function()
 game.CoreGui.Shiftlockgui:Destroy()
 end)
 
+realTab:Button("infinite yiff 🤯", function()
+loadstring(game:HttpGet('https://raw.githubusercontent.com/EdgeIY/infiniteyield/master/source'))()
+end)
+
+realTab:Button("nameless admin 🤫🧏‍♂️", function()
+loadstring(game:HttpGet("https://raw.githubusercontent.com/FD2Team/Nameless-Admin-No-Byfron-Kick/main/Source",true))()
+end)
+
+realTab:Button("reacher wit tool", function()
+loadstring(game:HttpGet("https://raw.githubusercontent.com/Coolestsmug/Coolestsmug/main/reach.lua", true))()
+end)
+
+realTab:Button("cool esp (TOO LAGGY WTF)", function()
+loadstring(game:HttpGet(('https://raw.githubusercontent.com/cool83birdcarfly02six/UNIVERSALESPLTX/main/README.md'),true))()
+end)
+
+realTab:Button("rtx for high quality", function()
+loadstring(game:HttpGet(('https://pastefy.app/xXkUxA0P/raw'),true))()
+end)
+
+realTab:Button("dex explorer but better (my ass)", function()
+loadstring(game:GetObjects('rbxassetid://2180084478')[1].Source)()
+end)
+
 realTab:InfoLabel("pick one only! (below)")
 realTab:Button("chat bypass", function()
 loadstring(game:HttpGet("https://raw.githubusercontent.com/Coolestsmug/Coolestsmug/main/Chatbypass.lua", true))()
@@ -526,7 +530,6 @@ end)
 realTab:Button("chat bypass2", function()
 loadstring(game:HttpGet('https://pastebin.ai/raw/lstrrfipqq'))();
 end)
-realTab:InfoLabel("pick one only! (above)")
 
 gangTab:Button("zombie game", function()
 loadstring(game:HttpGet("https://raw.githubusercontent.com/Coolestsmug/Coolestsmug/main/zombiegame.lua", true))()
@@ -571,3 +574,100 @@ Simulate_Physics_On_LocalPlayer_Only = false,
 loadstring(game:HttpGet("https://gist.githubusercontent.com/htt-py/92db22eeefad0042a6da9117501ad827/raw/BBies.luau", true))()
 end)
 
+animTab:InfoLabel("animtool customize")
+getgenv().name = tool
+getgenv().timepos = 5
+getgenv().waittime = 1
+getgenv().adspeed = 1
+getgenv().timepos1 = 0
+getgenv().waittime1 = 100
+getgenv().adspeed1 = 1
+animTab:TextBox("Name", function(string)
+    getgenv().name = string
+end)
+animTab:TextBox("id", function(number)
+    getgenv().ID11 = number
+end)
+animTab:TextBox("TimePosition", function(number)
+    getgenv().timepos = number
+end)
+animTab:TextBox("wait", function(number)
+    getgenv().waittime = number
+end)
+animTab:TextBox("speed", function(number)
+    getgenv().adspeed = number
+end)
+animTab:TextBox("TimePosition1", function(number)
+    getgenv().timepos1 = number
+end)
+animTab:TextBox("wait1", function(number)
+    getgenv().waittime1 = number
+end)
+animTab:TextBox("speed2", function(number)
+    getgenv().adspeed1 = number
+end)
+
+
+local isPlaying = false
+local animationTrack = nil
+
+-- Function to play the animation from a specific time position and loop
+local function playAnimationLoop()
+    local player = game.Players.LocalPlayer
+    local character = player.Character or player.CharacterAdded:Wait()
+    local humanoid = character:WaitForChild("Humanoid")
+
+    if not isPlaying then
+        -- Play the animation
+        local animationId = "rbxassetid://ID11" -- Replace with your animation ID
+        local animation = Instance.new("Animation")
+        animation.AnimationId = animationId
+        animationTrack = humanoid:LoadAnimation(animation)
+        
+        -- Set the initial time position
+        local initialTimePosition = timepos -- Replace with your desired start time position
+        animationTrack.TimePosition = initialTimePosition
+        
+        -- Play the animation at normal speed
+        animationTrack:Play()
+        animationTrack:AdjustSpeed(0)
+        isPlaying = true
+        
+        -- Loop the animation from the initial time position
+        while isPlaying and animationTrack do
+            if animationTrack then
+            animationTrack.TimePosition = initialTimePosition -- Return to the initial time position
+            animationTrack:AdjustSpeed(adspeed)
+            wait(waittime) -- Play for 2 seconds
+            end
+        end
+    else
+        -- End the animation immediately
+        if animationTrack then
+            animationTrack:Stop()
+            animationTrack = nil
+        end
+        isPlaying = false
+    end
+end
+
+-- Create a tool to control the animation
+local tool = Instance.new("Tool")
+tool.Name = "name"
+tool.RequiresHandle = false
+tool.CanBeDropped = false
+tool.Parent = game.Players.LocalPlayer.Backpack
+
+-- Connect the toggle function to tool activation
+tool.Activated:Connect(playAnimationLoop)
+
+-- Stop the animation when the tool is unequipped
+tool.Unequipped:Connect(function()
+    if animationTrack then
+        animationTrack:Stop()
+        animationTrack = nil
+    end
+    isPlaying = false
+end)
+local isPlaying = false
+local animationTrack = nil
