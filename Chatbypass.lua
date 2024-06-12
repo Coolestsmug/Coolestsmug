@@ -19,7 +19,6 @@ local chatService, players = game:GetService("Chat"), game:GetService("Players")
 
 local custom_chars = {
     [" "] = "￰",
-    ["a"] = "а",
     ["i"] = "і",
     ["e"] = "е",
     ["g"] = "g",
@@ -28,7 +27,6 @@ local custom_chars = {
     ["p"] = "р",
     ["s"] = "ѕ",
     ["u"] = "u",
-    ["A"] = "А",
     ["I"] = "Ӏ",
     ["E"] = "Е",
     ["G"] = "ꓖ",
