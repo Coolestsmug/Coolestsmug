@@ -279,6 +279,7 @@ local function PlayAnimation()
         -- Play the animation at normal speed
         animationTrack:Play()
         animationTrack:AdjustSpeed(0)
+        animationTrack:AdjustWeight(1)
         isPlaying = true
 
         -- Loop the animation
@@ -291,6 +292,40 @@ local function PlayAnimation()
 end
 
 createButton("squat", function()
+    if isPlaying then
+        StopAnimation()
+    else
+        PlayAnimation()
+    end
+end)
+
+local function PlayAnimation()
+    local player = game.Players.LocalPlayer
+    local character = player.Character or player.CharacterAdded:Wait()
+    local humanoid = character:WaitForChild("Humanoid")
+
+    if not isPlaying then
+        local animationId = "rbxassetid://16302968986"
+        local animation = Instance.new("Animation")
+        animation.AnimationId = animationId
+        animationTrack = humanoid:LoadAnimation(animation)
+
+        local initialTimePosition = 11.2
+        animationTrack.TimePosition = initialTimePosition
+
+        animationTrack:Play()
+        animationTrack:AdjustSpeed(0)
+        isPlaying = true
+
+        while isPlaying and animationTrack do
+            animationTrack.TimePosition = initialTimePosition
+                animationTrack:AdjustSpeed(1)
+            wait(0.8)
+        end
+    end
+end
+
+createButton("lethal company reference", function()
     if isPlaying then
         StopAnimation()
     else
