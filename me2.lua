@@ -17,7 +17,7 @@ closeButton.Parent = frame
 local isOpen = false
 
 local function openGui()
-    frame:TweenPosition(UDim2.new(0, -169.99, 0, 170), "Out", "Quad", 0.6, true)
+    frame:TweenPosition(UDim2.new(0, -170, 0, 170), "Out", "Quad", 0.6, true)
     isOpen = true
     wait(0.5)
     closeButton.Text = "Open"
@@ -116,19 +116,19 @@ setting.Parent = scrolltab
 
 tabButton.MouseButton1Click:Connect(function()
     scrollingFrame:TweenPosition(UDim2.new(0, 0, 0, 0), "Out", "Quad", 0.6, true)
-    scrollingFrame2:TweenPosition(UDim2.new(0, -170, 0, 0), "In", "Quad", 0.6, true)
-scrollingFrame3:TweenPosition(UDim2.new(0, -170, 0, 0), "In", "Quad", 0.6, true)
+    scrollingFrame2:TweenPosition(UDim2.new(0, -172, 0, 0), "In", "Quad", 0.6, true)
+scrollingFrame3:TweenPosition(UDim2.new(0, -172, 0, 0), "In", "Quad", 0.6, true)
 end)
 
 tabButton2.MouseButton1Click:Connect(function()
-    scrollingFrame:TweenPosition(UDim2.new(0, -170, 0, 0), "In", "Quad", 0.6, true)
+    scrollingFrame:TweenPosition(UDim2.new(0, -172, 0, 0), "In", "Quad", 0.6, true)
     scrollingFrame2:TweenPosition(UDim2.new(0, 0, 0, 0), "Out", "Quad", 0.6, true)
-scrollingFrame3:TweenPosition(UDim2.new(0, -170, 0, 0), "In", "Quad", 0.6, true)
+scrollingFrame3:TweenPosition(UDim2.new(0, -172, 0, 0), "In", "Quad", 0.6, true)
 end)
 
 setting.MouseButton1Click:Connect(function()
-    scrollingFrame:TweenPosition(UDim2.new(0, -170, 0, 0), "In", "Quad", 0.6, true)
-    scrollingFrame2:TweenPosition(UDim2.new(0, -170, 0, 0), "In", "Quad", 0.6, true)
+    scrollingFrame:TweenPosition(UDim2.new(0, -172, 0, 0), "In", "Quad", 0.6, true)
+    scrollingFrame2:TweenPosition(UDim2.new(0, -172, 0, 0), "In", "Quad", 0.6, true)
     scrollingFrame3:TweenPosition(UDim2.new(0, 0, 0, 0), "Out", "Quad", 0.6, true)
 end)
 
