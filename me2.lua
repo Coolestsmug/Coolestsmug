@@ -10,7 +10,7 @@ frame.Parent = screenGui
 
 local closeButton = Instance.new("TextButton")
 closeButton.Size = UDim2.new(0, 30, 0, 120)
-closeButton.Position = UDim2.new(0, 170, 0, 0)
+closeButton.Position = UDim2.new(0, 171, 0, 0)
 closeButton.Text = "Close"
 closeButton.Parent = frame
 
@@ -39,8 +39,8 @@ closeButton.MouseButton1Click:Connect(function()
 end)
 
 local scrolltab = Instance.new("ScrollingFrame")
-scrolltab.Size = UDim2.new(0, 170, 0, 35)
-scrolltab.Position = UDim2.new(0, 0, 0, -21)
+scrolltab.Size = UDim2.new(0, 170, 0, 30)
+scrolltab.Position = UDim2.new(0, 0, 0, -20)
 scrolltab.CanvasSize = UDim2.new(1, 0, 0, 0)
 scrolltab.Parent = frame
 
