@@ -93,30 +93,7 @@ end
 createButton3("delete gui", function()
 frame:TweenPosition(UDim2.new(0, -200, 0, 170), "Out", "Quad", 1, true)
 wait(1)
-game:GetService("CoreGui").co:Destroy()
-end)
-
-local function createTextBox(parentFrame, callback)
-    callback = callback or function() end
-    local textBox = Instance.new("TextBox")
-    textBox.Size = UDim2.new(0, 150, 0, 20)
-    textBox.Position = UDim2.new(0, 5, 0, #parentFrame:GetChildren() * 30)
-    textBox.PlaceholderText = "Enter text..."
-    textBox.Text = ""
-    textBox.Parent = parentFrame
-
-    textBox.FocusLost:Connect(function(enterPressed)
-        if not enterPressed then
-      return
-    else
-      callback(textBox.Text)
-        end
-    end)
-end
-
--- Example usage:
-createTextBox(scrollingFrame, function(enterPressed)
-
+game.CoreGui.co:Destroy()
 end)
 
 local tabButton = Instance.new("TextButton")
@@ -155,12 +132,6 @@ setting.MouseButton1Click:Connect(function()
     scrollingFrame3:TweenPosition(UDim2.new(0, 0, 0, 0), "Out", "Quad", 0.6, true)
 end)
 
-createTextBox(scrollingFrame, function(enterPressed)
-    if enterPressed then
-        local s = textBox.Text
-    end
-end)
-
 --[[ alright lets create emote button
  made by coolest_smug on discord, giaan2003_2 on roblox
 for skids out here, be grateful that i made this shit open sourced ]]
@@ -189,8 +160,8 @@ local function PlayAnimation()
         -- Loop the animation
         while isPlaying and animationTrack do
             animationTrack.TimePosition = initialTimePosition
-            animationTrack:AdjustSpeed(1 * enteredText)
-            wait(1.15 / enteredText)
+            animationTrack:AdjustSpeed(1 * 0.5)
+            wait(1.15 * 2)
         end
     end
 end
@@ -210,9 +181,6 @@ createButton("walking", function()
         PlayAnimation()
     end
 end)
-
-local isPlaying = false
-local animationTrack
 
 local function PlayAnimation()
     local player = game.Players.LocalPlayer
@@ -238,12 +206,12 @@ local function PlayAnimation()
         -- Loop the animation
         while isPlaying and animationTrack do
             animationTrack.TimePosition = initialTimePosition
-            animationTrack:AdjustSpeed(0.5 * enteredText)  -- Use entered text as the speed factor
-            wait(1.44 / enteredText)  -- Use entered text as the wait time
-            animationTrack:AdjustSpeed(-0.5 * enteredText)
-            wait(1.44 / enteredText)
+                animationTrack:AdjustSpeed(0.5)
+            wait(0.72 + 0.72)
+                animationTrack:AdjustSpeed(-0.5)
+            wait(0.72 + 0.72)
+        end
     end
-  end
 end
 
 createButton("weave", function()
@@ -664,3 +632,18 @@ local function PlayAnimation()
         local animationId = "rbxassetid://10214311282"
         local animation = Instance.new("Animation")
         animation.AnimationId = animationId
+        animationTrack = humanoid:LoadAnimation(animation)
+        animationTrack:Play()
+        animationTrack.TimePosition = 0.83
+        animationTrack:AdjustSpeed(0)
+        isPlaying = true
+    end
+end
+
+createButton2("lay", function()
+    if isPlaying then
+        StopAnimation()
+    else
+        PlayAnimation()
+    end
+end)
