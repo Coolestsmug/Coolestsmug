@@ -11,7 +11,7 @@ frame.BackgroundColor3 = Color3.fromRGB(163, 162, 165)
 frame.Parent = screenGui
 
 local closeButton = Instance.new("TextButton")
-closeButton.Size = UDim2.new(0, 22.5, 0, 120)
+closeButton.Size = UDim2.new(0, 30, 0, 120)
 closeButton.Position = UDim2.new(0, 171, 0, 0)
 closeButton.Text = "Close"
 closeButton.Parent = frame
