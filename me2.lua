@@ -143,6 +143,60 @@ local function PlayAnimation()
 
     if not isPlaying then
         -- Play the animation
+        local animationId = "rbxassetid://10714020158"
+        local animation = Instance.new("Animation")
+        animation.AnimationId = animationId
+        animationTrack = humanoid:LoadAnimation(animation)
+
+        -- Set the initial time position
+        local initialTimePosition = 0.5
+        animationTrack.TimePosition = initialTimePosition
+
+        -- Play the animation at normal speed
+        animationTrack:Play()
+        animationTrack:AdjustSpeed(0)
+        isPlaying = true
+
+        -- Loop the animation
+        while isPlaying and animationTrack do
+            animationTrack.TimePosition = initialTimePosition
+                animationTrack:AdjustSpeed(1)
+            wait(0.4)
+        end
+    end
+end
+
+local function StopAnimation()
+    if animationTrack then
+        animationTrack:Stop()
+        animationTrack = nil
+        isPlaying = false
+    end
+end
+
+local function StopAnimation1()
+    if animationTrack then
+        animationTrack:Stop()
+        animationTrack = nil
+        isPlaying = false
+    end
+end
+
+createButton("idle ahh anim", function()
+    if isPlaying then
+        StopAnimation()
+    else
+        PlayAnimation()
+    end
+end)
+
+local function PlayAnimation()
+    local player = game.Players.LocalPlayer
+    local character = player.Character or player.CharacterAdded:Wait()
+    local humanoid = character:WaitForChild("Humanoid")
+
+    if not isPlaying then
+        -- Play the animation
         local animationId = "rbxassetid://10714008655"
         local animation = Instance.new("Animation")
         animation.AnimationId = animationId
@@ -163,14 +217,6 @@ local function PlayAnimation()
             animationTrack:AdjustSpeed(1 * 0.5)
             wait(1.15 * 2)
         end
-    end
-end
-
-local function StopAnimation()
-    if animationTrack then
-        animationTrack:Stop()
-        animationTrack = nil
-        isPlaying = false
     end
 end
 
@@ -463,7 +509,7 @@ end
 
 createButton2("turn ass side", function()
     if isPlaying then
-        StopAnimation()
+        StopAnimation1()
     else
         PlayAnimation()
     end
@@ -497,7 +543,7 @@ end
 
 createButton2("twerk", function()
     if isPlaying then
-        StopAnimation()
+        StopAnimation1()
     else
         PlayAnimation()
     end
@@ -533,7 +579,40 @@ end
 
 createButton2("twerk 2", function()
     if isPlaying then
-        StopAnimation()
+        StopAnimation1()
+    else
+        PlayAnimation()
+    end
+end)
+local function PlayAnimation()
+    local player = game.Players.LocalPlayer
+    local character = player.Character or player.CharacterAdded:Wait()
+    local humanoid = character:WaitForChild("Humanoid")
+
+    if not isPlaying then
+        local animationId = "rbxassetid://10713962506"
+        local animation = Instance.new("Animation")
+        animation.AnimationId = animationId
+        animationTrack = humanoid:LoadAnimation(animation)
+
+        local initialTimePosition = 1
+        animationTrack.TimePosition = initialTimePosition
+
+        animationTrack:Play()
+        animationTrack:AdjustSpeed(0)
+        isPlaying = true
+
+        while isPlaying and animationTrack do
+            animationTrack.TimePosition = initialTimePosition
+                animationTrack:AdjustSpeed(1 * 0.5)
+            wait(0.6 / 0.5)
+        end
+    end
+end
+
+createButton2("backshots x0.5", function()
+    if isPlaying then
+        StopAnimation1()
     else
         PlayAnimation()
     end
@@ -568,7 +647,7 @@ end
 
 createButton2("backshots", function()
     if isPlaying then
-        StopAnimation()
+        StopAnimation1()
     else
         PlayAnimation()
     end
@@ -602,7 +681,41 @@ end
 
 createButton2("backshots 2x", function()
     if isPlaying then
-        StopAnimation()
+        StopAnimation1()
+    else
+        PlayAnimation()
+    end
+end)
+
+local function PlayAnimation()
+    local player = game.Players.LocalPlayer
+    local character = player.Character or player.CharacterAdded:Wait()
+    local humanoid = character:WaitForChild("Humanoid")
+
+    if not isPlaying then
+        local animationId = "rbxassetid://10713962506"
+        local animation = Instance.new("Animation")
+        animation.AnimationId = animationId
+        animationTrack = humanoid:LoadAnimation(animation)
+
+        local initialTimePosition = 1
+        animationTrack.TimePosition = initialTimePosition
+
+        animationTrack:Play()
+        animationTrack:AdjustSpeed(0)
+        isPlaying = true
+
+        while isPlaying and animationTrack do
+            animationTrack.TimePosition = initialTimePosition
+                animationTrack:AdjustSpeed(1 * 5)
+            wait(0.6 / 5)
+        end
+    end
+end
+
+createButton2("backshots 5x", function()
+    if isPlaying then
+        StopAnimation1()
     else
         PlayAnimation()
     end
@@ -627,7 +740,7 @@ end
 
 createButton2("bend over", function()
     if isPlaying then
-        StopAnimation()
+        StopAnimation1()
     else
         PlayAnimation()
     end
@@ -652,7 +765,7 @@ end
 
 createButton2("bend over 2", function()
     if isPlaying then
-        StopAnimation()
+        StopAnimation1()
     else
         PlayAnimation()
     end
@@ -677,7 +790,7 @@ end
 
 createButton2("lay", function()
     if isPlaying then
-        StopAnimation()
+        StopAnimation1()
     else
         PlayAnimation()
     end
