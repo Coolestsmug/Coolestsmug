@@ -50,7 +50,6 @@ scrollingFrame.Position = UDim2.new(0, 0, 0, 0)
 scrollingFrame.CanvasSize = UDim2.new(0, 0, 3, 0)
 scrollingFrame.Parent = frame
 
--- Create buttons inside the scrolling frame
 local function createButton(text, func)
     local button = Instance.new("TextButton")
     button.Size = UDim2.new(0, 150, 0, 20)
@@ -133,8 +132,11 @@ setting.MouseButton1Click:Connect(function()
 end)
 
 --[[ alright lets create emote button
- made by coolest_smug on discord, giaan2003_2 on roblox
-for skids out here, be grateful that i made this shit open sourced ]]
+
+made by coolest_smug on discord, giaan2003_2 on roblox
+swag swag swag swag swag!!
+
+]]
 
 local function PlayAnimation()
     local player = game.Players.LocalPlayer
@@ -142,22 +144,18 @@ local function PlayAnimation()
     local humanoid = character:WaitForChild("Humanoid")
 
     if not isPlaying then
-        -- Play the animation
         local animationId = "rbxassetid://10714020158"
         local animation = Instance.new("Animation")
         animation.AnimationId = animationId
         animationTrack = humanoid:LoadAnimation(animation)
 
-        -- Set the initial time position
         local initialTimePosition = 0.5
         animationTrack.TimePosition = initialTimePosition
 
-        -- Play the animation at normal speed
         animationTrack:Play()
         animationTrack:AdjustSpeed(0)
         isPlaying = true
 
-        -- Loop the animation
         while isPlaying and animationTrack do
             animationTrack.TimePosition = initialTimePosition
                 animationTrack:AdjustSpeed(1)
@@ -167,14 +165,6 @@ local function PlayAnimation()
 end
 
 local function StopAnimation()
-    if animationTrack then
-        animationTrack:Stop()
-        animationTrack = nil
-        isPlaying = false
-    end
-end
-
-local function StopAnimation1()
     if animationTrack then
         animationTrack:Stop()
         animationTrack = nil
@@ -196,22 +186,18 @@ local function PlayAnimation()
     local humanoid = character:WaitForChild("Humanoid")
 
     if not isPlaying then
-        -- Play the animation
         local animationId = "rbxassetid://10714008655"
         local animation = Instance.new("Animation")
         animation.AnimationId = animationId
         animationTrack = humanoid:LoadAnimation(animation)
 
-        -- Set the initial time position
         local initialTimePosition = 0.6
         animationTrack.TimePosition = initialTimePosition
 
-        -- Play the animation at normal speed
         animationTrack:Play()
         animationTrack:AdjustSpeed(0)
         isPlaying = true
 
-        -- Loop the animation
         while isPlaying and animationTrack do
             animationTrack.TimePosition = initialTimePosition
             animationTrack:AdjustSpeed(1 * 0.5)
@@ -234,22 +220,18 @@ local function PlayAnimation()
     local humanoid = character:WaitForChild("Humanoid")
 
     if not isPlaying then
-        -- Play the animation
         local animationId = "rbxassetid://15963314052"
         local animation = Instance.new("Animation")
         animation.AnimationId = animationId
         animationTrack = humanoid:LoadAnimation(animation)
 
-        -- Set the initial time position
         local initialTimePosition = 0.6
         animationTrack.TimePosition = initialTimePosition
 
-        -- Play the animation at normal speed
         animationTrack:Play()
         animationTrack:AdjustSpeed(0)
         isPlaying = true
 
-        -- Loop the animation
         while isPlaying and animationTrack do
             animationTrack.TimePosition = initialTimePosition
                 animationTrack:AdjustSpeed(0.5)
@@ -274,22 +256,18 @@ local function PlayAnimation()
     local humanoid = character:WaitForChild("Humanoid")
 
     if not isPlaying then
-        -- Play the animation
         local animationId = "rbxassetid://16392075853"
         local animation = Instance.new("Animation")
         animation.AnimationId = animationId
         animationTrack = humanoid:LoadAnimation(animation)
 
-        -- Set the initial time position
         local initialTimePosition = 1.2
         animationTrack.TimePosition = initialTimePosition
 
-        -- Play the animation at normal speed
         animationTrack:Play()
         animationTrack:AdjustSpeed(0)
         isPlaying = true
 
-        -- Loop the animation
         while isPlaying and animationTrack do
             animationTrack.TimePosition = initialTimePosition
                 animationTrack:AdjustSpeed(1)
@@ -312,23 +290,19 @@ local function PlayAnimation()
     local humanoid = character:WaitForChild("Humanoid")
 
     if not isPlaying then
-        -- Play the animation
         local animationId = "rbxassetid://10714385204"
         local animation = Instance.new("Animation")
         animation.AnimationId = animationId
         animationTrack = humanoid:LoadAnimation(animation)
 
-        -- Set the initial time position
         local initialTimePosition = 2.4
         animationTrack.TimePosition = initialTimePosition
 
-        -- Play the animation at normal speed
         animationTrack:Play()
         animationTrack:AdjustSpeed(0)
         animationTrack:AdjustWeight(1)
         isPlaying = true
 
-        -- Loop the animation
         while isPlaying and animationTrack do
             animationTrack.TimePosition = initialTimePosition
                 animationTrack:AdjustSpeed(1)
@@ -343,7 +317,7 @@ createButton("squat", function()
     else
         PlayAnimation()
     end
-end)
+end).
 
 local function PlayAnimation()
     local player = game.Players.LocalPlayer
@@ -504,6 +478,14 @@ local function PlayAnimation()
                 animationTrack:AdjustSpeed(1)
             wait(0.57) 
         end
+    end
+end
+
+local function StopAnimation1()
+    if animationTrack then
+        animationTrack:Stop()
+        animationTrack = nil
+        isPlaying = false
     end
 end
 
