@@ -50,6 +50,7 @@ scrollingFrame.Position = UDim2.new(0, 0, 0, 0)
 scrollingFrame.CanvasSize = UDim2.new(0, 0, 3, 0)
 scrollingFrame.Parent = frame
 
+-- Create buttons inside the scrolling frame
 local function createButton(text, func)
     local button = Instance.new("TextButton")
     button.Size = UDim2.new(0, 150, 0, 20)
@@ -131,10 +132,10 @@ setting.MouseButton1Click:Connect(function()
     scrollingFrame3:TweenPosition(UDim2.new(0, 0, 0, 0), "Out", "Quad", 0.6, true)
 end)
 
---[[ alright lets create emote button
+--[[
 
-made by coolest_smug on discord, giaan2003_2 on roblox
-swag swag swag swag swag!!
+ made by coolest_smug on discord, giaan2003_2 on roblox
+swag!
 
 ]]
 
@@ -165,6 +166,14 @@ local function PlayAnimation()
 end
 
 local function StopAnimation()
+    if animationTrack then
+        animationTrack:Stop()
+        animationTrack = nil
+        isPlaying = false
+    end
+end
+
+local function StopAnimation1()
     if animationTrack then
         animationTrack:Stop()
         animationTrack = nil
@@ -317,7 +326,7 @@ createButton("squat", function()
     else
         PlayAnimation()
     end
-end).
+end)
 
 local function PlayAnimation()
     local player = game.Players.LocalPlayer
@@ -478,14 +487,6 @@ local function PlayAnimation()
                 animationTrack:AdjustSpeed(1)
             wait(0.57) 
         end
-    end
-end
-
-local function StopAnimation1()
-    if animationTrack then
-        animationTrack:Stop()
-        animationTrack = nil
-        isPlaying = false
     end
 end
 
