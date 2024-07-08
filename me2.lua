@@ -3,13 +3,13 @@ screenGui.Name = "co"
 screenGui.Parent = game.CoreGui
 
 local frame = Instance.new("Frame")
-frame.Size = UDim2.new(0, 200, 0, 120)
-frame.Position = UDim2.new(0, 1, 0, 170)
+frame.Size = UDim2.new(0, 200, 0, 150)
+frame.Position = UDim2.new(0, 1, 0, 140)
 frame.BackgroundColor3 = Color3.fromRGB(163, 162, 165)
 frame.Parent = screenGui
 
 local closeButton = Instance.new("TextButton")
-closeButton.Size = UDim2.new(0, 30, 0, 120)
+closeButton.Size = UDim2.new(0, 30, 0, 150)
 closeButton.Position = UDim2.new(0, 171, 0, 0)
 closeButton.Text = "Close"
 closeButton.Parent = frame
@@ -17,14 +17,14 @@ closeButton.Parent = frame
 local isOpen = false
 
 local function openGui()
-    frame:TweenPosition(UDim2.new(0, -170, 0, 170), "Out", "Quad", 0.6, true)
+    frame:TweenPosition(UDim2.new(0, -170, 0, 140), "Out", "Quad", 0.6, true)
     isOpen = true
     wait(0.5)
     closeButton.Text = "Open"
 end
 
 local function closeGui()
-    frame:TweenPosition(UDim2.new(0, 1, 0, 170), "In", "Quad", 0.6, true)
+    frame:TweenPosition(UDim2.new(0, 1, 0, 140), "In", "Quad", 0.6, true)
     isOpen = false
     wait(0.5)
     closeButton.Text = "Close"
@@ -45,9 +45,9 @@ scrolltab.CanvasSize = UDim2.new(1, 0, 0, 0)
 scrolltab.Parent = frame
 
 local scrollingFrame = Instance.new("ScrollingFrame")
-scrollingFrame.Size = UDim2.new(0, 170, 0, 120)
+scrollingFrame.Size = UDim2.new(0, 170, 0, 150)
 scrollingFrame.Position = UDim2.new(0, 0, 0, 0)
-scrollingFrame.CanvasSize = UDim2.new(0, 0, 3, 0)
+scrollingFrame.CanvasSize = UDim2.new(0, 0, 2.4, 0)
 scrollingFrame.Parent = frame
 
 -- Create buttons inside the scrolling frame
