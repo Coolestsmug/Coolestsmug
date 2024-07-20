@@ -466,26 +466,22 @@ local function PlayAnimation()
     local humanoid = character:WaitForChild("Humanoid")
 
     if not isPlaying then
-        -- Play the animation
-        local animationId = "rbxassetid://14548619594"
+        local animationId = "rbxassetid://10713962506"
         local animation = Instance.new("Animation")
         animation.AnimationId = animationId
         animationTrack = humanoid:LoadAnimation(animation)
 
-        -- Set the initial time position
-        local initialTimePosition = 1.5
+        local initialTimePosition = 1
         animationTrack.TimePosition = initialTimePosition
 
-        -- Play the animation at normal speed
         animationTrack:Play()
         animationTrack:AdjustSpeed(0)
         isPlaying = true
 
-        -- Loop the animation
         while isPlaying and animationTrack do
             animationTrack.TimePosition = initialTimePosition
                 animationTrack:AdjustSpeed(1)
-            wait(0.57) 
+            wait(0.6)
         end
     end
 end
@@ -497,7 +493,6 @@ createButton2("backshots x0.5", function()
         PlayAnimation()
     end
 end)
-
 
 local function PlayAnimation()
     local player = game.Players.LocalPlayer
