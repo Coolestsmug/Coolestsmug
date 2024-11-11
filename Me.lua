@@ -230,7 +230,6 @@ loadstring(game:HttpGet("https://raw.githubusercontent.com/Vcsk/RobloxScripts/ma
 end)
 
 realTab:InfoLabel("#COOLGANG")
-realTab:InfoLabel("remember to turn off shiftlock before destroy")
 
 getgenv().Offset1 = 1.7
 getgenv().Offset2 = 0
@@ -495,6 +494,7 @@ end)
 realTab:Button("destroy shiftlock", function()
 game.CoreGui.Shiftlockgui:Destroy()
 end)
+realTab:InfoLabel("remember to turn off shiftlock before destroy")
 
 realTab:Button("infinite yiff 🤯", function()
 loadstring(game:HttpGet('https://raw.githubusercontent.com/EdgeIY/infiniteyield/master/source'))()
