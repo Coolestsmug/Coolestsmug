@@ -72,51 +72,76 @@ end)
 HomeTab:Section("Main")
 
 HomeTab:Toggle("Status: ", function(state)
-	getgenv().HitboxStatus = state
-    game:GetService('RunService').RenderStepped:connect(function()
-		if HitboxStatus == true and TeamCheck == false then
-			for i,v in next, game:GetService('Players'):GetPlayers() do
-				if v.Name ~= game:GetService('Players').LocalPlayer.Name then
-					pcall(function()
-						v.Character.HumanoidRootPart.Size = Vector3.new(HitboxSize, HitboxSize, HitboxSize)
-						v.Character.HumanoidRootPart.Transparency = HitboxTransparency
-						v.Character.HumanoidRootPart.BrickColor = BrickColor.new("Really black")
-						v.Character.HumanoidRootPart.Material = "Neon"
-						v.Character.HumanoidRootPart.CanCollide = false
-					end)
-				end
-			end
-		elseif HitboxStatus == true and TeamCheck == true then
-			for i,v in next, game:GetService('Players'):GetPlayers() do
-				if game:GetService('Players').LocalPlayer.Team ~= v.Team then
-					pcall(function()
-						v.Character.HumanoidRootPart.Size = Vector3.new(HitboxSize, HitboxSize, HitboxSize)
-						v.Character.HumanoidRootPart.Transparency = HitboxTransparency
-						v.Character.HumanoidRootPart.BrickColor = BrickColor.new("Really black")
-						v.Character.HumanoidRootPart.Material = "Neon"
-						v.Character.HumanoidRootPart.CanCollide = false
-					end)
-				end
-			end
-		else
-		    for i,v in next, game:GetService('Players'):GetPlayers() do
-				if v.Name ~= game:GetService('Players').LocalPlayer.Name then
-					pcall(function()
-						v.Character.HumanoidRootPart.Size = Vector3.new(2,2,1)
-						v.Character.HumanoidRootPart.Transparency = 1
-						v.Character.HumanoidRootPart.BrickColor = BrickColor.new("Medium stone grey")
-						v.Character.HumanoidRootPart.Material = "Plastic"
-						v.Character.HumanoidRootPart.CanCollide = false
-					end)
-				end
-			end
-		end
-	end)
+  getgenv().HitboxStatus = state
+  game:GetService('RunService').RenderStepped:connect(function()
+    if HitboxStatus == true and TeamCheck == false then
+      for _, v in next, game:GetService('Players'):GetPlayers() do
+        if v.Name ~= game:GetService('Players').LocalPlayer.Name then
+          pcall(function()
+            if v.Character and v.Character:FindFirstChild("Humanoid") and v.Character.Humanoid.Health > 0 then
+              v.Character.HumanoidRootPart.Size = Vector3.new(HitboxSize, HitboxSize, HitboxSize)
+              v.Character.HumanoidRootPart.Transparency = HitboxTransparency
+              v.Character.HumanoidRootPart.BrickColor = BrickColor.new("Really black")
+              v.Character.HumanoidRootPart.Material = "Neon"
+              v.Character.HumanoidRootPart.CanCollide = false
+            else
+              v.Character.HumanoidRootPart.Size = Vector3.new(2, 2, 1)
+              v.Character.HumanoidRootPart.Transparency = 1
+              v.Character.HumanoidRootPart.BrickColor = BrickColor.new("Medium stone grey")
+              v.Character.HumanoidRootPart.Material = "Plastic"
+              v.Character.HumanoidRootPart.CanCollide = false
+            end
+          end)
+        end
+      end
+    elseif HitboxStatus == true and TeamCheck == true then
+      for _, v in next, game:GetService('Players'):GetPlayers() do
+        if game:GetService('Players').LocalPlayer.Team ~= v.Team then
+          pcall(function()
+            if v.Character and v.Character:FindFirstChild("Humanoid") and v.Character.Humanoid.Health > 0 then
+              v.Character.HumanoidRootPart.Size = Vector3.new(HitboxSize, HitboxSize, HitboxSize)
+              v.Character.HumanoidRootPart.Transparency = HitboxTransparency
+              v.Character.HumanoidRootPart.BrickColor = BrickColor.new("Really black")
+              v.Character.HumanoidRootPart.Material = "Neon"
+              v.Character.HumanoidRootPart.CanCollide = false
+            else
+              v.Character.HumanoidRootPart.Size = Vector3.new(2, 2, 1)
+              v.Character.HumanoidRootPart.Transparency = 1
+              v.Character.HumanoidRootPart.BrickColor = BrickColor.new("Medium stone grey")
+              v.Character.HumanoidRootPart.Material = "Plastic"
+              v.Character.HumanoidRootPart.CanCollide = false
+            end
+          end)
+        end
+      end
+    else
+      for _, v in next, game:GetService('Players'):GetPlayers() do
+        if v.Name ~= game:GetService('Players').LocalPlayer.Name then
+          pcall(function()
+            if v.Character and v.Character:FindFirstChild("Humanoid") and v.Character.Humanoid.Health > 0 then
+              v.Character.HumanoidRootPart.Size = Vector3.new(HitboxSize, HitboxSize, HitboxSize)
+              v.Character.HumanoidRootPart.Transparency = HitboxTransparency
+              v.Character.HumanoidRootPart.BrickColor = BrickColor.new("Really black")
+              v.Character.HumanoidRootPart.Material = "Neon"
+              v.Character.HumanoidRootPart.CanCollide = false
+            else
+              v.Character.HumanoidRootPart.Size = Vector3.new(2, 2, 1)
+              v.Character.HumanoidRootPart.Transparency = 1
+              v.Character.HumanoidRootPart.BrickColor = BrickColor.new("Medium stone grey")
+              v.Character.HumanoidRootPart.Material = "Plastic"
+              v.Character.HumanoidRootPart.CanCollide = false
+            end
+          end)
+        end
+      end
+    end
+  end)
 end)
 
 HomeTab:Toggle("Team Check", function(state)
-    getgenv().TeamCheck = state
+  getgenv().TeamCheck = state
 end)
+
 
 PlayerTab:TextBox("WalkSpeed", function(value)
     getgenv().Walkspeed = value
@@ -136,23 +161,39 @@ PlayerTab:Toggle("Loop WalkSpeed", function(state)
     end)
 end)
 
-PlayerTab:TextBox("JumpPower", function(value)
-    getgenv().Jumppower = value
+PlayerTab:TextBox("Jump Value", function(value)
+    getgenv().JumpValue = tonumber(value)
     pcall(function()
-        game:GetService("Players").LocalPlayer.Character.Humanoid.JumpPower = value
+        local humanoid = game:GetService("Players").LocalPlayer.Character:FindFirstChild("Humanoid")
+        if humanoid then
+            if humanoid.UseJumpHeight then
+                humanoid.JumpHeight = JumpValue
+            else
+                humanoid.JumpPower = JumpValue
+            end
+        end
     end)
 end)
 
-PlayerTab:Toggle("Loop JumpPower", function(state)
+PlayerTab:Toggle("Loop Jump", function(state)
     getgenv().loopJ = state
     game:GetService("RunService").Heartbeat:Connect(function()
         if loopJ == true then
             pcall(function()
-                game:GetService("Players").LocalPlayer.Character.Humanoid.JumpPower = Jumppower
+                local humanoid = game:GetService("Players").LocalPlayer.Character:FindFirstChild("Humanoid")
+                if humanoid then
+                    if humanoid.UseJumpHeight then
+                        humanoid.JumpHeight = JumpValue
+                    else
+                        humanoid.JumpPower = JumpValue
+                    end
+                end
             end)
         end
     end)
 end)
+
+
 
 PlayerTab:TextBox("TP Speed", function(value)
 getgenv().TPSpeed = value
@@ -176,7 +217,7 @@ while getgenv().TPWalk and hb:Wait() and chr and hum and hum.Parent do
 end
 end)
 
-PlayerTab:Slider("Fov", game.Workspace.CurrentCamera.FieldOfView,120, function(v)
+PlayerTab:Slider("Fov", 30,120, function(v)
      game.Workspace.CurrentCamera.FieldOfView = v
 end)
 
@@ -201,15 +242,16 @@ getgenv().InfJ = s
 end)
 
 PlayerTab:Toggle("head camera", function(state)
-getgenv().camera = state
-    pcall(function()
-	if camera == true then
-            game.Workspace.Camera.CameraSubject = game.Players.LocalPlayer.Character:WaitForChild("Head")
-	elseif camera == false then
-	    game.Workspace.Camera.CameraSubject = game.Players.LocalPlayer.Character:WaitForChild("Humanoid")
-	end
-    end)
+  getgenv().camera = state
+  pcall(function()
+    while camera do
+      game.Workspace.Camera.CameraSubject = game.Players.LocalPlayer.Character:WaitForChild(camera and "Head" or "Humanoid")
+      task.wait(0.1)
+    end
+    game.Workspace.Camera.CameraSubject = game.Players.LocalPlayer.Character:WaitForChild("Humanoid")
+  end)
 end)
+
 
 PlayerTab:Button("Rejoin", function()
     game:GetService("TeleportService"):Teleport(game.PlaceId, game:GetService("Players").LocalPlayer)
@@ -494,7 +536,7 @@ end)
 realTab:Button("destroy shiftlock", function()
 game.CoreGui.Shiftlockgui:Destroy()
 end)
-realTab:InfoLabel("remember to turn off shiftlock before destroy")
+realTab:InfoLabel("disable shiftlock before destroy")
 
 realTab:Button("infinite yiff 🤯", function()
 loadstring(game:HttpGet('https://raw.githubusercontent.com/EdgeIY/infiniteyield/master/source'))()
