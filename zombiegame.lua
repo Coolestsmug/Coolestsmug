@@ -84,6 +84,12 @@ zomTab:Button("summon horde", function()
     end
 end)
 
+zomTab:Button("...", function()
+    for i= 1, 100 do
+        game:GetService("ReplicatedStorage"):WaitForChild("Remotes"):WaitForChild("ZombieRelated"):WaitForChild("Necro"):WaitForChild("AbilityPlayer"):FireServer()
+    end
+end)
+
 local zomTab = Window:Tab("human","rbxassetid://12308581351")
 zomTab:Section("basic")
 zomTab:Button("spawn landmine", function()
