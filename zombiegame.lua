@@ -103,9 +103,9 @@ end)
 zomTab:Section("loops")
 zomTab:Toggle("heal (gamepass)", function(state)
     getgenv().looph = state
-        while looph then
-            pcall(function()
-                local args = {
+    while looph do
+         pcall(function()
+              local args = {
     [1] = "Medkit_Heal"
 }
 
