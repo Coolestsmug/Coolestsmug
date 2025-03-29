@@ -572,7 +572,7 @@ loadstring(game:HttpGet('https://pastebin.ai/raw/lstrrfipqq'))();
 end)
 
 gangTab:Button("zombie game", function()
-loadstring(game:HttpGet("https://raw.githubusercontent.com/Coolestsmug/Coolestsmug/main/zombiegame.lua", true))()
+loadstring(game:HttpGet("https://raw.githubusercontent.com/Coolestsmug/Coolestsmug/main/games/zombiegame.lua", true))()
 end)
 
 gangTab:Button("pose greenscren", function()
@@ -582,13 +582,9 @@ gangTab:Button("posegreenscreen (temp)", function()
 loadstring(game:HttpGet("https://raw.githubusercontent.com/Coolestsmug/Coolestsmug/Coolestsmug-patch-2/anim.lua", true))()
 end)
 gangTab:Button("everyborder game", function()
-loadstring(game:HttpGet("https://raw.githubusercontent.com/Coolestsmug/Coolestsmug/main/everybordergameever.lua", true))()
+loadstring(game:HttpGet("https://raw.githubusercontent.com/Coolestsmug/Coolestsmug/main/games/everybordergameever.lua", true))()
 end)
-
-gangTab:Button("storage", function()
-loadstring(game:HttpGet("https://raw.githubusercontent.com/Coolestsmug/Coolestsmug/main/The_storage.lua", true))()
-end)
-					
+				
 gangTab:Button("isolation warm", function()
 endloadstring(game:HttpGet("https://raw.githubusercontent.com/Coolestsmug/Coolestsmug/main/Isolationwarm.lua", true))()
 end)
