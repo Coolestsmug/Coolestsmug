@@ -1,5 +1,5 @@
-This script is just made for myself
+hi my repos is obviously dogshit pls do not interact
 
-DUDE WHY IS IT A SPECIAL REPOSITORY
 
-whatever, im coolest_smug
+
+im coolest_smug
