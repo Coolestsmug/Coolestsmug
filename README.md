@@ -1,5 +1,4 @@
-This script is just made for myself
+hi im smug
 
-DUDE WHY IS IT A SPECIAL REPOSITORY
 
-whatever, im coolest_smug
+my repo is dogshit and unable to read shit
