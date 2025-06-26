@@ -265,8 +265,8 @@ game:GetService("RunService").RenderStepped:connect(function()
 							local mag = (hrp.Position-handle.Position).magnitude
 							if mag <= reach then
 								onHit(hrp,handle)
-								end
 							end
+						end
 					end
 				elseif reachType == "Box" then
 					visualizer.Shape = Enum.PartType.Block
@@ -277,11 +277,11 @@ game:GetService("RunService").RenderStepped:connect(function()
 					for _,v in pairs(game.Players:GetPlayers()) do
 						local hrp = v.Character and v.Character:FindFirstChild("HumanoidRootPart")
 						if hrp and handle then
-							local mag = (hrp.Position-handle.Position).magnitude
-							if mag <= reach then
+							local rel = visualizer.CFrame:PointToObjectSpace(hrp.Position)
+							if math.abs(rel.X) <= reach / 2 and math.abs(rel.Y) <= reach / 2 and math.abs(rel.Z) <= reach / 2 then
 								onHit(hrp,handle)
-								end
 							end
+						end
 					end
 				elseif reachType == "Line" then
 					local origin = (handle.CFrame*CFrame.new(0,0,-2)).p
