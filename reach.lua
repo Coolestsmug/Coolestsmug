@@ -21,9 +21,9 @@ local TextLabel_2 = Instance.new("TextLabel")
 local TextLabel_3 = Instance.new("TextLabel")
 local TextLabel_4 = Instance.new("TextLabel")
 local TextButton = Instance.new("TextButton")
-local Frame_2 = Instance.new("Frame")
+local Frame_2 = Instance.new("TextButton")
 local Frame_3 = Instance.new("Frame")
-local Frame_4 = Instance.new("Frame")
+local Frame_4 = Instance.new("TextButton")
 local Frame_5 = Instance.new("Frame")
 local TextButton_2 = Instance.new("TextButton")
 
@@ -118,6 +118,7 @@ TextButton.TextWrapped = true
 
 Frame_2.Parent = Frame
 Frame_2.Active = true
+Frame_2.Text = ''
 Frame_2.AnchorPoint = Vector2.new(0, 0.5)
 Frame_2.BackgroundColor3 = Color3.fromRGB(31, 31, 31)
 Frame_2.BorderSizePixel = 0
@@ -134,6 +135,7 @@ Frame_3.Position = UDim2.new(0.5, 0, 0.5, 0)
 
 Frame_4.Parent = Frame
 Frame_4.Active = true
+Frame_4.Text = ''
 Frame_4.AnchorPoint = Vector2.new(0, 0.5)
 Frame_4.BackgroundColor3 = Color3.fromRGB(31, 31, 31)
 Frame_4.BorderSizePixel = 0
@@ -164,25 +166,21 @@ TextButton_2.TextWrapped = true
 repeat wait() until game.Players.LocalPlayer
 ScreenGui.Parent = game:GetService("CoreGui")
 
-Frame_4.InputBegan:connect(function(inp)
-	if inp.UserInputType == Enum.UserInputType.MouseButton1 or inp.UserInputType == Enum.UserInputType.Touch then
-		dmgEnabled = not dmgEnabled
-		local goal = {Size = UDim2.new(0,0,0,0)}
-		if dmgEnabled then
-			goal = {Size = UDim2.new(1,0,1,0)}
-		end
-		game:GetService("TweenService"):Create(Frame_5,TweenInfo.new(0.12,Enum.EasingStyle.Quad),goal):Play()
+Frame_4.MouseButton1Click:connect(function()
+	dmgEnabled = not dmgEnabled
+	local goal = {Size = UDim2.new(0,0,0,0)}
+	if dmgEnabled then
+		goal = {Size = UDim2.new(1,0,1,0)}
 	end
+	game:GetService("TweenService"):Create(Frame_5,TweenInfo.new(0.12,Enum.EasingStyle.Quad),goal):Play()
 end)
-Frame_2.InputBegan:connect(function(inp)
-	if inp.UserInputType == Enum.UserInputType.MouseButton1 or inp.UserInputType == Enum.UserInputType.Touch then
-		visualizerEnabled = not visualizerEnabled
-		local goal = {Size = UDim2.new(0,0,0,0)}
-		if visualizerEnabled then
-			goal = {Size = UDim2.new(1,0,1,0)}
-		end
-		game:GetService("TweenService"):Create(Frame_3,TweenInfo.new(0.12,Enum.EasingStyle.Linear),goal):Play()
+Frame_2.MouseButton1Click:connect(function()
+	visualizerEnabled = not visualizerEnabled
+	local goal = {Size = UDim2.new(0,0,0,0)}
+	if visualizerEnabled then
+		goal = {Size = UDim2.new(1,0,1,0)}
 	end
+	game:GetService("TweenService"):Create(Frame_3,TweenInfo.new(0.12,Enum.EasingStyle.Linear),goal):Play()
 end)
 TextButton_2.MouseButton1Click:connect(function()
 	if reachType == "Sphere" then
