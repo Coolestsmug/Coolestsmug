@@ -13,27 +13,7 @@ visualizer.Size = Vector3.new(0.5,0.5,0.5)
 visualizer.BottomSurface = Enum.SurfaceType.Smooth
 visualizer.TopSurface = Enum.SurfaceType.Smooth
 
-PARENT = nil
-if get_hidden_gui or gethui then
-    local hiddenUI = get_hidden_gui or gethui
-    local Main = Instance.new("ScreenGui")
-    Main.Name = "cool"
-    Main.Parent = hiddenUI()
-    PARENT = Main
-elseif (not is_sirhurt_closure) and (syn and syn.protect_gui) then
-    local Main = Instance.new("ScreenGui")
-    Main.Name = "cool"
-    syn.protect_gui(Main)
-    Main.Parent = game:GetService("CoreGui")
-    PARENT = Main
-elseif game:GetService("CoreGui"):FindFirstChild("RobloxGui") then
-    PARENT = game:GetService("CoreGui").RobloxGui
-else
-    local Main = Instance.new("ScreenGui")
-    Main.Name = "cool"
-    Main.Parent = game:GetService("CoreGui")
-    PARENT = Main
-end
+local ScreenGui = Instance.new("ScreenGui")
 local Frame = Instance.new("Frame")
 local TextLabel = Instance.new("TextLabel")
 local TextBox = Instance.new("TextBox")
@@ -49,7 +29,11 @@ local TextButton_2 = Instance.new("TextButton")
 
 --Properties:
 
-Frame.Parent = PARENT
+ScreenGui.ZIndexBehavior = Enum.ZIndexBehavior.Sibling
+ScreenGui.DisplayOrder = 999999999
+ScreenGui.ResetOnSpawn = false
+
+Frame.Parent = ScreenGui
 Frame.AnchorPoint = Vector2.new(0, 0.5)
 Frame.BackgroundColor3 = Color3.fromRGB(45, 45, 45)
 Frame.BackgroundTransparency = 0
@@ -57,8 +41,6 @@ Frame.BorderColor3 = Color3.fromRGB(0, 0, 0)
 Frame.BorderSizePixel = 4
 Frame.Position = UDim2.new(0, 0, 0.600000024, 0)
 Frame.Size = UDim2.new(0.150000006, 0, 0.300000012, 0)
-Frame.Draggable = true
-Frame.Active = false
 
 TextLabel.Parent = Frame
 TextLabel.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
@@ -178,6 +160,7 @@ TextButton_2.TextSize = 14.000
 TextButton_2.TextWrapped = true
 
 repeat wait() until game.Players.LocalPlayer
+ScreenGui.Parent = game:GetService("CoreGui")
 
 Frame_4.InputBegan:connect(function(inp)
 	if inp.UserInputType == Enum.UserInputType.MouseButton1 or inp.UserInputType == Enum.UserInputType.Touch then
