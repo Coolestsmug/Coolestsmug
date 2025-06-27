@@ -203,10 +203,10 @@ local plr = game.Players.LocalPlayer
 
 local function onHit(hit,handle)
 	local victim = hit.Parent:FindFirstChildOfClass("Humanoid")
-	if victim and victim.Parent.Name ~= game.Players.LocalPlayer.Name then
+	if victim and victim.Parent.Name ~= game:GetService("Players").LocalPlayer.Name then
 		if dmgEnabled then
         		for _,v in pairs(hit.Parent:GetChildren()) do
-				if v:IsA("Part") then
+				if v:IsA("BasePart") then
                 			firetouchinterest(v,handle,0)
                 			firetouchinterest(v,handle,1)
 				end
@@ -220,7 +220,7 @@ end
 
 local function getWhiteList()
     local wl = {}
-    for _,v in pairs(game.Players:GetPlayers()) do
+    for _,v in pairs(game:GetService("Players"):GetPlayers()) do
         if v ~= plr then
             local char = v.Character
             if char then
