@@ -1,6 +1,6 @@
 --i rewrite this script lmao
 
-local CoreGui = game:GetService("StarterGui")
+local CoreGui = game:GetService("CoreGui")
 local Players = game:GetService("Players")
 
 local function isNumber(str)
@@ -30,7 +30,7 @@ local ToggleGui = Instance.new("ScreenGui")
 local Toggle = Instance.new("TextButton")
 
 ToggleGui.Name = "ToggleGui_HE"
-ToggleGui.Parent = game.CoreGui
+ToggleGui.Parent = CoreGui
 
 Toggle.Name = "tog"
 Toggle.Parent = ToggleGui
@@ -118,19 +118,11 @@ HomeTab:Toggle("Status: ", function(state)
       for _, v in next, game:GetService('Players'):GetPlayers() do
         if v.Name ~= game:GetService('Players').LocalPlayer.Name then
           pcall(function()
-            if v.Character and v.Character:FindFirstChild("Humanoid") and v.Character.Humanoid.Health > 0 then
-              v.Character.HumanoidRootPart.Size = Vector3.new(HitboxSize, HitboxSize, HitboxSize)
-              v.Character.HumanoidRootPart.Transparency = HitboxTransparency
-              v.Character.HumanoidRootPart.BrickColor = BrickColor.new("Really black")
-              v.Character.HumanoidRootPart.Material = "Neon"
-              v.Character.HumanoidRootPart.CanCollide = false
-            else
-              v.Character.HumanoidRootPart.Size = Vector3.new(2, 2, 1)
-              v.Character.HumanoidRootPart.Transparency = 1
-              v.Character.HumanoidRootPart.BrickColor = BrickColor.new("Medium stone grey")
-              v.Character.HumanoidRootPart.Material = "Plastic"
-              v.Character.HumanoidRootPart.CanCollide = false
-            end
+            v.Character.HumanoidRootPart.Size = Vector3.new(2, 2, 1)
+            v.Character.HumanoidRootPart.Transparency = 1
+            v.Character.HumanoidRootPart.BrickColor = BrickColor.new("Medium stone grey")
+            v.Character.HumanoidRootPart.Material = "Plastic"
+            v.Character.HumanoidRootPart.CanCollide = false
           end)
         end
       end
@@ -193,31 +185,7 @@ PlayerTab:Toggle("Loop Jump", function(state)
     end)
 end)
 
-
-
-PlayerTab:TextBox("TP Speed", function(value)
-getgenv().TPSpeed = value
-end)
-
-PlayerTab:Toggle("TP Walk", function(s)
-getgenv().TPWalk = s
-local hb = game:GetService("RunService").Heartbeat
-local player = game:GetService("Players")
-local lplr = player.LocalPlayer
-local chr = lplr.Character
-local hum = chr and chr:FindFirstChildWhichIsA("Humanoid")
-while getgenv().TPWalk and hb:Wait() and chr and hum and hum.Parent do
-  if hum.MoveDirection.Magnitude > 0 then
-    if getgenv().TPSpeed and isNumber(getgenv().TPSpeed) then
-      chr:TranslateBy(hum.MoveDirection * tonumber(getgenv().TPSpeed))
-    else
-      chr:TranslateBy(hum.MoveDirection)
-    end
-  end
-end
-end)
-
-PlayerTab:Slider("Fov", 30,120, function(v)
+PlayerTab:Slider("Fov", 10,120, function(v)
      game.Workspace.CurrentCamera.FieldOfView = v
 end)
 
@@ -225,7 +193,6 @@ PlayerTab:Toggle("Noclip", function(s)
     getgenv().Noclip = s
     game:GetService("RunService").Heartbeat:Connect(function()
         if Noclip == true then
-            game:GetService("RunService").Stepped:wait()
             game.Players.LocalPlayer.Character.Head.CanCollide = false
             game.Players.LocalPlayer.Character.Torso.CanCollide = false
         end
@@ -236,7 +203,7 @@ PlayerTab:Toggle("Infinite Jump", function(s)
 getgenv().InfJ = s
     game:GetService("UserInputService").JumpRequest:connect(function()
         if InfJ == true then
-            game:GetService("Players").LocalPlayer.Character:FindFirstChildOfClass'Humanoid':ChangeState("Jumping")
+            game:GetService("Players").LocalPlayer.Character:FindFirstChildOfClass('Humanoid'):ChangeState("Jumping")
         end
     end)
 end)
@@ -244,11 +211,14 @@ end)
 PlayerTab:Toggle("head camera", function(state)
   getgenv().camera = state
   pcall(function()
+  if camera then
     while camera do
-      game.Workspace.Camera.CameraSubject = game.Players.LocalPlayer.Character:WaitForChild(camera and "Head" or "Humanoid")
+      game.Workspace.Camera.CameraSubject = game.Players.LocalPlayer.Character:WaitForChild("Head")
       task.wait(0.1)
     end
+  else
     game.Workspace.Camera.CameraSubject = game.Players.LocalPlayer.Character:WaitForChild("Humanoid")
+  end
   end)
 end)
 
@@ -295,7 +265,7 @@ local ImageButton = Instance.new("ImageButton")
 --Properties:
 
 ShiftlockStarterGui.Name = "Shiftlockgui"
-ShiftlockStarterGui.Parent = game.CoreGui
+ShiftlockStarterGui.Parent = CoreGui
 ShiftlockStarterGui.ZIndexBehavior =  Enum.ZIndexBehavior.Sibling
 ShiftlockStarterGui.ResetOnSpawn = false
 
