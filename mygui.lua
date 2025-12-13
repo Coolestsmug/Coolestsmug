@@ -1,291 +1,413 @@
-local TweenService = game:GetService("TweenService")
+local uis = game:GetService("UserInputService")
+local ts = game:GetService("TweenService")
 
-local screenGui = Instance.new("ScreenGui")
-screenGui.Name = "co"
-screenGui.Parent = game.CoreGui
+local guiset = {
+  font = Enum.Font.Highway,
+  size = 12,
+  downinfo = TweenInfo.new(0.1,Enum.EasingStyle.Sine, Enum.EasingDirection.Out),
+  upinfo = TweenInfo.new(0.3,Enum.EasingStyle.Sine, Enum.EasingDirection.Out),
+}
+
+local function rounded(n, dec)
+  dec = dec or 2
+  local mult = 10 ^ dec
+  local round = math.floor(n * mult + 0.5) / mult
+  local s = tostring(round)
+  s = s:gsub("(%..-)0+$", "%1")
+  s = s:gsub("%.$", "")
+  return s
+end
+
+local function autobuttoncolor(btn, frame, base, down)
+  btn.MouseButton1Down:Connect(function()
+    ts:Create(frame, guiset.downinfo, {BackgroundColor3 = down}):Play()
+  end)
+  btn.InputEnded:Connect(function()
+    ts:Create(frame, guiset.upinfo, {BackgroundColor3 = base}):Play()
+  end)
+end
+
+local gui = Instance.new("ScreenGui")
+gui.Name = "co"
+gui.Parent = game:GetService("CoreGui")
 
 local frame = Instance.new("Frame")
-frame.Size = UDim2.new(0, 200, 0, 120)
-frame.Position = UDim2.new(0, 1, 0, 170)
-frame.BackgroundColor3 = Color3.fromRGB(163, 162, 165)
-frame.Parent = screenGui
+frame.BorderSizePixel = 1
+frame.BorderColor3 = Color3.fromRGB(255,255,255)
+frame.Size = UDim2.new(0,170,0,121)
+frame.Position = UDim2.new(0,1,0.4,0)
+frame.AnchorPoint = Vector2.new(0,0.5)
+frame.BackgroundColor3 = Color3.fromRGB(255,255,255)
+frame.Parent = gui
 
 local closeButton = Instance.new("TextButton")
-closeButton.Size = UDim2.new(0, 30, 0, 120)
-closeButton.Position = UDim2.new(0, 171, 0, 0)
-closeButton.Text = "Close"
+closeButton.BorderSizePixel = 1
+closeButton.BorderColor3 = Color3.fromRGB(255,255,255)
+closeButton.BackgroundColor3 = Color3.fromRGB(130,130,130)
+closeButton.Size = UDim2.new(0,25,1,-1.5)
+closeButton.Position = UDim2.new(1,1,0,1)
+closeButton.AnchorPoint = Vector2.new(0,0)
+closeButton.Text = ""
 closeButton.Parent = frame
 
-local isOpen = false
-
-local function openGui()
-    frame:TweenPosition(UDim2.new(0, -170, 0, 170), "Out", "Quad", 0.6, true)
-    isOpen = true
-    wait(0.5)
-    closeButton.Text = "Open"
-end
-
-local function closeGui()
-    frame:TweenPosition(UDim2.new(0, 1, 0, 170), "In", "Quad", 0.6, true)
-    isOpen = false
-    wait(0.5)
-    closeButton.Text = "Close"
-end
-
+local open = false
 closeButton.MouseButton1Click:Connect(function()
-    if isOpen then
-        closeGui()
-    else
-        openGui()
+  open = not open
+  ts:Create(frame, TweenInfo.new(0.25,Enum.EasingStyle.Sine, Enum.EasingDirection.Out),{
+  AnchorPoint = open and Vector2.new(1,0.5) or Vector2.new(0,0.5),
+  Position = open and UDim2.new(0,0,frame.Position.Y.Scale,0) or UDim2.new(0,1,frame.Position.Y.Scale,0),
+  }):Play()
+end)
+
+local dragging = false
+local dragStartY = nil
+local frameStartY = nil
+local inputdrag = nil
+local taskdrag = nil
+
+closeButton.InputBegan:Connect(function(i)
+  if inputdrag == nil and (i.UserInputType == Enum.UserInputType.MouseButton1 or i.UserInputType == Enum.UserInputType.Touch) then
+    inputdrag = i
+    dragStartY = i.Position.Y
+    frameStartY = frame.Position.Y.Scale
+  end
+end)
+
+closeButton.MouseButton1Down:Connect(function()
+  taskdrag = task.delay(0.2, function()
+    if inputdrag then
+      dragging = true
     end
+  end)
 end)
 
-local scrolltab = Instance.new("ScrollingFrame")
-scrolltab.Size = UDim2.new(0, 170, 0, 30)
-scrolltab.Position = UDim2.new(0, 0, 0, -20)
-scrolltab.CanvasSize = UDim2.new(1, 0, 0, 0)
-scrolltab.Parent = frame
-
-local scrollingFrame = Instance.new("ScrollingFrame")
-scrollingFrame.Size = UDim2.new(0, 170, 0, 120)
-scrollingFrame.Position = UDim2.new(0, 0, 0, 0)
-scrollingFrame.CanvasSize = UDim2.new(0, 0, 3, 0)
-scrollingFrame.Parent = frame
-
-local scrollingFrame2 = Instance.new("ScrollingFrame")
-scrollingFrame2.Size = UDim2.new(0, 170, 0, 120)
-scrollingFrame2.Position = UDim2.new(0, -171, 0, 0)
-scrollingFrame2.CanvasSize = UDim2.new(0, 0, 3, 0)
-scrollingFrame2.Parent = frame
-
-local scrollingFrame3 = Instance.new("ScrollingFrame")
-scrollingFrame3.Size = UDim2.new(0, 170, 0, 120)
-scrollingFrame3.Position = UDim2.new(0, -171, 0, 0)
-scrollingFrame3.CanvasSize = UDim2.new(0, 0, 3, 0)
-scrollingFrame3.Parent = frame
-
-local tabButton = Instance.new("TextButton")
-tabButton.Size = UDim2.new(0, 50, 0, 20)
-tabButton.Position = UDim2.new(0, 0, 0, 0)
-tabButton.Text = "sfw"
-tabButton.Parent = scrolltab
-
-local tabButton2 = Instance.new("TextButton")
-tabButton2.Size = UDim2.new(0, 50, 0, 20)
-tabButton2.Position = UDim2.new(0, 50, 0, 0)
-tabButton2.Text = "nsfw"
-tabButton2.Parent = scrolltab
-
-local setting = Instance.new("TextButton")
-setting.Size = UDim2.new(0, 50, 0, 20)
-setting.Position = UDim2.new(0, 100, 0, 0)
-setting.Text = "setting"
-setting.Parent = scrolltab
-
-tabButton.MouseButton1Click:Connect(function()
-    scrollingFrame:TweenPosition(UDim2.new(0, 0, 0, 0), "Out", "Quad", 0.6, true)
-    scrollingFrame2:TweenPosition(UDim2.new(0, -172, 0, 0), "In", "Quad", 0.6, true)
-scrollingFrame3:TweenPosition(UDim2.new(0, -172, 0, 0), "In", "Quad", 0.6, true)
+uis.InputEnded:Connect(function(i)
+  if inputdrag == i and (i.UserInputType == Enum.UserInputType.MouseButton1 or i.UserInputType == Enum.UserInputType.Touch) then
+    inputdrag = nil
+    dragging = false
+    if taskdrag then
+      task.cancel(taskdrag)
+      taskdrag = nil
+    end
+  end
 end)
 
-tabButton2.MouseButton1Click:Connect(function()
-    scrollingFrame:TweenPosition(UDim2.new(0, -172, 0, 0), "In", "Quad", 0.6, true)
-    scrollingFrame2:TweenPosition(UDim2.new(0, 0, 0, 0), "Out", "Quad", 0.6, true)
-scrollingFrame3:TweenPosition(UDim2.new(0, -172, 0, 0), "In", "Quad", 0.6, true)
+uis.InputChanged:Connect(function(i)
+  if inputdrag == i and dragging and (i.UserInputType == Enum.UserInputType.MouseButton1 or i.UserInputType == Enum.UserInputType.Touch) then
+    local dy = (i.Position.Y - dragStartY) / gui.AbsoluteSize.Y
+    local newY = math.clamp(frameStartY + dy,0, 1 - (frame.AbsoluteSize.Y / gui.AbsoluteSize.Y))
+    frame.Position = UDim2.new(
+      frame.Position.X.Scale, frame.Position.X.Offset,newY, 0
+    )
+  end
 end)
 
-setting.MouseButton1Click:Connect(function()    scrollingFrame:TweenPosition(UDim2.new(0, -172, 0, 0), "In", "Quad", 0.6, true)
-    scrollingFrame2:TweenPosition(UDim2.new(0, -172, 0, 0), "In", "Quad", 0.6, true)
-    scrollingFrame3:TweenPosition(UDim2.new(0, 0, 0, 0), "Out", "Quad", 0.6, true)
+local scrollTab = Instance.new("ScrollingFrame")
+scrollTab.BorderSizePixel = 1
+scrollTab.BorderColor3 = Color3.fromRGB(255,255,255)
+scrollTab.Size = UDim2.new(1,0,0,22)
+scrollTab.Position = UDim2.new(0,0,0,-22)
+scrollTab.CanvasSize = UDim2.new(0,0,0,0)
+scrollTab.BackgroundColor3 = Color3.fromRGB(130,130,130)
+scrollTab.ScrollingDirection = "X"
+scrollTab.AutomaticCanvasSize = "X"
+scrollTab.ScrollBarThickness = 0
+scrollTab.Parent = frame
+
+local tabList = {}
+local function createTab(name)
+  local scroll = Instance.new("ScrollingFrame",frame)
+  local tabButton = Instance.new("TextButton",scrollTab)
+  local list = Instance.new("UIListLayout",scroll)
+  local label = Instance.new("TextLabel", scroll)
+  scroll.Size = UDim2.new(1,0,1,-1)
+  scroll.Position = UDim2.new(0,0,1,0)
+  scroll.AnchorPoint = Vector2.new(0,1)
+  scroll.BackgroundColor3 = Color3.fromRGB(130,130,130)
+  scroll.CanvasSize = UDim2.new(0,0,0.5,0)
+  scroll.BorderSizePixel = 0
+  scroll.ScrollBarThickness = 0
+  scroll.ScrollingDirection = "Y"
+  scroll.AutomaticCanvasSize = "Y"
+  tabButton.Size = UDim2.new(0,45,0,20)
+  tabButton.Position = UDim2.new(0,1+(#tabList * 48),.5,0)
+  tabButton.AnchorPoint = Vector2.new(0,0.5)
+  tabButton.BackgroundColor3 = Color3.fromRGB(140,140,140)
+  tabButton.BorderSizePixel = 0
+  tabButton.Text = name
+  tabButton.TextSize = guiset.size
+  tabButton.Font = guiset.font
+  tabButton.TextColor3 = Color3.fromRGB(230,230,230)
+  label.Name = "1"
+  label.BackgroundTransparency = 1
+  label.Size = UDim2.new(1,0,0,1)
+  label.Text = ""
+  list.Padding = UDim.new(0,3)
+  list.HorizontalAlignment = "Center"
+  table.insert(tabList, scroll)
+  tabButton.MouseButton1Click:Connect(function()
+    for _,scr in ipairs(tabList) do
+      if scr ~= scroll then
+        scr.Visible = false
+      end
+    end
+    scroll.Visible = true
+  end)
+  return scroll
+end
+
+local function button(text, par, func)
+  local framebox = Instance.new("Frame")
+  framebox.Size = UDim2.new(0.95,0,0,20)
+  framebox.AnchorPoint = Vector2.new(.5,0)
+  framebox.BorderSizePixel = 0
+  framebox.BackgroundColor3 = Color3.fromRGB(110,110,110)
+  framebox.Parent = par
+  local button = Instance.new("TextButton",framebox)
+  button.BackgroundTransparency = 1
+  button.Size = UDim2.new(0.95,0,1,0)
+  button.AnchorPoint = Vector2.new(.5,.5)
+  button.Position = UDim2.new(.5,0,.5,0)
+  button.TextXAlignment = "Left"
+  button.Text = text
+  button.TextSize = guiset.size
+  button.Font = guiset.font
+  button.TextColor3 = Color3.fromRGB(230,230,230)
+  button.MouseButton1Click:Connect(func)
+  autobuttoncolor(button,framebox,Color3.fromRGB(110,110,110),Color3.fromRGB(170,170,170))
+end
+
+local function toggle(text, par, func)
+  local framebox = Instance.new("Frame")
+  framebox.Size = UDim2.new(0.95,0,0,20)
+  framebox.BorderSizePixel = 0
+  framebox.BackgroundColor3 = Color3.fromRGB(110,110,110)
+  framebox.Parent = par
+  local button = Instance.new("TextButton",framebox)
+  local colorBox = Instance.new("Frame",button)
+  button.BackgroundTransparency = 1
+  button.Size = UDim2.new(0.95,0,1,0)
+  button.AnchorPoint = Vector2.new(.5,.5)
+  button.Position = UDim2.new(.5,0,.5,0)
+  button.TextXAlignment = "Left"
+  button.Text = text
+  button.TextSize = guiset.size
+  button.Font = guiset.font
+  button.TextColor3 = Color3.fromRGB(230,230,230)
+  colorBox.Size = UDim2.new(0,13,0.8,0)
+  colorBox.BorderSizePixel = 0
+  colorBox.Position = UDim2.new(1,0,.5,0)
+  colorBox.AnchorPoint = Vector2.new(1,0.5)
+  colorBox.BackgroundColor3 = Color3.fromRGB(255,0,0)
+  local isOn = false
+  button.MouseButton1Click:Connect(function()
+    isOn = not isOn
+    ts:Create(colorBox, TweenInfo.new(0.2), {BackgroundColor3 = isOn and Color3.fromRGB(0,255,0) or Color3.fromRGB(255,0,0)}):Play()
+    func(isOn)
+  end)
+  autobuttoncolor(button,framebox,Color3.fromRGB(110,110,110),Color3.fromRGB(170,170,170))
+end
+
+local function textbox(text, text2, par, func)
+  local framebox = Instance.new("Frame")
+  framebox.Size = UDim2.new(0.95,0,0,20)
+  framebox.BorderSizePixel = 0
+  framebox.BackgroundColor3 = Color3.fromRGB(110,110,110)
+  framebox.Parent = par
+  local label = Instance.new("TextLabel", framebox)
+  local box = Instance.new("TextBox",framebox)
+  label.BackgroundTransparency = 1
+  label.Size = UDim2.new(0.95,0,1,0)
+  label.AnchorPoint = Vector2.new(.5,.5)
+  label.Position = UDim2.new(.5,0,.5,0)
+  label.TextXAlignment = "Left"
+  label.TextColor3 = Color3.fromRGB(230,230,230)
+  label.Active = false
+  label.Text = text .." :"
+  label.TextSize = guiset.size
+  label.Font = guiset.font
+  box.BackgroundTransparency = 1
+  box.Size = UDim2.new(0.95,0,1,0)
+  box.AnchorPoint = Vector2.new(.5,.5)
+  box.Position = UDim2.new(.5,0,.5,0)
+  box.TextXAlignment = "Right"
+  box.PlaceholderText = text2
+  box.Text = ""
+  box.TextSize = guiset.size
+  box.Font = guiset.font
+  box.TextColor3 = Color3.fromRGB(230,230,230)
+  box.FocusLost:Connect(function(enter)
+    func(box.Text)
+  end)
+end
+
+local function label(text, par)
+  local framebox = Instance.new("Frame")
+  framebox.Size = UDim2.new(0.95,0,0,10)
+  framebox.BorderSizePixel = 0
+  framebox.BackgroundColor3 = Color3.fromRGB(110,110,110)
+  framebox.Parent = par
+  local label = Instance.new("TextLabel", framebox)
+  label.BackgroundTransparency = 1
+  label.Size = UDim2.new(0.95,0,0.8,0)
+  label.AnchorPoint = Vector2.new(.5,.5)
+  label.Position = UDim2.new(.5,0,.5,0)
+  label.TextXAlignment = "Center"
+  label.TextColor3 = Color3.fromRGB(230,230,230)
+  label.Active = false
+  label.Text = "- ".. text .." -"
+  label.TextSize = guiset.size
+  label.Font = guiset.font
+  return label
+end
+
+local function switch(text, par, func, list)
+  local framebox = Instance.new("Frame")
+  framebox.Size = UDim2.new(0.95,0,0,20)
+  framebox.AnchorPoint = Vector2.new(.5,0)
+  framebox.BorderSizePixel = 0
+  framebox.BackgroundColor3 = Color3.fromRGB(110,110,110)
+  framebox.Parent = par
+  local button = Instance.new("TextButton", framebox)
+  local label = Instance.new("TextLabel", framebox)
+  button.BackgroundTransparency = 1
+  button.Size = UDim2.new(0.95,0,1,0)
+  button.AnchorPoint = Vector2.new(.5,.5)
+  button.Position = UDim2.new(.5,0,.5,0)
+  button.TextXAlignment = "Left"
+  button.Text = text .. " :"
+  button.TextSize = guiset.size
+  button.Font = guiset.font
+  button.TextColor3 = Color3.fromRGB(230,230,230)
+  label.BackgroundTransparency = 1
+  label.Size = UDim2.new(0.95,0,0.8,0)
+  label.AnchorPoint = Vector2.new(.5,.5)
+  label.Position = UDim2.new(.5,0,.5,0)
+  label.TextXAlignment = "Right"
+  label.TextColor3 = Color3.fromRGB(230,230,230)
+  label.TextSize = guiset.size
+  label.Font = guiset.font
+  label.Active = false
+  local idx = 1
+  label.Text = tostring(list[idx])
+  button.MouseButton1Click:Connect(function()
+    idx += 1
+    if idx > #list then
+      idx = 1
+    end
+    label.Text = tostring(list[idx])
+    func(list[idx])
+  end)
+  autobuttoncolor(button,framebox,Color3.fromRGB(110,110,110),Color3.fromRGB(170,170,170))
+end
+
+local function slider(text, par, cb, cfg)
+  cfg = type(cfg) == "table" and cfg or {}
+  local value = cfg.value
+  local min = cfg.min or 0
+  local max = cfg.max or 1
+  local truescale = (cfg.truescale ~= nil) and cfg.truescale or true
+  local framebox = Instance.new("Frame")
+  framebox.Size = UDim2.new(0.95,0,0,28)
+  framebox.BorderSizePixel = 0
+  framebox.BackgroundColor3 = Color3.fromRGB(110,110,110)
+  framebox.Parent = par
+  local slidebox = Instance.new("TextButton",framebox)
+  local fill = Instance.new("Frame",slidebox)
+  local label = Instance.new("TextLabel",framebox)
+  slidebox.Size = UDim2.new(0.95,0,0,12)
+  slidebox.Position = UDim2.fromScale(0.5,0.925)
+  slidebox.AnchorPoint = Vector2.new(0.5,1)
+  slidebox.BorderSizePixel = 0
+  slidebox.BackgroundColor3 = Color3.fromRGB(80,80,80)
+  slidebox.Text = ""
+  slidebox.AutoButtonColor = false
+  fill.Size = UDim2.new(0,0,1,0)
+  fill.BorderSizePixel = 0
+  fill.Active = false
+  fill.BackgroundColor3 = Color3.fromRGB(160,160,160)
+  label.Size = UDim2.new(1,0,0,14)
+  label.BackgroundTransparency = 1
+  label.TextColor3 = Color3.fromRGB(230,230,230)
+  label.Active = false
+  label.TextSize = guiset.size
+  label.Font = guiset.font
+  if value == nil then value = min end
+  value = math.clamp(value, min, max)
+  local relInit = (value - min) / (max - min)
+  fill.Size = UDim2.new(relInit, 0, 1, 0)
+  label.Text = text .. " : " .. rounded(value)
+  if cb then cb(value) end
+  local function setValue(px)
+    local absW = slidebox.AbsoluteSize.X
+    local left = slidebox.AbsolutePosition.X
+    local rel = math.clamp((px - left) / absW, 0, 1)
+    fill.Size = UDim2.new(rel,0,1,0)
+    local out = min + (max - min) * rel
+    if not truescale then out = math.round(out) end
+    label.Text = text .. " : " .. rounded(out)
+    if cb then cb(out) end
+  end
+  local dragging = false
+  local inputs = nil
+  slidebox.MouseButton1Down:Connect(function()
+    dragging = true
+  end)
+  slidebox.InputBegan:Connect(function(i)
+    if inputs == nil and (i.UserInputType == Enum.UserInputType.MouseButton1 or i.UserInputType == Enum.UserInputType.Touch) then
+      inputs = i
+      par.ScrollingEnabled = false
+      setValue(i.Position.X)
+    end
+  end)
+  uis.InputEnded:Connect(function(i)
+    if inputs == i and (i.UserInputType == Enum.UserInputType.MouseButton1 or i.UserInputType == Enum.UserInputType.Touch) then
+      dragging = false
+      par.ScrollingEnabled = true
+      inputs = nil
+    end
+  end)
+  uis.InputChanged:Connect(function(i)
+    if inputs == i and dragging then
+      if i.UserInputType == Enum.UserInputType.MouseMovement then
+        setValue(uis:GetMouseLocation().X)
+      elseif i.UserInputType == Enum.UserInputType.Touch then
+        setValue(i.Position.X)
+      end
+    end
+  end)
+end
+
+local tab = createTab("Main")
+local tab2 = createTab("Settings")
+
+button("Click Me", tab, function()
+  print("button pressed")
 end)
 
-local function Button(text, func)
-    local button = Instance.new("TextButton")
-    button.Size = UDim2.new(0, 150, 0, 20)
-    button.Position = UDim2.new(0, 5, 0, #scrollingFrame:GetChildren() * 30)
-    button.Text = text
-    button.Parent = scrollingFrame
-    button.MouseButton1Click:Connect(func)
-end
-
-local function Button2(text, func)
-    local button2 = Instance.new("TextButton")
-    button2.Size = UDim2.new(0, 150, 0, 20)
-    button2.Position = UDim2.new(0, 5, 0, #scrollingFrame2:GetChildren() * 30)
-    button2.Text = text
-    button2.Parent = scrollingFrame2
-    button2.MouseButton1Click:Connect(func)
-end
-
-local function Button3(text, func)
-    local button3 = Instance.new("TextButton")
-    button3.Size = UDim2.new(0, 150, 0, 20)
-    button3.Position = UDim2.new(0, 5, 0, #scrollingFrame3:GetChildren() * 30)
-    button3.Text = text
-    button3.Parent = scrollingFrame3
-    button3.MouseButton1Click:Connect(func)
-end
-
-Button3("delete gui", function()
-frame:TweenPosition(UDim2.new(0, -200, 0, 170), "Out", "Quad", 1, true)
-wait(1)
-game.CoreGui.co:Destroy()
+toggle("Godmode", tab, function(state)
+  print("godmode:", state)
 end)
 
-local Tween
-local function Toggle(text, funcOn, funcOff)
-    local button = Instance.new("TextButton")
-    local isOn = false -- This will track the toggle state
-    local colorBox = Instance.new("Frame") -- Create a Frame to act as the color box
-    colorBox.Size = UDim2.new(0, 150, 0, 20)
-    colorBox.Position = UDim2.new(0, 150, 0, 0) -- Position it next to the button
-    colorBox.BackgroundColor3 = Color3.fromRGB(255, 255, 255) -- Start with white color
-    colorBox.Parent = button
+switch("Mode", tab, function(v)
+  print("selected:", v)
+end, {"Easy","Medium","Hard"})
 
-    button.Name = "tbutton"
-    button.Size = UDim2.new(0, 150, 0, 20)
-    button.Position = UDim2.new(0, 5, 0, #scrollingFrame:GetChildren() * 30)
-    button.Text = text
-    button.Parent = scrollingFrame
-
-    button.MouseButton1Click:Connect(function()
-        isOn = not isOn -- Toggle the state
-        if isOn then
-            funcOn()
-            local tweenInfo = TweenInfo.new(0.5) -- Duration of 1 second
-            local goal = {BackgroundColor3 = Color3.fromRGB(0, 255, 0)} -- Green when on
-            local tween = TweenService:Create(colorBox, tweenInfo, goal)
-            tween:Play()
-        else
-            funcOff()
-            local tweenInfo = TweenInfo.new(0.5) -- Duration of 1 second
-            local goal = {BackgroundColor3 = Color3.fromRGB(255, 0, 0)} -- Red when off
-            local tween = TweenService:Create(colorBox, tweenInfo, goal)
-            tween:Play()
-        end
-    end)
-end
-
-local function Toggle2(text, funcOn, funcOff)
-    local button = Instance.new("TextButton")
-    local isOn = false -- This will track the toggle state
-    local colorBox = Instance.new("Frame") -- Create a Frame to act as the color box
-    colorBox.Size = UDim2.new(0, 150, 0, 20)
-    colorBox.Position = UDim2.new(0, 150, 0, 0) -- Position it next to the button
-    colorBox.BackgroundColor3 = Color3.fromRGB(255, 255, 255) -- Start with white color
-    colorBox.Parent = button
-
-    button.Name = "tbutton2"
-    button.Size = UDim2.new(0, 150, 0, 20)
-    button.Position = UDim2.new(0, 5, 0, #scrollingFrame2:GetChildren() * 30)
-    button.Text = text
-    button.Parent = scrollingFrame2
-
-    button.MouseButton1Click:Connect(function()
-        isOn = not isOn -- Toggle the state
-        if isOn then
-            funcOn()
-            local tweenInfo = TweenInfo.new(0.5) -- Duration of 1 second
-            local goal = {BackgroundColor3 = Color3.fromRGB(0, 255, 0)} -- Green when on
-            local tween = TweenService:Create(colorBox, tweenInfo, goal)
-            tween:Play()
-        else
-            funcOff()
-            local tweenInfo = TweenInfo.new(0.5) -- Duration of 1 second
-            local goal = {BackgroundColor3 = Color3.fromRGB(255, 0, 0)} -- Red when off
-            local tween = TweenService:Create(colorBox, tweenInfo, goal)
-            tween:Play()
-        end
-    end)
-end
-
-local function Toggle3(text, funcOn, funcOff)
-    local button = Instance.new("TextButton")
-    local isOn = false -- This will track the toggle state
-    local colorBox = Instance.new("Frame") -- Create a Frame to act as the color box
-    colorBox.Size = UDim2.new(0, 150, 0, 20)
-    colorBox.Position = UDim2.new(0, 150, 0, 0) -- Position it next to the button
-    colorBox.BackgroundColor3 = Color3.fromRGB(255, 255, 255) -- Start with white color
-    colorBox.Parent = button
-
-    button.Name = "tbutton3"
-    button.Size = UDim2.new(0, 150, 0, 20)
-    button.Position = UDim2.new(0, 5, 0, #scrollingFrame3:GetChildren() * 30)
-    button.Text = text
-    button.Parent = scrollingFrame3
-
-    button.MouseButton1Click:Connect(function()
-        isOn = not isOn -- Toggle the state
-        if isOn then
-            funcOn()
-            local tweenInfo = TweenInfo.new(0.5) -- Duration of 1 second
-            local goal = {BackgroundColor3 = Color3.fromRGB(0, 255, 0)} -- Green when on
-            local tween = TweenService:Create(colorBox, tweenInfo, goal)
-            tween:Play()
-        else
-            funcOff()
-            local tweenInfo = TweenInfo.new(0.5) -- Duration of 1 second
-            local goal = {BackgroundColor3 = Color3.fromRGB(255, 0, 0)} -- Red when off
-            local tween = TweenService:Create(colorBox, tweenInfo, goal)
-            tween:Play()
-        end
-    end)
-end
-
-local function Text(text, func)
-    local textBox = Instance.new("TextBox")
-    textBox.Size = UDim2.new(0, 150, 0, 20)
-    textBox.Position = UDim2.new(0, 5, 0, #scrollingFrame:GetChildren() * 30)
-    textBox.Text = text
-    textBox.Parent = scrollingFrame
-    textBox.FocusLost:Connect(function(enterPressed)
-        if enterPressed then
-            func(textBox.Text)
-        end
-    end)
-end
-
-local function Text2(text, func)
-    local textBox = Instance.new("TextBox")
-    textBox.Size = UDim2.new(0, 150, 0, 20)
-    textBox.Position = UDim2.new(0, 5, 0, #scrollingFrame2:GetChildren() * 30)
-    textBox.Text = text
-    textBox.Parent = scrollingFrame2
-    textBox.FocusLost:Connect(function(enterPressed)
-        if enterPressed then
-            func(textBox.Text)
-        end
-    end)
-end
-
-local function Text3(text, func)
-    local textBox = Instance.new("TextBox")
-    textBox.Size = UDim2.new(0, 150, 0, 20)
-    textBox.Position = UDim2.new(0, 5, 0, #scrollingFrame3:GetChildren() * 30)
-    textBox.Text = text
-    textBox.Parent = scrollingFrame3
-    textBox.FocusLost:Connect(function(enterPressed)
-        if enterPressed then
-            func(textBox.Text)
-        end
-    end)
-end
-
---[[ heres template!
-
-Button("mee", function()
--- code
+textbox("Name", "Enter name", tab, function(txt)
+  print("name:", txt)
 end)
 
-local function onFunction()
-    -- code
-end
-local function offFunction()
-    -- code
-end
-Toggle("me2", onFunction, offFunction)
+label("slider", tab)
+slider("Speed", tab, function(v)
 
-Text("textbox", function(inputText)
-    -- code
+end, {
+  min = 0,
+  max = 1,
+  truescale = false
+})
+
+label("End of settings", tab)
+
+button("delete gui",tab2,function()
+  gui:Destroy()
 end)
-]]
